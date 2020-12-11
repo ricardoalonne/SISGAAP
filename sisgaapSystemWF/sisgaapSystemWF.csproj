@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Complements\Console\SisgaapConsole.cs" />
     <Compile Include="wmSystem.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +79,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\sisgaapCoreWF\sisgaapCoreWF.csproj">
+      <Project>{c970e13d-2707-4e7d-8bb5-2f993ca0a555}</Project>
+      <Name>sisgaapCoreWF</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Components\" />
+    <Folder Include="Views\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

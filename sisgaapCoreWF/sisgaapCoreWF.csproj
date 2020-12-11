@@ -44,5 +44,15 @@
     <Compile Include="SisgaapCoreWF.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\sisgaapCore\sisgaapCore.csproj">
+      <Project>{107b0b36-2261-4b0b-88dc-1f468cab6711}</Project>
+      <Name>sisgaapCore</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\sisgaapSqlDB\sisgaapSqlDB.csproj">
+      <Project>{1184486b-9985-431c-bfdf-ed9c1b7e93bc}</Project>
+      <Name>sisgaapSqlDB</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
