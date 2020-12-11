@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 namespace sisgaapSystemWF.Complements.Console
 {
     class SisgaapConsole{
-        static void Main(string[] args){
+        //static void Main(string[] args){
 
-        }
+        //}
     }
 }

@@ -4,10 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace sisgaapCore
-{
-    public class SolicitudAbastecimiento
-    {
+namespace sisgaapCore{
+    public class SolicitudAbastecimiento{
         public string codigoSolicitud { get; set; }
         public string asunto { get; set; }
         public string descripcion { get; set; }

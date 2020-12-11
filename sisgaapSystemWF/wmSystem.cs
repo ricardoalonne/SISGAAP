@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using sisgaapSystemWF.Views.Documentos;
+
 namespace sisgaapSystemWF
 {
     public partial class wmSystem : Form
@@ -15,6 +17,18 @@ namespace sisgaapSystemWF
         public wmSystem()
         {
             InitializeComponent();
+        }
+
+        private Documentos documentos;
+
+        private void Button_DocumentosSA_Click(object sender, EventArgs e){
+            documentos = new Documentos("Solicitud","Abastecimiento");
+            documentos.Show();
+        }
+
+        private void Button_DocumentosSP_Click(object sender, EventArgs e){
+            documentos = new Documentos("Solicitud", "Produccion");
+            documentos.Show();
         }
     }
 }

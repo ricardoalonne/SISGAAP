@@ -4,10 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace sisgaapCore.Entities
-{
-    public class Repuesto
-    {
+namespace sisgaapCore.Entities{
+    public class Repuesto{
         public string codigoRepuesto { get; set; }
         public string nombreRepuesto { get; set; }
         public string descripcion { get; set; }
