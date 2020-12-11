@@ -11,5 +11,6 @@ namespace sisgaapCore.Entities
         public string codigoSolicitud { get; set; }
         public string codigoRepuesto { get; set; }
         public int cantidadSolicitada { get; set; }
+        public int error { get; set; }
     }
 }
