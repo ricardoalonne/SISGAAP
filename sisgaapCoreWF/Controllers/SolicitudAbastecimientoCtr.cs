@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.SqlClient;
+using System.Data;
 using sisgaapCore;
 using sisgaapSqlDB.DataBase;
 
@@ -70,6 +72,10 @@ namespace sisgaapCoreWF.Controllers
             }
             objSA.error = 77;
             objSAdat.UpdateSolicitudAbastecimiento(objSA);
+        }
+        public DataTable ConsultaSolicitudAbastecimiento(string dato, string letra)
+        {
+            return objSAdat.select_SAxCB(dato, letra);
         }
     }
 }

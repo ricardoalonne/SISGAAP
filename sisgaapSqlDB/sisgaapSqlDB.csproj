@@ -43,7 +43,9 @@
   <ItemGroup>
     <Compile Include="DataBase\conexion.cs" />
     <Compile Include="DataBase\DetalleSolicitudAbastecimientoDat.cs" />
+    <Compile Include="DataBase\DetalleSolicitudProduccionDat.cs" />
     <Compile Include="DataBase\SolicitudAbastecimientoDat.cs" />
+    <Compile Include="DataBase\SolicitudProduccionDat.cs" />
     <Compile Include="SisgaapSqlDB.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

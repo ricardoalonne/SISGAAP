@@ -44,7 +44,7 @@ namespace sisgaapSqlDB.DataBase
         {
             DataTable dt = null;
             conexionBD.Open();
-            SqlCommand command = new SqlCommand("SELECT*FROM v_detalle_sa where codigoSolicitud='" + detallesa.codigoSolicitud + "'", conexionBD);
+            SqlCommand command = new SqlCommand("select Codigo,Repuesto,Cantidad from v_detalle_sa where Solicitud ='" + detallesa.codigoSolicitud + "'", conexionBD);
             SqlDataAdapter daAdaptador = new SqlDataAdapter(command);
             dt = new DataTable();
             daAdaptador.Fill(dt);
