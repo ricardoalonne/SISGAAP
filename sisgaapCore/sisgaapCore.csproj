@@ -41,11 +41,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\DetalleSolicitudAbastecimiento.cs" />
+    <Compile Include="Entities\DetalleSolicitudProduccion.cs" />
+    <Compile Include="Entities\Repuesto.cs" />
+    <Compile Include="Entities\SolicitudProducción.cs" />
     <Compile Include="SisgaapCore.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Entities\SolicitudAbastecimiento.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Entities\" />
     <Folder Include="SISGAAP\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
