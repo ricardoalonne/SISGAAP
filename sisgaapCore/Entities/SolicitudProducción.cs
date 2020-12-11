@@ -16,5 +16,6 @@ namespace sisgaapCore.Entities{
         public double costoTotal { get; set; }
         public string estado { get; set; }
         public string redactor { get; set; }
+        public int error { get; set; }
     }
 }

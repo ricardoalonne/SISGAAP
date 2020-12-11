@@ -12,5 +12,6 @@ namespace sisgaapCore.Entities
         public string Detalle_Solicitud_Abastecimiento_codigoSolicitud { get; set; }
         public double costoUnitario { get; set; }
         public int cantidadSugerida { get; set; }
+        public int error { get; set; }
     }
 }
