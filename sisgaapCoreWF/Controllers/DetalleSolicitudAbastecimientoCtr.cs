@@ -24,5 +24,18 @@ namespace sisgaapCoreWF.Controllers
             objDetalleSA.error = 77;
             objDetalleSAdat.InsertarDetalle_SA(objDetalleSA);
         }
+        public void EliminarDetallesSA(DetalleSolicitudAbastecimiento objDetalleSA)
+        {
+            objDetalleSAdat.DeleteDetalle_SA(objDetalleSA);
+        }
+        public void ActualizarDetalleSA(DetalleSolicitudAbastecimiento objDetalleSA)
+        {
+            if (objDetalleSA.cantidadSolicitada <= 0)
+            {
+                objDetalleSA.error = 1; //cantidad invalidad!!
+            }
+            objDetalleSA.error = 77;
+            objDetalleSAdat.UpdateDetalle_SA(objDetalleSA);
+        }
     }
 }
