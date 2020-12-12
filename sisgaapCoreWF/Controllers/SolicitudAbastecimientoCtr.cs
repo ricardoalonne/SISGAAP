@@ -77,5 +77,9 @@ namespace sisgaapCoreWF.Controllers
         {
             return objSAdat.select_SAxCB(dato, letra);
         }
+        public DataTable ListarSolicitudesAbastecimiento()//retorna una tabla con todas las solicitudes de Abastecimiento
+        {
+            return objSAdat.select_SA();
+        }
     }
 }

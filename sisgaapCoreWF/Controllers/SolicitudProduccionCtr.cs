@@ -72,9 +72,13 @@ namespace sisgaapCoreWF.Controllers
             objSP.error = 77;
             objSPdat.UpdateSolicitudProduccion(objSP);
         }
-        public DataTable ConsultaSolicitudAbastecimiento(string dato, string letra)
+        public DataTable ConsultaSolicitudProduccion(string dato, string letra)
         {
             return objSPdat.select_SPxCB(dato, letra);
+        }
+        public DataTable ListarSolicitudesProduccion()//retorna una tabla con todas las solicitudes de produccion
+        {
+            return objSPdat.select_SP();
         }
     }
 }
