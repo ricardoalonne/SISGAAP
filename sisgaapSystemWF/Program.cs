@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace sisgaapSystemWF
 {
-    static class SisgaapSystemWF
+    static class Program
     {
         /// <summary>
         /// Punto de entrada principal para la aplicación.
@@ -16,7 +16,7 @@ namespace sisgaapSystemWF
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new wmSystem());
+            Application.Run(new sisgaapSystemWF.Views.Documentos.VisualizarDocumento());
         }
     }
 }
