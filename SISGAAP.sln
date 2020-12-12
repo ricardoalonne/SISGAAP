@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sisgaapCoreWF", "sisgaapCor
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sisgaapSqlDB", "sisgaapSqlDB\sisgaapSqlDB.csproj", "{1184486B-9985-431C-BFDF-ED9C1B7E93BC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sisgaapTestWF", "sisgaapTestWF\sisgaapTestWF.csproj", "{3046BF6A-F929-4B1B-BAFB-D96E4204273B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{1184486B-9985-431C-BFDF-ED9C1B7E93BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1184486B-9985-431C-BFDF-ED9C1B7E93BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1184486B-9985-431C-BFDF-ED9C1B7E93BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3046BF6A-F929-4B1B-BAFB-D96E4204273B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3046BF6A-F929-4B1B-BAFB-D96E4204273B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3046BF6A-F929-4B1B-BAFB-D96E4204273B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3046BF6A-F929-4B1B-BAFB-D96E4204273B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
