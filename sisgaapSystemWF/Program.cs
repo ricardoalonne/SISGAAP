@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace sisgaapSystemWF
 {
-    static class SisgaapSystemWF
+    static class Program
     {
         /// <summary>
         /// Punto de entrada principal para la aplicación.

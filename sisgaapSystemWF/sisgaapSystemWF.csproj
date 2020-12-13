@@ -44,8 +44,9 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="wmCoreWF">
-      <HintPath>..\..\WM00P\wmCoreWF\bin\Debug\wmCoreWF.dll</HintPath>
+    <Reference Include="wmCoreWF, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\.dll\wmCoreWF\wmCoreWF.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -68,13 +69,19 @@
     <Compile Include="Views\Documentos\Documentos.Designer.cs">
       <DependentUpon>Documentos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Documentos\VisualizarDocumento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Documentos\VisualizarDocumento.Designer.cs">
+      <DependentUpon>VisualizarDocumento.cs</DependentUpon>
+    </Compile>
     <Compile Include="wmSystem.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="wmSystem.Designer.cs">
       <DependentUpon>wmSystem.cs</DependentUpon>
     </Compile>
-    <Compile Include="SisgaapSystemWF.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Components\Documentos\Solicitud\Solicitud.resx">
       <DependentUpon>Solicitud.cs</DependentUpon>
@@ -93,6 +100,9 @@
     </Compile>
     <EmbeddedResource Include="Views\Documentos\Documentos.resx">
       <DependentUpon>Documentos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Documentos\VisualizarDocumento.resx">
+      <DependentUpon>VisualizarDocumento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="wmSystem.resx">
       <DependentUpon>wmSystem.cs</DependentUpon>

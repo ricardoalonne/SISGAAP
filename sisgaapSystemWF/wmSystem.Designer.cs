@@ -31,6 +31,7 @@ namespace sisgaapSystemWF
         {
             this.Button_DocumentosSA = new System.Windows.Forms.Button();
             this.Button_DocumentosSP = new System.Windows.Forms.Button();
+            this.Button_VisualizarDocumento = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Button_DocumentosSA
@@ -67,16 +68,35 @@ namespace sisgaapSystemWF
             this.Button_DocumentosSP.UseVisualStyleBackColor = false;
             this.Button_DocumentosSP.Click += new System.EventHandler(this.Button_DocumentosSP_Click);
             // 
+            // Button_VisualizarDocumento
+            // 
+            this.Button_VisualizarDocumento.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.Button_VisualizarDocumento.FlatAppearance.BorderSize = 0;
+            this.Button_VisualizarDocumento.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.Button_VisualizarDocumento.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.Button_VisualizarDocumento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Button_VisualizarDocumento.Location = new System.Drawing.Point(12, 115);
+            this.Button_VisualizarDocumento.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Button_VisualizarDocumento.Name = "Button_VisualizarDocumento";
+            this.Button_VisualizarDocumento.Size = new System.Drawing.Size(230, 43);
+            this.Button_VisualizarDocumento.TabIndex = 8;
+            this.Button_VisualizarDocumento.Text = "Documentos: Visualizar Documento";
+            this.Button_VisualizarDocumento.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Button_VisualizarDocumento.UseVisualStyleBackColor = false;
+            this.Button_VisualizarDocumento.Click += new System.EventHandler(this.Button_VisualizarDocumento_Click);
+            // 
             // wmSystem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(688, 378);
+            this.Controls.Add(this.Button_VisualizarDocumento);
             this.Controls.Add(this.Button_DocumentosSP);
             this.Controls.Add(this.Button_DocumentosSA);
             this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "wmSystem";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "WAREHOUSE MANANGER";
             this.ResumeLayout(false);
 
@@ -86,6 +106,7 @@ namespace sisgaapSystemWF
 
         private System.Windows.Forms.Button Button_DocumentosSA;
         private System.Windows.Forms.Button Button_DocumentosSP;
+        private System.Windows.Forms.Button Button_VisualizarDocumento;
     }
 }
 

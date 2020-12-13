@@ -30,5 +30,10 @@ namespace sisgaapSystemWF
             documentos = new Documentos("Solicitud", "Produccion");
             documentos.Show();
         }
+
+        private void Button_VisualizarDocumento_Click(object sender, EventArgs e){
+            VisualizarDocumento vdoc = new VisualizarDocumento();
+            vdoc.Show();
+        }
     }
 }

@@ -170,6 +170,7 @@ namespace sisgaapSystemWF.Views.Documentos
             this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Documentos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Documentos";
             this.Load += new System.EventHandler(this.Documentos_Load);
             this.FlowLayoutPanel_Menu.ResumeLayout(false);
