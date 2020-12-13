@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{342CA420-BB13-4294-978B-6D88E34A85CC}</ProjectGuid>
+    <ProjectGuid>{04DAD7B2-CA8C-4E2D-8A6F-F8F63838CB79}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>sisgaapSystemWF</RootNamespace>
-    <AssemblyName>sisgaapSystemWF</AssemblyName>
+    <RootNamespace>sisgaapWF</RootNamespace>
+    <AssemblyName>sisgaapWF</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -44,44 +44,22 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="wmCoreWF">
-      <HintPath>..\..\WM00P\wmCoreWF\bin\Debug\wmCoreWF.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Complements\Console\SisgaapConsole.cs" />
-    <Compile Include="Components\Documentos\Solicitud\Solicitud.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Components\Documentos\Solicitud\Solicitud.Designer.cs">
-      <DependentUpon>Solicitud.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Components\SISGAAP\SearchBar.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Components\SISGAAP\SearchBar.Designer.cs">
-      <DependentUpon>SearchBar.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Documentos\Documentos.cs">
+    <Compile Include="RealizarSolicitudes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\Documentos\Documentos.Designer.cs">
-      <DependentUpon>Documentos.cs</DependentUpon>
+    <Compile Include="RealizarSolicitudes.Designer.cs">
+      <DependentUpon>RealizarSolicitudes.cs</DependentUpon>
     </Compile>
-    <Compile Include="wmSystem.cs">
+    <Compile Include="Solicitudes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="wmSystem.Designer.cs">
-      <DependentUpon>wmSystem.cs</DependentUpon>
+    <Compile Include="Solicitudes.Designer.cs">
+      <DependentUpon>Solicitudes.cs</DependentUpon>
     </Compile>
-    <Compile Include="SisgaapSystemWF.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Components\Documentos\Solicitud\Solicitud.resx">
-      <DependentUpon>Solicitud.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Components\SISGAAP\SearchBar.resx">
-      <DependentUpon>SearchBar.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -91,11 +69,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Views\Documentos\Documentos.resx">
-      <DependentUpon>Documentos.cs</DependentUpon>
+    <EmbeddedResource Include="RealizarSolicitudes.resx">
+      <DependentUpon>RealizarSolicitudes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="wmSystem.resx">
-      <DependentUpon>wmSystem.cs</DependentUpon>
+    <EmbeddedResource Include="Solicitudes.resx">
+      <DependentUpon>Solicitudes.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -119,30 +97,6 @@
       <Project>{107b0b36-2261-4b0b-88dc-1f468cab6711}</Project>
       <Name>sisgaapCore</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Components\Almacen\" />
-    <Folder Include="Components\Dashboard\" />
-    <Folder Include="Components\Documentos\Orden\Compra\" />
-    <Folder Include="Components\Documentos\Orden\Merma\" />
-    <Folder Include="Components\Documentos\Orden\Produccion\" />
-    <Folder Include="Components\Documentos\Solicitud\Abastecimiento\" />
-    <Folder Include="Components\Documentos\Solicitud\Merma\" />
-    <Folder Include="Components\Documentos\Solicitud\Produccion\" />
-    <Folder Include="Components\Inventario\" />
-    <Folder Include="Components\Login\" />
-    <Folder Include="Components\Pedidos\" />
-    <Folder Include="Components\Proveedores\" />
-    <Folder Include="Components\Usuarios\" />
-    <Folder Include="Icons\" />
-    <Folder Include="Views\Almacen\" />
-    <Folder Include="Views\Dashboard\" />
-    <Folder Include="Views\Inventario\" />
-    <Folder Include="Views\Login\" />
-    <Folder Include="Views\Pedidos\" />
-    <Folder Include="Views\Proveedores\" />
-    <Folder Include="Views\SISGAAP\" />
-    <Folder Include="Views\Usuarios\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
