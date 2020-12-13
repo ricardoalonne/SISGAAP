@@ -16,7 +16,7 @@ namespace sisgaapSystemWF
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new sisgaapSystemWF.Views.Documentos.VisualizarDocumento());
+            Application.Run(new wmSystem());
         }
     }
 }
