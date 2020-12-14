@@ -29,6 +29,7 @@ namespace sisgaapSystemWF.Components.Documentos.Solicitud
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Solicitud));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -39,6 +40,7 @@ namespace sisgaapSystemWF.Components.Documentos.Solicitud
             this.RadioButton_Produccion = new System.Windows.Forms.RadioButton();
             this.RadioButton_Merma = new System.Windows.Forms.RadioButton();
             this.Panel_Busqueda = new System.Windows.Forms.Panel();
+            this.SearchBar_BarraBusqueda = new sisgaapSystemWF.Components.SISGAAP.SearchBar();
             this.Button_NuevaSolicitud = new System.Windows.Forms.Button();
             this.Button_RefrescarTabla = new System.Windows.Forms.Button();
             this.Button_EliminarSolicitud = new System.Windows.Forms.Button();
@@ -48,15 +50,15 @@ namespace sisgaapSystemWF.Components.Documentos.Solicitud
             this.Button_GuardarCambios = new System.Windows.Forms.Button();
             this.Button_ModificarSolicitud = new System.Windows.Forms.Button();
             this.Panel_TablaContenido = new System.Windows.Forms.Panel();
-            this.DataGridView_VistaPrincipal = new System.Windows.Forms.DataGridView();
             this.FlowLayoutPanel_Acciones = new System.Windows.Forms.FlowLayoutPanel();
             this.Panel_Separator = new System.Windows.Forms.Panel();
-            this.SearchBar_BarraBusqueda = new sisgaapSystemWF.Components.SISGAAP.SearchBar();
+            this.DataGridView_VistaPrincipal = new System.Windows.Forms.DataGridView();
+            this.ToolTip_DetailButton = new System.Windows.Forms.ToolTip(this.components);
             this.FlowLayoutPanel_BarraMenu.SuspendLayout();
             this.Panel_Busqueda.SuspendLayout();
             this.Panel_TablaContenido.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DataGridView_VistaPrincipal)).BeginInit();
             this.FlowLayoutPanel_Acciones.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridView_VistaPrincipal)).BeginInit();
             this.SuspendLayout();
             // 
             // FlowLayoutPanel_BarraMenu
@@ -85,6 +87,8 @@ namespace sisgaapSystemWF.Components.Documentos.Solicitud
             this.RadioButton_Principal.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.RadioButton_Principal.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.RadioButton_Principal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.RadioButton_Principal.Image = ((System.Drawing.Image)(resources.GetObject("RadioButton_Principal.Image")));
+            this.RadioButton_Principal.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.RadioButton_Principal.Location = new System.Drawing.Point(0, 0);
             this.RadioButton_Principal.Margin = new System.Windows.Forms.Padding(0);
             this.RadioButton_Principal.Name = "RadioButton_Principal";
@@ -106,6 +110,8 @@ namespace sisgaapSystemWF.Components.Documentos.Solicitud
             this.RadioButton_Abastecimiento.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.RadioButton_Abastecimiento.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.RadioButton_Abastecimiento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.RadioButton_Abastecimiento.Image = ((System.Drawing.Image)(resources.GetObject("RadioButton_Abastecimiento.Image")));
+            this.RadioButton_Abastecimiento.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.RadioButton_Abastecimiento.Location = new System.Drawing.Point(200, 0);
             this.RadioButton_Abastecimiento.Margin = new System.Windows.Forms.Padding(0);
             this.RadioButton_Abastecimiento.Name = "RadioButton_Abastecimiento";
@@ -126,6 +132,8 @@ namespace sisgaapSystemWF.Components.Documentos.Solicitud
             this.RadioButton_Produccion.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.RadioButton_Produccion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.RadioButton_Produccion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.RadioButton_Produccion.Image = ((System.Drawing.Image)(resources.GetObject("RadioButton_Produccion.Image")));
+            this.RadioButton_Produccion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.RadioButton_Produccion.Location = new System.Drawing.Point(400, 0);
             this.RadioButton_Produccion.Margin = new System.Windows.Forms.Padding(0);
             this.RadioButton_Produccion.Name = "RadioButton_Produccion";
@@ -146,6 +154,8 @@ namespace sisgaapSystemWF.Components.Documentos.Solicitud
             this.RadioButton_Merma.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.RadioButton_Merma.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.RadioButton_Merma.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.RadioButton_Merma.Image = ((System.Drawing.Image)(resources.GetObject("RadioButton_Merma.Image")));
+            this.RadioButton_Merma.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.RadioButton_Merma.Location = new System.Drawing.Point(600, 0);
             this.RadioButton_Merma.Margin = new System.Windows.Forms.Padding(0);
             this.RadioButton_Merma.Name = "RadioButton_Merma";
@@ -165,6 +175,18 @@ namespace sisgaapSystemWF.Components.Documentos.Solicitud
             this.Panel_Busqueda.Size = new System.Drawing.Size(800, 40);
             this.Panel_Busqueda.TabIndex = 3;
             // 
+            // SearchBar_BarraBusqueda
+            // 
+            this.SearchBar_BarraBusqueda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.SearchBar_BarraBusqueda.DataSource = null;
+            this.SearchBar_BarraBusqueda.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SearchBar_BarraBusqueda.Location = new System.Drawing.Point(0, 0);
+            this.SearchBar_BarraBusqueda.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.SearchBar_BarraBusqueda.MessageSearchBox = "Buscar en el sistema e internet.";
+            this.SearchBar_BarraBusqueda.Name = "SearchBar_BarraBusqueda";
+            this.SearchBar_BarraBusqueda.Size = new System.Drawing.Size(596, 40);
+            this.SearchBar_BarraBusqueda.TabIndex = 5;
+            // 
             // Button_NuevaSolicitud
             // 
             this.Button_NuevaSolicitud.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -172,11 +194,14 @@ namespace sisgaapSystemWF.Components.Documentos.Solicitud
             this.Button_NuevaSolicitud.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.Button_NuevaSolicitud.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.Button_NuevaSolicitud.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Button_NuevaSolicitud.Location = new System.Drawing.Point(578, 3);
+            this.Button_NuevaSolicitud.Image = ((System.Drawing.Image)(resources.GetObject("Button_NuevaSolicitud.Image")));
+            this.Button_NuevaSolicitud.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Button_NuevaSolicitud.Location = new System.Drawing.Point(600, 3);
             this.Button_NuevaSolicitud.Name = "Button_NuevaSolicitud";
-            this.Button_NuevaSolicitud.Size = new System.Drawing.Size(218, 33);
+            this.Button_NuevaSolicitud.Size = new System.Drawing.Size(196, 33);
             this.Button_NuevaSolicitud.TabIndex = 4;
             this.Button_NuevaSolicitud.Text = "Solicitud Abastecimiento";
+            this.Button_NuevaSolicitud.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Button_NuevaSolicitud.UseVisualStyleBackColor = false;
             // 
             // Button_RefrescarTabla
@@ -194,6 +219,7 @@ namespace sisgaapSystemWF.Components.Documentos.Solicitud
             this.Button_RefrescarTabla.Name = "Button_RefrescarTabla";
             this.Button_RefrescarTabla.Size = new System.Drawing.Size(42, 36);
             this.Button_RefrescarTabla.TabIndex = 6;
+            this.ToolTip_DetailButton.SetToolTip(this.Button_RefrescarTabla, "Refrescar Tabla");
             this.Button_RefrescarTabla.UseVisualStyleBackColor = false;
             this.Button_RefrescarTabla.Click += new System.EventHandler(this.Button_RefrescarTabla_Click);
             // 
@@ -206,11 +232,13 @@ namespace sisgaapSystemWF.Components.Documentos.Solicitud
             this.Button_EliminarSolicitud.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.Button_EliminarSolicitud.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.Button_EliminarSolicitud.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Button_EliminarSolicitud.Image = ((System.Drawing.Image)(resources.GetObject("Button_EliminarSolicitud.Image")));
             this.Button_EliminarSolicitud.Location = new System.Drawing.Point(4, 79);
             this.Button_EliminarSolicitud.Margin = new System.Windows.Forms.Padding(4, 1, 4, 1);
             this.Button_EliminarSolicitud.Name = "Button_EliminarSolicitud";
             this.Button_EliminarSolicitud.Size = new System.Drawing.Size(42, 36);
             this.Button_EliminarSolicitud.TabIndex = 6;
+            this.ToolTip_DetailButton.SetToolTip(this.Button_EliminarSolicitud, "Eliminar Solicitud");
             this.Button_EliminarSolicitud.UseVisualStyleBackColor = false;
             // 
             // Button_CargarExcelBD
@@ -228,6 +256,7 @@ namespace sisgaapSystemWF.Components.Documentos.Solicitud
             this.Button_CargarExcelBD.Name = "Button_CargarExcelBD";
             this.Button_CargarExcelBD.Size = new System.Drawing.Size(42, 36);
             this.Button_CargarExcelBD.TabIndex = 5;
+            this.ToolTip_DetailButton.SetToolTip(this.Button_CargarExcelBD, "Importar BD en Excel");
             this.Button_CargarExcelBD.UseVisualStyleBackColor = false;
             this.Button_CargarExcelBD.Click += new System.EventHandler(this.Button_CargarExcelBD_Click);
             // 
@@ -246,6 +275,7 @@ namespace sisgaapSystemWF.Components.Documentos.Solicitud
             this.Button_ExportarExcelDB.Name = "Button_ExportarExcelDB";
             this.Button_ExportarExcelDB.Size = new System.Drawing.Size(42, 36);
             this.Button_ExportarExcelDB.TabIndex = 8;
+            this.ToolTip_DetailButton.SetToolTip(this.Button_ExportarExcelDB, "Exportar BD a Excel");
             this.Button_ExportarExcelDB.UseVisualStyleBackColor = false;
             this.Button_ExportarExcelDB.Click += new System.EventHandler(this.Button_ExportarExcelDB_Click);
             // 
@@ -258,11 +288,13 @@ namespace sisgaapSystemWF.Components.Documentos.Solicitud
             this.Button_VerSolicitud.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.Button_VerSolicitud.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.Button_VerSolicitud.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Button_VerSolicitud.Image = ((System.Drawing.Image)(resources.GetObject("Button_VerSolicitud.Image")));
             this.Button_VerSolicitud.Location = new System.Drawing.Point(4, 41);
             this.Button_VerSolicitud.Margin = new System.Windows.Forms.Padding(4, 1, 4, 1);
             this.Button_VerSolicitud.Name = "Button_VerSolicitud";
             this.Button_VerSolicitud.Size = new System.Drawing.Size(42, 36);
             this.Button_VerSolicitud.TabIndex = 6;
+            this.ToolTip_DetailButton.SetToolTip(this.Button_VerSolicitud, "Ver Solicitud");
             this.Button_VerSolicitud.UseVisualStyleBackColor = false;
             // 
             // Button_GuardarCambios
@@ -280,6 +312,7 @@ namespace sisgaapSystemWF.Components.Documentos.Solicitud
             this.Button_GuardarCambios.Name = "Button_GuardarCambios";
             this.Button_GuardarCambios.Size = new System.Drawing.Size(42, 36);
             this.Button_GuardarCambios.TabIndex = 7;
+            this.ToolTip_DetailButton.SetToolTip(this.Button_GuardarCambios, "Guardar Cambios");
             this.Button_GuardarCambios.UseVisualStyleBackColor = false;
             // 
             // Button_ModificarSolicitud
@@ -291,11 +324,13 @@ namespace sisgaapSystemWF.Components.Documentos.Solicitud
             this.Button_ModificarSolicitud.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.Button_ModificarSolicitud.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.Button_ModificarSolicitud.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Button_ModificarSolicitud.Image = ((System.Drawing.Image)(resources.GetObject("Button_ModificarSolicitud.Image")));
             this.Button_ModificarSolicitud.Location = new System.Drawing.Point(4, 3);
             this.Button_ModificarSolicitud.Margin = new System.Windows.Forms.Padding(4, 3, 4, 1);
             this.Button_ModificarSolicitud.Name = "Button_ModificarSolicitud";
             this.Button_ModificarSolicitud.Size = new System.Drawing.Size(42, 36);
             this.Button_ModificarSolicitud.TabIndex = 5;
+            this.ToolTip_DetailButton.SetToolTip(this.Button_ModificarSolicitud, "Modificar Solicitud");
             this.Button_ModificarSolicitud.UseVisualStyleBackColor = false;
             // 
             // Panel_TablaContenido
@@ -307,6 +342,34 @@ namespace sisgaapSystemWF.Components.Documentos.Solicitud
             this.Panel_TablaContenido.Name = "Panel_TablaContenido";
             this.Panel_TablaContenido.Size = new System.Drawing.Size(800, 420);
             this.Panel_TablaContenido.TabIndex = 5;
+            // 
+            // FlowLayoutPanel_Acciones
+            // 
+            this.FlowLayoutPanel_Acciones.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.FlowLayoutPanel_Acciones.Controls.Add(this.Button_ModificarSolicitud);
+            this.FlowLayoutPanel_Acciones.Controls.Add(this.Button_VerSolicitud);
+            this.FlowLayoutPanel_Acciones.Controls.Add(this.Button_EliminarSolicitud);
+            this.FlowLayoutPanel_Acciones.Controls.Add(this.Panel_Separator);
+            this.FlowLayoutPanel_Acciones.Controls.Add(this.Button_RefrescarTabla);
+            this.FlowLayoutPanel_Acciones.Controls.Add(this.Button_GuardarCambios);
+            this.FlowLayoutPanel_Acciones.Controls.Add(this.Button_ExportarExcelDB);
+            this.FlowLayoutPanel_Acciones.Controls.Add(this.Button_CargarExcelBD);
+            this.FlowLayoutPanel_Acciones.Dock = System.Windows.Forms.DockStyle.Right;
+            this.FlowLayoutPanel_Acciones.Location = new System.Drawing.Point(750, 0);
+            this.FlowLayoutPanel_Acciones.Margin = new System.Windows.Forms.Padding(0);
+            this.FlowLayoutPanel_Acciones.Name = "FlowLayoutPanel_Acciones";
+            this.FlowLayoutPanel_Acciones.Size = new System.Drawing.Size(50, 420);
+            this.FlowLayoutPanel_Acciones.TabIndex = 9;
+            // 
+            // Panel_Separator
+            // 
+            this.Panel_Separator.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Panel_Separator.BackColor = System.Drawing.Color.Black;
+            this.Panel_Separator.Location = new System.Drawing.Point(3, 119);
+            this.Panel_Separator.Name = "Panel_Separator";
+            this.Panel_Separator.Size = new System.Drawing.Size(44, 1);
+            this.Panel_Separator.TabIndex = 10;
             // 
             // DataGridView_VistaPrincipal
             // 
@@ -350,46 +413,6 @@ namespace sisgaapSystemWF.Components.Documentos.Solicitud
             this.DataGridView_VistaPrincipal.Size = new System.Drawing.Size(740, 409);
             this.DataGridView_VistaPrincipal.TabIndex = 2;
             // 
-            // FlowLayoutPanel_Acciones
-            // 
-            this.FlowLayoutPanel_Acciones.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.FlowLayoutPanel_Acciones.Controls.Add(this.Button_ModificarSolicitud);
-            this.FlowLayoutPanel_Acciones.Controls.Add(this.Button_VerSolicitud);
-            this.FlowLayoutPanel_Acciones.Controls.Add(this.Button_EliminarSolicitud);
-            this.FlowLayoutPanel_Acciones.Controls.Add(this.Panel_Separator);
-            this.FlowLayoutPanel_Acciones.Controls.Add(this.Button_RefrescarTabla);
-            this.FlowLayoutPanel_Acciones.Controls.Add(this.Button_GuardarCambios);
-            this.FlowLayoutPanel_Acciones.Controls.Add(this.Button_ExportarExcelDB);
-            this.FlowLayoutPanel_Acciones.Controls.Add(this.Button_CargarExcelBD);
-            this.FlowLayoutPanel_Acciones.Dock = System.Windows.Forms.DockStyle.Right;
-            this.FlowLayoutPanel_Acciones.Location = new System.Drawing.Point(750, 0);
-            this.FlowLayoutPanel_Acciones.Margin = new System.Windows.Forms.Padding(0);
-            this.FlowLayoutPanel_Acciones.Name = "FlowLayoutPanel_Acciones";
-            this.FlowLayoutPanel_Acciones.Size = new System.Drawing.Size(50, 420);
-            this.FlowLayoutPanel_Acciones.TabIndex = 9;
-            // 
-            // Panel_Separator
-            // 
-            this.Panel_Separator.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.Panel_Separator.BackColor = System.Drawing.Color.Black;
-            this.Panel_Separator.Location = new System.Drawing.Point(3, 119);
-            this.Panel_Separator.Name = "Panel_Separator";
-            this.Panel_Separator.Size = new System.Drawing.Size(44, 1);
-            this.Panel_Separator.TabIndex = 10;
-            // 
-            // SearchBar_BarraBusqueda
-            // 
-            this.SearchBar_BarraBusqueda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.SearchBar_BarraBusqueda.DataSource = null;
-            this.SearchBar_BarraBusqueda.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SearchBar_BarraBusqueda.Location = new System.Drawing.Point(0, 0);
-            this.SearchBar_BarraBusqueda.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.SearchBar_BarraBusqueda.MessageSearchBox = "Buscar en el sistema e internet.";
-            this.SearchBar_BarraBusqueda.Name = "SearchBar_BarraBusqueda";
-            this.SearchBar_BarraBusqueda.Size = new System.Drawing.Size(574, 40);
-            this.SearchBar_BarraBusqueda.TabIndex = 5;
-            // 
             // Solicitud
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
@@ -406,8 +429,8 @@ namespace sisgaapSystemWF.Components.Documentos.Solicitud
             this.FlowLayoutPanel_BarraMenu.ResumeLayout(false);
             this.Panel_Busqueda.ResumeLayout(false);
             this.Panel_TablaContenido.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.DataGridView_VistaPrincipal)).EndInit();
             this.FlowLayoutPanel_Acciones.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridView_VistaPrincipal)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -433,5 +456,6 @@ namespace sisgaapSystemWF.Components.Documentos.Solicitud
         private SISGAAP.SearchBar SearchBar_BarraBusqueda;
         private System.Windows.Forms.FlowLayoutPanel FlowLayoutPanel_Acciones;
         private System.Windows.Forms.Panel Panel_Separator;
+        private System.Windows.Forms.ToolTip ToolTip_DetailButton;
     }
 }

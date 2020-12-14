@@ -29,6 +29,7 @@ namespace sisgaapSystemWF.Views.Documentos
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Documentos));
             this.FlowLayoutPanel_Menu = new System.Windows.Forms.FlowLayoutPanel();
             this.RadioButton_Documentos = new System.Windows.Forms.RadioButton();
             this.RadioButton_Solicitudes = new System.Windows.Forms.RadioButton();
@@ -65,6 +66,8 @@ namespace sisgaapSystemWF.Views.Documentos
             this.RadioButton_Documentos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.RadioButton_Documentos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.RadioButton_Documentos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.RadioButton_Documentos.Image = ((System.Drawing.Image)(resources.GetObject("RadioButton_Documentos.Image")));
+            this.RadioButton_Documentos.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.RadioButton_Documentos.Location = new System.Drawing.Point(0, 0);
             this.RadioButton_Documentos.Margin = new System.Windows.Forms.Padding(0);
             this.RadioButton_Documentos.Name = "RadioButton_Documentos";
@@ -86,6 +89,8 @@ namespace sisgaapSystemWF.Views.Documentos
             this.RadioButton_Solicitudes.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.RadioButton_Solicitudes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.RadioButton_Solicitudes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.RadioButton_Solicitudes.Image = ((System.Drawing.Image)(resources.GetObject("RadioButton_Solicitudes.Image")));
+            this.RadioButton_Solicitudes.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.RadioButton_Solicitudes.Location = new System.Drawing.Point(0, 80);
             this.RadioButton_Solicitudes.Margin = new System.Windows.Forms.Padding(0);
             this.RadioButton_Solicitudes.Name = "RadioButton_Solicitudes";
@@ -106,6 +111,8 @@ namespace sisgaapSystemWF.Views.Documentos
             this.RadioButton_Ordenes.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.RadioButton_Ordenes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.RadioButton_Ordenes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.RadioButton_Ordenes.Image = ((System.Drawing.Image)(resources.GetObject("RadioButton_Ordenes.Image")));
+            this.RadioButton_Ordenes.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.RadioButton_Ordenes.Location = new System.Drawing.Point(0, 160);
             this.RadioButton_Ordenes.Margin = new System.Windows.Forms.Padding(0);
             this.RadioButton_Ordenes.Name = "RadioButton_Ordenes";
@@ -136,6 +143,8 @@ namespace sisgaapSystemWF.Views.Documentos
             this.RadioButton_Ajustes.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.RadioButton_Ajustes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.RadioButton_Ajustes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.RadioButton_Ajustes.Image = ((System.Drawing.Image)(resources.GetObject("RadioButton_Ajustes.Image")));
+            this.RadioButton_Ajustes.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.RadioButton_Ajustes.Location = new System.Drawing.Point(0, 435);
             this.RadioButton_Ajustes.Margin = new System.Windows.Forms.Padding(0);
             this.RadioButton_Ajustes.Name = "RadioButton_Ajustes";
@@ -152,7 +161,7 @@ namespace sisgaapSystemWF.Views.Documentos
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Solicitud_Solicitudes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.Solicitud_Solicitudes.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Solicitud_Solicitudes.Location = new System.Drawing.Point(90, 2);
+            this.Solicitud_Solicitudes.Location = new System.Drawing.Point(90, 0);
             this.Solicitud_Solicitudes.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Solicitud_Solicitudes.Name = "Solicitud_Solicitudes";
             this.Solicitud_Solicitudes.Size = new System.Drawing.Size(805, 513);
@@ -168,6 +177,7 @@ namespace sisgaapSystemWF.Views.Documentos
             this.Controls.Add(this.Solicitud_Solicitudes);
             this.Controls.Add(this.Panel_BarraMenu);
             this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Documentos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>WM_icon.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -140,7 +143,6 @@
     <Folder Include="Components\Pedidos\" />
     <Folder Include="Components\Proveedores\" />
     <Folder Include="Components\Usuarios\" />
-    <Folder Include="Icons\" />
     <Folder Include="Views\Almacen\" />
     <Folder Include="Views\Dashboard\" />
     <Folder Include="Views\Inventario\" />
@@ -149,6 +151,18 @@
     <Folder Include="Views\Proveedores\" />
     <Folder Include="Views\SISGAAP\" />
     <Folder Include="Views\Usuarios\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Icons\DBexcelE.png" />
+    <Content Include="Icons\DBexcelI.png" />
+    <Content Include="Icons\eliminar.png" />
+    <Content Include="Icons\modificar.png" />
+    <Content Include="Icons\RefreshTable.png" />
+    <Content Include="Icons\registrar.png" />
+    <Content Include="Icons\Save.png" />
+    <Content Include="Icons\Search.png" />
+    <Content Include="Icons\verDetalle.png" />
+    <Content Include="WM_icon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

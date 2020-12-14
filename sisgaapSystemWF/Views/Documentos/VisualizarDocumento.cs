@@ -71,6 +71,7 @@ namespace sisgaapSystemWF.Views.Documentos
                 if (svd.ShowDialog() == DialogResult.OK) {
                     if (svd.FileName.EndsWith(".pdf")){
                         docpdf = new PDFGenerator(RichTextBox_Documento.Text, svd.FileName);
+                        docpdf.Print();
                     }
                     else {
                         StreamWriter saveText = new StreamWriter(svd.FileName, false, Encoding.GetEncoding(1252));

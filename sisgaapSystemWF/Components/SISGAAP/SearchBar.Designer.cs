@@ -52,6 +52,7 @@ namespace sisgaapSystemWF.Components.SISGAAP
             this.ComboBox_Filtro.Name = "ComboBox_Filtro";
             this.ComboBox_Filtro.Size = new System.Drawing.Size(150, 25);
             this.ComboBox_Filtro.TabIndex = 87;
+            this.ComboBox_Filtro.SelectedIndexChanged += new System.EventHandler(this.ComboBox_Filtro_SelectedIndexChanged);
             // 
             // Panel_BarraBusqueda
             // 

@@ -30,13 +30,13 @@ namespace sisgaapSystemWF.Components.Documentos.Solicitud
                             RadioButton_Abastecimiento.Checked = true;
                             Button_NuevaSolicitud.Text = "Solicitud Abastecimiento"; 
                             SearchBar_BarraBusqueda.MessageSearchBox = "Buscar en todas las Solicitudes de Abastecimiento";
-                            RadioButton_Principal.Checked = RadioButton_Merma.Checked = RadioButton_Abastecimiento.Checked = false;
-                            RadioButton_Produccion.Checked = true;
                         } break;
                     case "Produccion": {
                             RadioButton_Principal.Visible = RadioButton_Merma.Visible = RadioButton_Abastecimiento.Visible = false;
                             Button_NuevaSolicitud.Text = "Solicitud Producción";
                             SearchBar_BarraBusqueda.MessageSearchBox = "Buscar en todas las Solicitudes de Produccion";
+                            RadioButton_Principal.Checked = RadioButton_Merma.Checked = RadioButton_Abastecimiento.Checked = false;
+                            RadioButton_Produccion.Checked = true;
                         } break;
                     default: break;
                 }
@@ -46,6 +46,7 @@ namespace sisgaapSystemWF.Components.Documentos.Solicitud
 
         private void Solicitud_Load(object sender, EventArgs e){
             SearchBar_BarraBusqueda.DataGridView(DataGridView_VistaPrincipal);
+            SearchBar_BarraBusqueda.LoadItemsFilter(new string [] { "Asunto","Redactor","Emisión","Entrega", "Estado" });
         }
 
         private void Button_RefrescarTabla_Click(object sender, EventArgs e){

@@ -34,22 +34,22 @@ namespace sisgaapSystemWF.Components.SISGAAP
             SearchBoxInteractive();
         }
 
-        private void Button_Buscar_Click(object sender, EventArgs e){
-            Search();
+        private void Button_Buscar_Click(object sender, EventArgs e) => Search();
+
+        private void ComboBox_Filtro_SelectedIndexChanged(object sender, EventArgs e) {
+            //options = database.ConsultColumnLead(ComboBox_Filtro.Text); //Toma el combobox filtro para obtener la columna y guarda todos los elementos de esa columna
+            //controlController.AutoComplete(TextBox_Búsqueda, options);
         }
 
         //---------------------------------------------------------------------------------------------
-        public void DataGridView(DataGridView dgv) {
-            this.dgv = dgv;
-        }
+
+        public void DataGridView(DataGridView dgv) => this.dgv = dgv;
+
+        public void RefreshDataGridView() => dgv.Refresh();
 
         public object DataSource {
             set => dataSource = value;
             get => dataSource;
-        }
-
-        public void RefreshDataGridView(){
-            dgv.Refresh();
         }
 
         public string MessageSearchBox{
@@ -103,7 +103,5 @@ namespace sisgaapSystemWF.Components.SISGAAP
         public void Search() { 
 
         }
-
-       
     }
 }

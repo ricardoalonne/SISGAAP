@@ -29,6 +29,7 @@ namespace sisgaapSystemWF
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(wmSystem));
             this.Button_DocumentosSA = new System.Windows.Forms.Button();
             this.Button_DocumentosSP = new System.Windows.Forms.Button();
             this.Button_VisualizarDocumento = new System.Windows.Forms.Button();
@@ -94,6 +95,7 @@ namespace sisgaapSystemWF
             this.Controls.Add(this.Button_DocumentosSP);
             this.Controls.Add(this.Button_DocumentosSA);
             this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "wmSystem";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
