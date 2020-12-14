@@ -29,6 +29,7 @@ namespace sisgaapSystemWF.Views.Documentos
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VisualizarDocumento));
             this.Panel_Contenedor = new System.Windows.Forms.Panel();
             this.TableLayoutPanel_Documento = new System.Windows.Forms.TableLayoutPanel();
             this.RichTextBox_Documento = new System.Windows.Forms.RichTextBox();
@@ -99,10 +100,12 @@ namespace sisgaapSystemWF.Views.Documentos
             this.Button_GuardarComo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.Button_GuardarComo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.Button_GuardarComo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Button_GuardarComo.Location = new System.Drawing.Point(823, 4);
+            this.Button_GuardarComo.Image = ((System.Drawing.Image)(resources.GetObject("Button_GuardarComo.Image")));
+            this.Button_GuardarComo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Button_GuardarComo.Location = new System.Drawing.Point(833, 4);
             this.Button_GuardarComo.Margin = new System.Windows.Forms.Padding(4, 3, 4, 1);
             this.Button_GuardarComo.Name = "Button_GuardarComo";
-            this.Button_GuardarComo.Size = new System.Drawing.Size(104, 36);
+            this.Button_GuardarComo.Size = new System.Drawing.Size(94, 36);
             this.Button_GuardarComo.TabIndex = 3;
             this.Button_GuardarComo.Text = "Guardar";
             this.Button_GuardarComo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -118,10 +121,12 @@ namespace sisgaapSystemWF.Views.Documentos
             this.Button_Cerrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.Button_Cerrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.Button_Cerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Button_Cerrar.Image = ((System.Drawing.Image)(resources.GetObject("Button_Cerrar.Image")));
+            this.Button_Cerrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Button_Cerrar.Location = new System.Drawing.Point(4, 4);
             this.Button_Cerrar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 1);
             this.Button_Cerrar.Name = "Button_Cerrar";
-            this.Button_Cerrar.Size = new System.Drawing.Size(95, 36);
+            this.Button_Cerrar.Size = new System.Drawing.Size(83, 36);
             this.Button_Cerrar.TabIndex = 2;
             this.Button_Cerrar.Text = "Cerrar";
             this.Button_Cerrar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -138,6 +143,7 @@ namespace sisgaapSystemWF.Views.Documentos
             this.Controls.Add(this.Panel_Contenedor);
             this.Controls.Add(this.Panel_Opciones);
             this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "VisualizarDocumento";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
