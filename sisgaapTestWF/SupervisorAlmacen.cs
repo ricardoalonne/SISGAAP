@@ -71,10 +71,11 @@ namespace sisgaapTestWF
                 string[] separador1 = fechaEt.Split(' ');
                 DetalleSA.codigoSolicitud = DataGridView_VistaPrincipal.CurrentRow.Cells["Solicitud"].Value.ToString();
                 int count = DetalleSA_Ctr.Detalles_SA_dataset(DetalleSA).Tables[0].Rows.Count;
-                string detalle = "";
+                string detalle = string.Format("{0,-15} {1,-30} {2,8}","Codigo","Nombre","Cantidad") + "\r\n";
                 for (int i = 0; i < count; i++)
                 {
-                    detalle += "\r\n"+DetalleSA_Ctr.Detalles_SA_dataset(DetalleSA).Tables[0].Rows[i][0].ToString() +" | "+ DetalleSA_Ctr.Detalles_SA_dataset(DetalleSA).Tables[0].Rows[i][1].ToString() +" | "+ DetalleSA_Ctr.Detalles_SA_dataset(DetalleSA).Tables[0].Rows[i][2].ToString();
+                    //detalle += "\r\n"+DetalleSA_Ctr.Detalles_SA_dataset(DetalleSA).Tables[0].Rows[i][0].ToString() + "\t" + " | "+ DetalleSA_Ctr.Detalles_SA_dataset(DetalleSA).Tables[0].Rows[i][1].ToString() +"\t"+" | "+ DetalleSA_Ctr.Detalles_SA_dataset(DetalleSA).Tables[0].Rows[i][2].ToString();
+                    detalle += "\r\n"+string.Format("{0,-15} {1,-30} {2,8}", DetalleSA_Ctr.Detalles_SA_dataset(DetalleSA).Tables[0].Rows[i][0].ToString(), DetalleSA_Ctr.Detalles_SA_dataset(DetalleSA).Tables[0].Rows[i][1].ToString(), DetalleSA_Ctr.Detalles_SA_dataset(DetalleSA).Tables[0].Rows[i][2].ToString());
                 }
                 //string detalle = DetalleSA_Ctr.Detalles_SA_dataset(DetalleSA).Tables[0].Rows[0];
                 textBox_vista.Text = "El código de solicitud es:" + DataGridView_VistaPrincipal.CurrentRow.Cells["Solicitud"].Value.ToString() + "\r\n\n" +

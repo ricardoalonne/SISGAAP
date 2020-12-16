@@ -64,7 +64,7 @@ namespace sisgaapTestWF
             this.button_actualizarSA.Image = ((System.Drawing.Image)(resources.GetObject("button_actualizarSA.Image")));
             this.button_actualizarSA.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.button_actualizarSA.Location = new System.Drawing.Point(0, 6);
-            this.button_actualizarSA.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button_actualizarSA.Margin = new System.Windows.Forms.Padding(4);
             this.button_actualizarSA.Name = "button_actualizarSA";
             this.button_actualizarSA.Size = new System.Drawing.Size(148, 68);
             this.button_actualizarSA.TabIndex = 0;
@@ -80,7 +80,7 @@ namespace sisgaapTestWF
             this.panel_Menu.Controls.Add(this.button_actualizarSA);
             this.panel_Menu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel_Menu.Location = new System.Drawing.Point(0, 0);
-            this.panel_Menu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel_Menu.Margin = new System.Windows.Forms.Padding(4);
             this.panel_Menu.Name = "panel_Menu";
             this.panel_Menu.Size = new System.Drawing.Size(148, 613);
             this.panel_Menu.TabIndex = 1;
@@ -93,7 +93,7 @@ namespace sisgaapTestWF
             this.button_actualizarI.Image = ((System.Drawing.Image)(resources.GetObject("button_actualizarI.Image")));
             this.button_actualizarI.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.button_actualizarI.Location = new System.Drawing.Point(0, 81);
-            this.button_actualizarI.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button_actualizarI.Margin = new System.Windows.Forms.Padding(4);
             this.button_actualizarI.Name = "button_actualizarI";
             this.button_actualizarI.Size = new System.Drawing.Size(148, 68);
             this.button_actualizarI.TabIndex = 1;
@@ -111,7 +111,7 @@ namespace sisgaapTestWF
             this.panel_SupervisorA.Controls.Add(this.button_visualizarSA);
             this.panel_SupervisorA.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_SupervisorA.Location = new System.Drawing.Point(148, 0);
-            this.panel_SupervisorA.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel_SupervisorA.Margin = new System.Windows.Forms.Padding(4);
             this.panel_SupervisorA.Name = "panel_SupervisorA";
             this.panel_SupervisorA.Size = new System.Drawing.Size(1164, 613);
             this.panel_SupervisorA.TabIndex = 2;
@@ -122,7 +122,7 @@ namespace sisgaapTestWF
             this.panel_vista.Controls.Add(this.button_cerrarVista);
             this.panel_vista.Controls.Add(this.textBox_vista);
             this.panel_vista.Location = new System.Drawing.Point(4, 4);
-            this.panel_vista.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel_vista.Margin = new System.Windows.Forms.Padding(4);
             this.panel_vista.Name = "panel_vista";
             this.panel_vista.Size = new System.Drawing.Size(945, 458);
             this.panel_vista.TabIndex = 90;
@@ -134,7 +134,7 @@ namespace sisgaapTestWF
             this.button_cerrarVista.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_cerrarVista.ForeColor = System.Drawing.Color.White;
             this.button_cerrarVista.Location = new System.Drawing.Point(779, 414);
-            this.button_cerrarVista.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button_cerrarVista.Margin = new System.Windows.Forms.Padding(4);
             this.button_cerrarVista.Name = "button_cerrarVista";
             this.button_cerrarVista.Size = new System.Drawing.Size(139, 41);
             this.button_cerrarVista.TabIndex = 1;
@@ -145,9 +145,9 @@ namespace sisgaapTestWF
             // textBox_vista
             // 
             this.textBox_vista.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox_vista.Font = new System.Drawing.Font("Century", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_vista.Font = new System.Drawing.Font("Courier New", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_vista.Location = new System.Drawing.Point(23, 26);
-            this.textBox_vista.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox_vista.Margin = new System.Windows.Forms.Padding(4);
             this.textBox_vista.Multiline = true;
             this.textBox_vista.Name = "textBox_vista";
             this.textBox_vista.Size = new System.Drawing.Size(895, 380);
@@ -159,9 +159,9 @@ namespace sisgaapTestWF
             this.group_Busqueda.Controls.Add(this.ComboBox_Filtro);
             this.group_Busqueda.Font = new System.Drawing.Font("Century", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.group_Busqueda.Location = new System.Drawing.Point(8, 31);
-            this.group_Busqueda.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.group_Busqueda.Margin = new System.Windows.Forms.Padding(4);
             this.group_Busqueda.Name = "group_Busqueda";
-            this.group_Busqueda.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.group_Busqueda.Padding = new System.Windows.Forms.Padding(4);
             this.group_Busqueda.Size = new System.Drawing.Size(855, 89);
             this.group_Busqueda.TabIndex = 89;
             this.group_Busqueda.TabStop = false;
@@ -241,7 +241,7 @@ namespace sisgaapTestWF
             this.Button_NuevaSolicitud.Image = ((System.Drawing.Image)(resources.GetObject("Button_NuevaSolicitud.Image")));
             this.Button_NuevaSolicitud.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Button_NuevaSolicitud.Location = new System.Drawing.Point(703, 155);
-            this.Button_NuevaSolicitud.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Button_NuevaSolicitud.Margin = new System.Windows.Forms.Padding(4);
             this.Button_NuevaSolicitud.Name = "Button_NuevaSolicitud";
             this.Button_NuevaSolicitud.Size = new System.Drawing.Size(261, 41);
             this.Button_NuevaSolicitud.TabIndex = 5;
@@ -280,7 +280,7 @@ namespace sisgaapTestWF
             this.DataGridView_VistaPrincipal.EnableHeadersVisualStyles = false;
             this.DataGridView_VistaPrincipal.GridColor = System.Drawing.Color.Silver;
             this.DataGridView_VistaPrincipal.Location = new System.Drawing.Point(24, 214);
-            this.DataGridView_VistaPrincipal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DataGridView_VistaPrincipal.Margin = new System.Windows.Forms.Padding(4);
             this.DataGridView_VistaPrincipal.Name = "DataGridView_VistaPrincipal";
             this.DataGridView_VistaPrincipal.RowHeadersVisible = false;
             this.DataGridView_VistaPrincipal.RowHeadersWidth = 51;
@@ -303,7 +303,7 @@ namespace sisgaapTestWF
             this.button_visualizarSA.Image = ((System.Drawing.Image)(resources.GetObject("button_visualizarSA.Image")));
             this.button_visualizarSA.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button_visualizarSA.Location = new System.Drawing.Point(416, 155);
-            this.button_visualizarSA.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button_visualizarSA.Margin = new System.Windows.Forms.Padding(4);
             this.button_visualizarSA.Name = "button_visualizarSA";
             this.button_visualizarSA.Size = new System.Drawing.Size(261, 41);
             this.button_visualizarSA.TabIndex = 91;
@@ -321,7 +321,7 @@ namespace sisgaapTestWF
             this.Controls.Add(this.panel_SupervisorA);
             this.Controls.Add(this.panel_Menu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "SupervisorAlmacen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SupervisorAlmacen";
