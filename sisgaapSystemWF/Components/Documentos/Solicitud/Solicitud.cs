@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using wmCoreWF;
+using sisgaapCoreWF.Controllers;
 
 namespace sisgaapSystemWF.Components.Documentos.Solicitud
 {
@@ -17,7 +18,8 @@ namespace sisgaapSystemWF.Components.Documentos.Solicitud
         {
             InitializeComponent();
         }
-
+        SolicitudAbastecimientoCtr SActr = new SolicitudAbastecimientoCtr();
+        SolicitudProduccionCtr SPctr = new SolicitudProduccionCtr();
         string tipo = "";
 
         public string Tipo{
@@ -30,6 +32,7 @@ namespace sisgaapSystemWF.Components.Documentos.Solicitud
                             RadioButton_Abastecimiento.Checked = true;
                             Button_NuevaSolicitud.Text = "Solicitud Abastecimiento"; 
                             SearchBar_BarraBusqueda.MessageSearchBox = "Buscar en todas las Solicitudes de Abastecimiento";
+                            CargarListaSolicitudAbastecimiento();
                         } break;
                     case "Produccion": {
                             RadioButton_Principal.Visible = RadioButton_Merma.Visible = RadioButton_Abastecimiento.Visible = false;
@@ -37,6 +40,7 @@ namespace sisgaapSystemWF.Components.Documentos.Solicitud
                             SearchBar_BarraBusqueda.MessageSearchBox = "Buscar en todas las Solicitudes de Produccion";
                             RadioButton_Principal.Checked = RadioButton_Merma.Checked = RadioButton_Abastecimiento.Checked = false;
                             RadioButton_Produccion.Checked = true;
+                            CargarListaSolicitudProduccion();
                         } break;
                     default: break;
                 }
@@ -51,6 +55,7 @@ namespace sisgaapSystemWF.Components.Documentos.Solicitud
 
         private void Button_RefrescarTabla_Click(object sender, EventArgs e){
             DataGridView_VistaPrincipal.Refresh();
+            CargarListaSolicitudAbastecimiento();
         }
 
         private void Button_ExportarExcelDB_Click(object sender, EventArgs e){
@@ -60,6 +65,16 @@ namespace sisgaapSystemWF.Components.Documentos.Solicitud
         private void Button_CargarExcelBD_Click(object sender, EventArgs e){
             MSExceltoSQLServer file = new MSExceltoSQLServer();
             file.ViewData("SOLICITUD");
+        }
+        
+        private void CargarListaSolicitudAbastecimiento()
+        {
+            DataGridView_VistaPrincipal.DataSource = SActr.ListarSolicitudesAbastecimiento();
+        }
+
+        private void CargarListaSolicitudProduccion()
+        {
+            DataGridView_VistaPrincipal.DataSource = SPctr.ListarSolicitudesProduccion();
         }
     }
 }
