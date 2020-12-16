@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using sisgaapCore.Entities;
+using System.Data.SqlClient;
+using System.Data;
 using sisgaapSqlDB.DataBase;
 
 namespace sisgaapCoreWF.Controllers
@@ -36,6 +38,10 @@ namespace sisgaapCoreWF.Controllers
             }
             objDetalleSA.error = 77;
             objDetalleSAdat.UpdateDetalle_SA(objDetalleSA);
+        }
+        public DataSet Detalles_SA_dataset(DetalleSolicitudAbastecimiento detalleSA)
+        {
+            return objDetalleSAdat.DetalleSA_dataset(detalleSA);
         }
     }
 }

@@ -17,8 +17,7 @@ namespace sisgaapTestWF
     {
         SqlDataReader dr;
         public SupervisorAlmacen()
-        {
-            
+        {            
             InitializeComponent();
             panel_Menu.BackColor = Color.FromArgb(125, Color.Black);
         }
@@ -72,6 +71,12 @@ namespace sisgaapTestWF
                 date_S.Visible = false;
                 TextBox_Búsqueda.Visible = true;
             }*/
+        }
+
+        private void DataGridView_VistaPrincipal_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridView_VistaPrincipal.CurrentRow.Selected = true;
+            string codigo = DataGridView_VistaPrincipal.Rows[e.RowIndex].Cells["Solicitud"].FormattedValue.ToString();
         }
     }
 }

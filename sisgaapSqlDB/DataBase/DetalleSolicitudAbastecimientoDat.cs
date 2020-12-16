@@ -51,5 +51,16 @@ namespace sisgaapSqlDB.DataBase
             conexionBD.Close();
             return dt;
         }
+        public DataSet DetalleSA_dataset(DetalleSolicitudAbastecimiento detallesa)
+        {
+            DataSet dt = null;
+            conexionBD.Open();
+            SqlCommand command = new SqlCommand("select Codigo,Repuesto,Cantidad from v_detalle_sa where Solicitud ='" + detallesa.codigoSolicitud + "'", conexionBD);
+            SqlDataAdapter daAdaptador = new SqlDataAdapter(command);
+            dt = new DataSet();
+            daAdaptador.Fill(dt);
+            conexionBD.Close();
+            return dt;
+        }
     }
 }
