@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using sisgaapCoreWF.Controllers;
 using System.Data.SqlClient;
-using sisgaapCore;
+using sisgaapCore.Entities;
 
 namespace sisgaapTestWF
 {
@@ -22,6 +22,8 @@ namespace sisgaapTestWF
             panel_Menu.BackColor = Color.FromArgb(125, Color.Black);
         }
         SolicitudAbastecimientoCtr SActr = new SolicitudAbastecimientoCtr();
+        DetalleSolicitudAbastecimiento DetalleSA = new DetalleSolicitudAbastecimiento();
+        DetalleSolicitudAbastecimientoCtr DetalleSA_Ctr = new DetalleSolicitudAbastecimientoCtr();
        // SolicitudProduccionCtr SPctr = new SolicitudProduccionCtr();
         private void button_actualizarSA_Click(object sender, EventArgs e)
         {
@@ -67,10 +69,19 @@ namespace sisgaapTestWF
                 string[] separador = fechaE.Split(' ');
                 string fechaEt = DataGridView_VistaPrincipal.CurrentRow.Cells["Entrega"].Value.ToString();
                 string[] separador1 = fechaEt.Split(' ');
+                DetalleSA.codigoSolicitud = DataGridView_VistaPrincipal.CurrentRow.Cells["Solicitud"].Value.ToString();
+                int count = DetalleSA_Ctr.Detalles_SA_dataset(DetalleSA).Tables[0].Rows.Count;
+                string detalle = "";
+                for (int i = 0; i < count; i++)
+                {
+                    detalle += "\r\n"+DetalleSA_Ctr.Detalles_SA_dataset(DetalleSA).Tables[0].Rows[i][0].ToString() +" | "+ DetalleSA_Ctr.Detalles_SA_dataset(DetalleSA).Tables[0].Rows[i][1].ToString() +" | "+ DetalleSA_Ctr.Detalles_SA_dataset(DetalleSA).Tables[0].Rows[i][2].ToString();
+                }
+                //string detalle = DetalleSA_Ctr.Detalles_SA_dataset(DetalleSA).Tables[0].Rows[0];
                 textBox_vista.Text = "El código de solicitud es:" + DataGridView_VistaPrincipal.CurrentRow.Cells["Solicitud"].Value.ToString() + "\r\n\n" +
-                                     "De asunto es: "+ DataGridView_VistaPrincipal.CurrentRow.Cells["Asunto"].Value.ToString()+ "\r\n\n\n\n" +
+                                     "De asunto es: " + DataGridView_VistaPrincipal.CurrentRow.Cells["Asunto"].Value.ToString() + "\r\n\n\n\n" +
                                      "Redactor: " + DataGridView_VistaPrincipal.CurrentRow.Cells["Redactor"].Value.ToString() + "\r\n\n\n\n\n\n\n" +
-                                     "Fecha Emisión: " + separador[0] + "       "+"Fecha Entrega"+ separador1[0]
+                                     "Fecha Emisión: " + separador[0] + "       " + "Fecha Entrega" + separador1[0] +"\r\n"+"\r\n" +
+                                     detalle
                                      ;
             }
         }
@@ -78,12 +89,6 @@ namespace sisgaapTestWF
         private void button_cerrarVista_Click(object sender, EventArgs e)
         {
             panel_vista.Visible = false;
-        }
-
-        private void DataGridView_VistaPrincipal_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            DataGridView_VistaPrincipal.CurrentRow.Selected = true;
-            string codigo = DataGridView_VistaPrincipal.Rows[e.RowIndex].Cells["Solicitud"].FormattedValue.ToString();
         }
     }
 }
