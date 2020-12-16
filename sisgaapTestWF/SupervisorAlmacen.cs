@@ -27,12 +27,14 @@ namespace sisgaapTestWF
         private void button_actualizarSA_Click(object sender, EventArgs e)
         {
 
-            if (panel_SupervisorA.Visible == true) panel_SupervisorA.Visible = false;
-            else { panel_SupervisorA.Visible = true; CargarListaSolicitudAbastecimiento();
-                ComboBox_Filtro.Items.Add( "Asunto");
+            if (panel_SupervisorA.Visible == true) { panel_SupervisorA.Visible = false; panel_vista.Visible = false; }
+            else
+            {
+                panel_SupervisorA.Visible = true; CargarListaSolicitudAbastecimiento();// panel_vista.Visible = false;
+                ComboBox_Filtro.Items.Add("Asunto");
                 ComboBox_Filtro.Items.Add("Redactor");
-                //ComboBox_Filtro.Items.Add("Emision");
-                //ComboBox_Filtro.Items.Add( "Entrega");
+                ComboBox_Filtro.Items.Add("Emision");
+                ComboBox_Filtro.Items.Add("Entrega");
                 ComboBox_Filtro.Items.Add("Estado");
             }
         }
@@ -48,30 +50,35 @@ namespace sisgaapTestWF
 
         private void cargarBusqueda()
         {
-          /*  if (ComboBox_Filtro.Text == "Emision" || ComboBox_Filtro.Text == "Entrega")
-            {
-                var listaConsultas = SActr.ConsultaSolicitudAbastecimiento(ComboBox_Filtro.Text, date_S.Text);
-                DataGridView_VistaPrincipal.DataSource = listaConsultas;
-            }
-            else
-            {*/
                 var listaConsultas = SActr.ConsultaSolicitudAbastecimiento(ComboBox_Filtro.Text, TextBox_Búsqueda.Text);
                 DataGridView_VistaPrincipal.DataSource = listaConsultas;
-           // }
         }
 
         private void ComboBox_Filtro_SelectedIndexChanged(object sender, EventArgs e)
         {
-           /* if(ComboBox_Filtro.Text=="Emision" || ComboBox_Filtro.Text == "Entrega")
+           
+        }
+
+        private void button_visualizarSA_Click(object sender, EventArgs e)
+        {
+            panel_vista.Visible = true;
+            if (DataGridView_VistaPrincipal.SelectedRows.Count > 0)
             {
-                date_S.Visible = true;
-                TextBox_Búsqueda.Visible = false;
+                string fechaE = DataGridView_VistaPrincipal.CurrentRow.Cells["Emision"].Value.ToString();
+                string[] separador = fechaE.Split(' ');
+                string fechaEt = DataGridView_VistaPrincipal.CurrentRow.Cells["Entrega"].Value.ToString();
+                string[] separador1 = fechaEt.Split(' ');
+                textBox_vista.Text = "El código de solicitud es:" + DataGridView_VistaPrincipal.CurrentRow.Cells["Solicitud"].Value.ToString() + "\r\n\n" +
+                                     "De asunto es: "+ DataGridView_VistaPrincipal.CurrentRow.Cells["Asunto"].Value.ToString()+ "\r\n\n\n\n" +
+                                     "Redactor: " + DataGridView_VistaPrincipal.CurrentRow.Cells["Redactor"].Value.ToString() + "\r\n\n\n\n\n\n\n" +
+                                     "Fecha Emisión: " + separador[0] + "       "+"Fecha Entrega"+ separador1[0]
+                                     ;
             }
-            else
-            {
-                date_S.Visible = false;
-                TextBox_Búsqueda.Visible = true;
-            }*/
+        }
+
+        private void button_cerrarVista_Click(object sender, EventArgs e)
+        {
+            panel_vista.Visible = false;
         }
     }
 }

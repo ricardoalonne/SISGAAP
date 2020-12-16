@@ -30,9 +30,9 @@ namespace sisgaapTestWF
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SupervisorAlmacen));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.button_actualizarSA = new System.Windows.Forms.Button();
             this.panel_Menu = new System.Windows.Forms.Panel();
             this.button_actualizarI = new System.Windows.Forms.Button();
@@ -44,11 +44,16 @@ namespace sisgaapTestWF
             this.Button_Buscar = new System.Windows.Forms.Button();
             this.ComboBox_Filtro = new System.Windows.Forms.ComboBox();
             this.group_Busqueda = new System.Windows.Forms.GroupBox();
+            this.panel_vista = new System.Windows.Forms.Panel();
+            this.textBox_vista = new System.Windows.Forms.TextBox();
+            this.button_visualizarSA = new System.Windows.Forms.Button();
+            this.button_cerrarVista = new System.Windows.Forms.Button();
             this.panel_Menu.SuspendLayout();
             this.panel_SupervisorA.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView_VistaPrincipal)).BeginInit();
             this.Panel_BarraBusqueda.SuspendLayout();
             this.group_Busqueda.SuspendLayout();
+            this.panel_vista.SuspendLayout();
             this.SuspendLayout();
             // 
             // button_actualizarSA
@@ -96,9 +101,11 @@ namespace sisgaapTestWF
             // panel_SupervisorA
             // 
             this.panel_SupervisorA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
+            this.panel_SupervisorA.Controls.Add(this.panel_vista);
             this.panel_SupervisorA.Controls.Add(this.group_Busqueda);
             this.panel_SupervisorA.Controls.Add(this.Button_NuevaSolicitud);
             this.panel_SupervisorA.Controls.Add(this.DataGridView_VistaPrincipal);
+            this.panel_SupervisorA.Controls.Add(this.button_visualizarSA);
             this.panel_SupervisorA.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_SupervisorA.Location = new System.Drawing.Point(111, 0);
             this.panel_SupervisorA.Name = "panel_SupervisorA";
@@ -116,34 +123,34 @@ namespace sisgaapTestWF
             this.DataGridView_VistaPrincipal.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
             this.DataGridView_VistaPrincipal.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DataGridView_VistaPrincipal.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(210)))), ((int)(((byte)(210)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DataGridView_VistaPrincipal.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(210)))), ((int)(((byte)(210)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DataGridView_VistaPrincipal.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.DataGridView_VistaPrincipal.ColumnHeadersHeight = 35;
             this.DataGridView_VistaPrincipal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DataGridView_VistaPrincipal.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DataGridView_VistaPrincipal.DefaultCellStyle = dataGridViewCellStyle2;
             this.DataGridView_VistaPrincipal.EnableHeadersVisualStyles = false;
             this.DataGridView_VistaPrincipal.GridColor = System.Drawing.Color.Silver;
             this.DataGridView_VistaPrincipal.Location = new System.Drawing.Point(18, 174);
             this.DataGridView_VistaPrincipal.Name = "DataGridView_VistaPrincipal";
             this.DataGridView_VistaPrincipal.RowHeadersVisible = false;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(164)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DataGridView_VistaPrincipal.RowsDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(164)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DataGridView_VistaPrincipal.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.DataGridView_VistaPrincipal.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DataGridView_VistaPrincipal.Size = new System.Drawing.Size(843, 312);
             this.DataGridView_VistaPrincipal.TabIndex = 3;
@@ -241,6 +248,57 @@ namespace sisgaapTestWF
             this.group_Busqueda.TabStop = false;
             this.group_Busqueda.Text = "Búsqueda de Solicitudes de Abastecimientos";
             // 
+            // panel_vista
+            // 
+            this.panel_vista.Controls.Add(this.button_cerrarVista);
+            this.panel_vista.Controls.Add(this.textBox_vista);
+            this.panel_vista.Location = new System.Drawing.Point(3, 3);
+            this.panel_vista.Name = "panel_vista";
+            this.panel_vista.Size = new System.Drawing.Size(709, 372);
+            this.panel_vista.TabIndex = 90;
+            this.panel_vista.Visible = false;
+            // 
+            // textBox_vista
+            // 
+            this.textBox_vista.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox_vista.Font = new System.Drawing.Font("Century", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_vista.Location = new System.Drawing.Point(17, 21);
+            this.textBox_vista.Multiline = true;
+            this.textBox_vista.Name = "textBox_vista";
+            this.textBox_vista.Size = new System.Drawing.Size(671, 309);
+            this.textBox_vista.TabIndex = 0;
+            // 
+            // button_visualizarSA
+            // 
+            this.button_visualizarSA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.button_visualizarSA.FlatAppearance.BorderSize = 0;
+            this.button_visualizarSA.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.button_visualizarSA.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.button_visualizarSA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_visualizarSA.Image = ((System.Drawing.Image)(resources.GetObject("button_visualizarSA.Image")));
+            this.button_visualizarSA.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button_visualizarSA.Location = new System.Drawing.Point(312, 126);
+            this.button_visualizarSA.Name = "button_visualizarSA";
+            this.button_visualizarSA.Size = new System.Drawing.Size(196, 33);
+            this.button_visualizarSA.TabIndex = 91;
+            this.button_visualizarSA.Text = "Visualizar Solicitud";
+            this.button_visualizarSA.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button_visualizarSA.UseVisualStyleBackColor = false;
+            this.button_visualizarSA.Click += new System.EventHandler(this.button_visualizarSA_Click);
+            // 
+            // button_cerrarVista
+            // 
+            this.button_cerrarVista.BackColor = System.Drawing.Color.Green;
+            this.button_cerrarVista.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_cerrarVista.ForeColor = System.Drawing.Color.White;
+            this.button_cerrarVista.Location = new System.Drawing.Point(584, 336);
+            this.button_cerrarVista.Name = "button_cerrarVista";
+            this.button_cerrarVista.Size = new System.Drawing.Size(104, 33);
+            this.button_cerrarVista.TabIndex = 1;
+            this.button_cerrarVista.Text = "Cerrar";
+            this.button_cerrarVista.UseVisualStyleBackColor = false;
+            this.button_cerrarVista.Click += new System.EventHandler(this.button_cerrarVista_Click);
+            // 
             // SupervisorAlmacen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -259,6 +317,8 @@ namespace sisgaapTestWF
             this.Panel_BarraBusqueda.ResumeLayout(false);
             this.Panel_BarraBusqueda.PerformLayout();
             this.group_Busqueda.ResumeLayout(false);
+            this.panel_vista.ResumeLayout(false);
+            this.panel_vista.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -276,5 +336,9 @@ namespace sisgaapTestWF
         private System.Windows.Forms.Button Button_Buscar;
         private System.Windows.Forms.GroupBox group_Busqueda;
         private System.Windows.Forms.ComboBox ComboBox_Filtro;
+        private System.Windows.Forms.Panel panel_vista;
+        private System.Windows.Forms.TextBox textBox_vista;
+        private System.Windows.Forms.Button button_visualizarSA;
+        private System.Windows.Forms.Button button_cerrarVista;
     }
 }
