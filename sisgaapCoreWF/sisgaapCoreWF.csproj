@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Controllers\DetalleSolicitudAbastecimientoCtr.cs" />
     <Compile Include="Controllers\DetalleSolicitudProduccionCtr.cs" />
+    <Compile Include="Controllers\RepuestoCtr.cs" />
     <Compile Include="Controllers\SolicitudAbastecimientoCtr.cs" />
     <Compile Include="Controllers\SolicitudProduccionCtr.cs" />
     <Compile Include="SisgaapCoreWF.cs" />

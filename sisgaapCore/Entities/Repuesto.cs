@@ -11,8 +11,13 @@ namespace sisgaapCore.Entities{
         public string descripcion { get; set; }
         public double precioVenta { get; set; }
         public string estado { get; set; }
+        public string marca { get; set; }
+        public string modelo { get; set; }
         public int cantidad { get; set; }
         public int cantidadMinima { get; set; }
         public string codigoCategoria { get; set; }
+        public string calidad { get; set; }
+        public bool condicion { get; set; }
+        public int error { get; set; }
     }
 }
