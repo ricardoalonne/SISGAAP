@@ -65,6 +65,7 @@ namespace sisgaapTestWF
             this.buttonSP.TabIndex = 1;
             this.buttonSP.Text = "Supervisor de Producción";
             this.buttonSP.UseVisualStyleBackColor = false;
+            this.buttonSP.Click += new System.EventHandler(this.buttonSP_Click);
             // 
             // panel1
             // 

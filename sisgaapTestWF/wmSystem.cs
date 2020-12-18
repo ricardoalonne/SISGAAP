@@ -38,5 +38,11 @@ namespace sisgaapTestWF
         {
             Application.Exit();
         }
+
+        private void buttonSP_Click(object sender, EventArgs e)
+        {
+            SupervisorProduccion sp = new SupervisorProduccion();
+            AbrirFormInPanel(sp);
+        }
     }
 }
