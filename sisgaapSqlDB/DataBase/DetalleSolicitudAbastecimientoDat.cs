@@ -70,5 +70,19 @@ namespace sisgaapSqlDB.DataBase
             conexionBD.Close();
             return dt;
         }
+        public bool SelectRepuestoxDetalleSAxSolicitud(DetalleSolicitudAbastecimiento objDetalleSA)
+        {
+            string Select = "select * from v_detalle_sa WHERE Codigo ='" + objDetalleSA.codigoRepuesto + "' and Solicitud='"+objDetalleSA.codigoSolicitud+"'";
+            SqlCommand unComando = new SqlCommand(Select, conexionBD);
+            conexionBD.Open();
+            SqlDataReader reader = unComando.ExecuteReader();
+            bool hayRegistros = reader.Read();
+            if (hayRegistros)
+            {
+                objDetalleSA.codigoRepuesto = (string)reader[1];
+            }
+            conexionBD.Close();
+            return hayRegistros;
+        }
     }
 }

@@ -182,29 +182,35 @@ namespace sisgaapTestWF
                 MessageBox.Show("ERROR!! ESPACIOS EN BLANCO!!");
                 return;
             }
+            string letra = "";
             for (int i = 0; i < textBox_cantidad_detalle_sa.Text.Length; i++)
             {
                 correcto = char.IsNumber(textBox_cantidad_detalle_sa.Text.Trim()[i]);
+                if (!correcto)
+                {
+                    letra += textBox_cantidad_detalle_sa.Text.Trim()[i].ToString();
+                }
             }
-            if (!correcto)
+            if (letra.Length>0)
             {
                 MessageBox.Show("ERROR!! Se ingresó letras en la cantidad solicitada");
                 return;
             }
             DetalleSA.codigoSolicitud = SA.codigoSolicitud;
             DetalleSA.codigoRepuesto = textBox_codigo_Repuesto.Text;
-            DetalleSA.cantidadSolicitada =Convert.ToInt32( textBox_cantidad_detalle_sa.Text);
+            DetalleSA.cantidadSolicitada =Int32.Parse(textBox_cantidad_detalle_sa.Text);
             DetalleSA_Ctr.RegistrarDetalleSA(DetalleSA);
-            msj1(SA);
+            msj1(DetalleSA);
             CargarListaDetalleSolicitudAbastecimiento();
         }
-        public void msj1(SolicitudAbastecimiento p)
+        public void msj1(DetalleSolicitudAbastecimiento p)
         {
             switch (p.error)
             {
                 case 1:
                     MessageBox.Show("ERROR! cantidad invalidad!!");
                     break;
+
                 case 77:
                     MessageBox.Show("REGISTRO EXITOSO!!");
                     textBox_codigo_Repuesto.Clear();
@@ -215,7 +221,7 @@ namespace sisgaapTestWF
         private void CargarListaDetalleSolicitudAbastecimiento()
         {
             DetalleSA.codigoSolicitud = SA.codigoSolicitud;
-            var listaDetalleSA = DetalleSA_Ctr.Detalles_SA_dataset(DetalleSA);
+            var listaDetalleSA = DetalleSA_Ctr.Detalle_SA_datatable(DetalleSA);
             DataGridView_VistaPrincipal.DataSource = listaDetalleSA;
         }
         private void cargarDetalles()
@@ -225,6 +231,49 @@ namespace sisgaapTestWF
             DataGridView_VistaPrincipal.DataSource = listaDetalleSA;
             // viewDetalle.Columns[viewDetalle.Columns.Count - 1].Visible = false;
            // viewDetalle.Columns[0].Visible = false;
+        }
+
+        private void button_GuardardetalleSA_Click(object sender, EventArgs e)
+        {
+            bool correcto = true;
+            if (textBox_cantidad_detalle_sa.Text == "" || textBox_codigo_Repuesto.Text == "")
+            {
+                MessageBox.Show("ERROR!! ESPACIOS EN BLANCO!!");
+                return;
+            }
+            string letra = "";
+            for (int i = 0; i < textBox_cantidad_detalle_sa.Text.Length; i++)
+            {
+                correcto = char.IsNumber(textBox_cantidad_detalle_sa.Text.Trim()[i]);
+                if (!correcto)
+                {
+                    letra += textBox_cantidad_detalle_sa.Text.Trim()[i].ToString();
+                }
+            }
+            if (letra.Length > 0)
+            {
+                MessageBox.Show("ERROR!! Se ingresó letras en la cantidad solicitada");
+                return;
+            }
+            DetalleSA.codigoSolicitud = dataGridView_detalleSA.CurrentRow.Cells["Solicitud"].Value.ToString();
+            DetalleSA.codigoRepuesto = dataGridView_detalleSA.CurrentRow.Cells["Codigo"].Value.ToString();
+            DetalleSA.cantidadSolicitada =Int32.Parse( dataGridView_detalleSA.CurrentRow.Cells["Cantidad"].Value.ToString());
+            DetalleSA_Ctr.ActualizarDetalleSA(DetalleSA);
+            msj1(DetalleSA);
+            CargarListaDetalleSolicitudAbastecimiento();
+        }
+
+        private void button_EliminardetalleSA_Click(object sender, EventArgs e)
+        {
+            DetalleSA.codigoSolicitud = dataGridView_detalleSA.CurrentRow.Cells["Solicitud"].Value.ToString();
+            DetalleSA_Ctr.EliminarAllDetalleSA(DetalleSA);
+            CargarListaDetalleSolicitudAbastecimiento();
+        }
+
+        private void button_Registrar_Click(object sender, EventArgs e)
+        {
+            panel_registro.Visible = false;
+            panel_SupervisorA.Visible = true;
         }
     }
 }

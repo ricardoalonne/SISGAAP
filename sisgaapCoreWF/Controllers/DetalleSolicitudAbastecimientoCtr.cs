@@ -22,6 +22,12 @@ namespace sisgaapCoreWF.Controllers
             if (objDetalleSA.cantidadSolicitada <= 0)
             {
                 objDetalleSA.error = 1; //cantidad invalidad!!
+                return;
+            }
+            else if (objDetalleSAdat.SelectRepuestoxDetalleSAxSolicitud(objDetalleSA))
+            {
+                objDetalleSA.error = 2;//repuesto ya ingresado anteriormente!!
+                return;
             }
             objDetalleSA.error = 77;
             objDetalleSAdat.InsertarDetalle_SA(objDetalleSA);
@@ -46,6 +52,10 @@ namespace sisgaapCoreWF.Controllers
         public void EliminarAllDetalleSA(DetalleSolicitudAbastecimiento objDetalleSA)
         {
             objDetalleSAdat.DeleteAllDetalle_SA(objDetalleSA);
+        }
+        public DataTable Detalle_SA_datatable(DetalleSolicitudAbastecimiento detalleSA)
+        {
+            return objDetalleSAdat.DetalleSA(detalleSA);
         }
     }
 }
