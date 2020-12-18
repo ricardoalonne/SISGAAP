@@ -9,7 +9,7 @@ using sisgaapSqlDB.DataBase;
 
 namespace sisgaapCoreWF.Controllers
 {
-    class DetalleSolicitudProduccionCtr
+    public class DetalleSolicitudProduccionCtr
     {
         DetalleSolicitudProduccionDat objDetalleSPdat;
         public DetalleSolicitudProduccionCtr()
@@ -37,6 +37,10 @@ namespace sisgaapCoreWF.Controllers
             }
             objDetalleSP.error = 77;
             objDetalleSPdat.UpdateDetalle_SP(objDetalleSP);
+        }
+        public DataSet Detalles_SP_dataset(DetalleSolicitudProduccion detalleSP)
+        {
+            return objDetalleSPdat.DetalleSP_dataset(detalleSP);
         }
     }
 }

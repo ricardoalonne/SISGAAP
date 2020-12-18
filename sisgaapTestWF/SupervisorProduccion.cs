@@ -15,20 +15,22 @@ using sisgaapCore;
 
 namespace sisgaapTestWF
 {
-    public partial class SupervisorAlmacen : Form
+    public partial class SupervisorProduccion : Form
     {
-        SqlDataReader dr;
-        public SupervisorAlmacen()
-        {            
+        public SupervisorProduccion()
+        {
             InitializeComponent();
             panel_Menu.BackColor = Color.FromArgb(125, Color.Black);
-            
         }
+        SqlDataReader dr;
         SolicitudAbastecimientoCtr SActr = new SolicitudAbastecimientoCtr();
         DetalleSolicitudAbastecimiento DetalleSA = new DetalleSolicitudAbastecimiento();
         DetalleSolicitudAbastecimientoCtr DetalleSA_Ctr = new DetalleSolicitudAbastecimientoCtr();
         SolicitudAbastecimiento SA = new SolicitudAbastecimiento();
-        
+        SolicitudProduccionCtr SPctr = new SolicitudProduccionCtr();
+        DetalleSolicitudProduccion DetalleSP = new DetalleSolicitudProduccion();
+        DetalleSolicitudProduccionCtr DetalleSP_Ctr = new DetalleSolicitudProduccionCtr();
+        SolicitudProducción SP = new SolicitudProducción();
         SqlCommand cmd;
         private void button_actualizarSA_Click(object sender, EventArgs e)
         {
@@ -36,7 +38,7 @@ namespace sisgaapTestWF
             if (panel_SupervisorA.Visible == true) { panel_SupervisorA.Visible = false; panel_vista.Visible = false; panel_registro.Visible = false; }
             else
             {
-                panel_SupervisorA.Visible = true; CargarListaSolicitudAbastecimiento(); panel_vista.Visible = false;
+                panel_SupervisorA.Visible = true; CargarListaSolicitudProduccion(); panel_vista.Visible = false;
                 ComboBox_Filtro.Items.Add("Asunto");
                 ComboBox_Filtro.Items.Add("Redactor");
                 ComboBox_Filtro.Items.Add("Emision");
@@ -47,10 +49,11 @@ namespace sisgaapTestWF
                 panel_Detalle_Solicitud.Visible = false;
             }
         }
-        private void CargarListaSolicitudAbastecimiento()
+        private void CargarListaSolicitudProduccion()
         {
-            DataGridView_VistaPrincipal.DataSource = SActr.ListarSolicitudesAbastecimiento();
+            DataGridView_VistaPrincipal.DataSource = SPctr.ListarSolicitudesProduccion();//SActr.ListarSolicitudesAbastecimiento();
             DataGridView_VistaPrincipal.Columns[0].Visible = false;
+            DataGridView_VistaPrincipal.Columns[3].Visible = false;
         }
 
         private void Button_Buscar_Click(object sender, EventArgs e)
@@ -60,36 +63,40 @@ namespace sisgaapTestWF
 
         private void cargarBusqueda()
         {
-                var listaConsultas = SActr.ConsultaSolicitudAbastecimiento(ComboBox_Filtro.Text, TextBox_Búsqueda.Text);
-                DataGridView_VistaPrincipal.DataSource = listaConsultas;
+            var listaConsultas = SPctr.ConsultaSolicitudProduccion(ComboBox_Filtro.Text, TextBox_Búsqueda.Text); //SActr.ConsultaSolicitudAbastecimiento(ComboBox_Filtro.Text, TextBox_Búsqueda.Text);
+            DataGridView_VistaPrincipal.DataSource = listaConsultas;
         }
 
         private void ComboBox_Filtro_SelectedIndexChanged(object sender, EventArgs e)
         {
-           
+
         }
 
         private void button_visualizarSA_Click(object sender, EventArgs e)
         {
             panel_vista.Visible = true;
             panel_SupervisorA.Visible = false;
-            if (DataGridView_VistaPrincipal.SelectedRows.Count > 0){
-                string fechaEmision = DateTime.Parse(DataGridView_VistaPrincipal.CurrentRow.Cells["Emision"].Value.ToString()).ToShortDateString();
-                string fechaEntrega = DateTime.Parse(DataGridView_VistaPrincipal.CurrentRow.Cells["Entrega"].Value.ToString()).ToShortDateString();
-                DetalleSA.codigoSolicitud = DataGridView_VistaPrincipal.CurrentRow.Cells["Solicitud"].Value.ToString();
-                int count = DetalleSA_Ctr.Detalles_SA_dataset(DetalleSA).Tables[0].Rows.Count;
-                string detalle = string.Format("{0,-15} {1,-30} {2,-10} {3,-10} {4,4}","Codigo","Nombre","Marca","Modelo","Cantidad") + "\r\n";
+            if (DataGridView_VistaPrincipal.SelectedRows.Count > 0)
+            {
+                string fechaE = DataGridView_VistaPrincipal.CurrentRow.Cells["Emision"].Value.ToString();
+                string[] separador = fechaE.Split(' ');
+                string fechaEt = DataGridView_VistaPrincipal.CurrentRow.Cells["Entrega"].Value.ToString();
+                string[] separador1 = fechaEt.Split(' ');
+                DetalleSP.codigoSolicitud = DataGridView_VistaPrincipal.CurrentRow.Cells["Solicitud"].Value.ToString();//DetalleSA.codigoSolicitud = DataGridView_VistaPrincipal.CurrentRow.Cells["Solicitud"].Value.ToString();
+                //Repuesto,Nombre,Marca,Modelo,[Cantidad Solicitada],[Cantidad Sugerida],Costo
+                int count = DetalleSP_Ctr.Detalles_SP_dataset(DetalleSP).Tables[0].Rows.Count;
+                string detalle = string.Format("{0,-15} {1,-30} {2,-10} {3,-10} {4,28} {5,15} {6,13}", "Codigo", "Nombre", "Marca", "Modelo", "Solicitada","Sugerida","Costo") + "\r\n";
                 for (int i = 0; i < count; i++)
                 {
                     //detalle += "\r\n"+DetalleSA_Ctr.Detalles_SA_dataset(DetalleSA).Tables[0].Rows[i][0].ToString() + "\t" + " | "+ DetalleSA_Ctr.Detalles_SA_dataset(DetalleSA).Tables[0].Rows[i][1].ToString() +"\t"+" | "+ DetalleSA_Ctr.Detalles_SA_dataset(DetalleSA).Tables[0].Rows[i][2].ToString();
-                    detalle += "\r\n"+string.Format("{0,-15} {1,-30} {2,-10} {3,-10} {4,4}", DetalleSA_Ctr.Detalles_SA_dataset(DetalleSA).Tables[0].Rows[i][0].ToString(), DetalleSA_Ctr.Detalles_SA_dataset(DetalleSA).Tables[0].Rows[i][1].ToString(), DetalleSA_Ctr.Detalles_SA_dataset(DetalleSA).Tables[0].Rows[i][2].ToString(), 
-                        DetalleSA_Ctr.Detalles_SA_dataset(DetalleSA).Tables[0].Rows[i][3].ToString(), DetalleSA_Ctr.Detalles_SA_dataset(DetalleSA).Tables[0].Rows[i][4].ToString());
+                    detalle += "\r\n" + string.Format("{0,-15} {1,-30} {2,-10} {3,-10} {4,8} {5,16} {6,24}", DetalleSP_Ctr.Detalles_SP_dataset(DetalleSP).Tables[0].Rows[i][0].ToString(), DetalleSP_Ctr.Detalles_SP_dataset(DetalleSP).Tables[0].Rows[i][1].ToString(), DetalleSP_Ctr.Detalles_SP_dataset(DetalleSP).Tables[0].Rows[i][2].ToString(),
+                        DetalleSP_Ctr.Detalles_SP_dataset(DetalleSP).Tables[0].Rows[i][3].ToString(), DetalleSP_Ctr.Detalles_SP_dataset(DetalleSP).Tables[0].Rows[i][4].ToString(), DetalleSP_Ctr.Detalles_SP_dataset(DetalleSP).Tables[0].Rows[i][5].ToString(), DetalleSP_Ctr.Detalles_SP_dataset(DetalleSP).Tables[0].Rows[i][6].ToString());
                 }
                 //string detalle = DetalleSA_Ctr.Detalles_SA_dataset(DetalleSA).Tables[0].Rows[0];
                 textBox_vista.Text = "El código de solicitud es:" + DataGridView_VistaPrincipal.CurrentRow.Cells["Solicitud"].Value.ToString() + "\r\n\n" +
                                      "De asunto es: " + DataGridView_VistaPrincipal.CurrentRow.Cells["Asunto"].Value.ToString() + "\r\n\n\n\n" +
                                      "Redactor: " + DataGridView_VistaPrincipal.CurrentRow.Cells["Redactor"].Value.ToString() + "\r\n\n\n\n\n\n\n" +
-                                     "Fecha Emisión: " + fechaEmision + "     " + "Fecha Entrega: " + fechaEntrega + "\r\n"+"\r\n" +
+                                     "Fecha Emisión: " + separador[0] + "     " + "Fecha Entrega: " + separador1[0] + "\r\n" + "\r\n" +
                                      detalle
                                      ;
             }
@@ -108,7 +115,7 @@ namespace sisgaapTestWF
 
         private void button_Continuar_Click(object sender, EventArgs e)
         {
-            if (textBox_redactor.Text == "" || textBox_asunto.Text == "" )
+            if (textBox_redactor.Text == "" || textBox_asunto.Text == "")
             {
                 MessageBox.Show("ERROR!! ESPACIOS EN BLANCO!!");
                 return;
@@ -120,7 +127,7 @@ namespace sisgaapTestWF
             SA.fechaEntrega = dateTime_SA.Value;
             SActr.RegistrarSA(SA);
             msj(SA);
-            SA.codigoSolicitud= SActr.TraerUltimoCodigoSA();
+            SA.codigoSolicitud = SActr.TraerUltimoCodigoSA();
             CargarListaDetalleSolicitudAbastecimiento();
         }
         public void msj(SolicitudAbastecimiento p)
@@ -160,7 +167,7 @@ namespace sisgaapTestWF
                     panel_Solicitud.Visible = false;
                     panel_Detalle_Solicitud.Visible = true;
                     button_actualizar_todo.Visible = true;
-                    button_actualizar.Visible = false; 
+                    button_actualizar.Visible = false;
                     break;
             }
         }
@@ -168,7 +175,7 @@ namespace sisgaapTestWF
         {
 
         }
-        
+
         private void button_CancelarTodo_Click(object sender, EventArgs e)
         {
             DetalleSA.codigoSolicitud = DataGridView_VistaPrincipal.CurrentRow.Cells["Solicitud"].Value.ToString();
@@ -212,14 +219,14 @@ namespace sisgaapTestWF
                     letra += textBox_cantidad_detalle_sa.Text.Trim()[i].ToString();
                 }
             }
-            if (letra.Length>0)
+            if (letra.Length > 0)
             {
                 MessageBox.Show("ERROR!! Se ingresó letras en la cantidad solicitada");
                 return;
             }
             DetalleSA.codigoSolicitud = SA.codigoSolicitud;
             DetalleSA.codigoRepuesto = textBox_codigo_Repuesto.Text;
-            DetalleSA.cantidadSolicitada =Int32.Parse(textBox_cantidad_detalle_sa.Text);
+            DetalleSA.cantidadSolicitada = Int32.Parse(textBox_cantidad_detalle_sa.Text);
             DetalleSA_Ctr.RegistrarDetalleSA(DetalleSA);
             msj1(DetalleSA);
             CargarListaDetalleSolicitudAbastecimiento();
@@ -250,8 +257,6 @@ namespace sisgaapTestWF
         {
             DetalleSA.codigoSolicitud = SA.codigoSolicitud;
             dataGridView_detalleSA.DataSource = DetalleSA_Ctr.Detalle_SA_datatable(DetalleSA);
-            dataGridView_detalleSA.Columns[0].ReadOnly = true;
-            dataGridView_detalleSA.Columns[1].ReadOnly = true;
         }
         private void cargarDetalles()
         {
@@ -259,7 +264,7 @@ namespace sisgaapTestWF
             var listaDetalleSA = DetalleSA_Ctr.Detalles_SA_dataset(DetalleSA);
             DataGridView_VistaPrincipal.DataSource = listaDetalleSA;
             // viewDetalle.Columns[viewDetalle.Columns.Count - 1].Visible = false;
-           // viewDetalle.Columns[0].Visible = false;
+            // viewDetalle.Columns[0].Visible = false;
         }
 
         private void button_GuardardetalleSA_Click(object sender, EventArgs e)
@@ -286,7 +291,7 @@ namespace sisgaapTestWF
             }
             DetalleSA.codigoSolicitud = SA.codigoSolicitud;
             DetalleSA.codigoRepuesto = dataGridView_detalleSA.CurrentRow.Cells["Codigo"].Value.ToString();
-            DetalleSA.cantidadSolicitada =Int32.Parse( dataGridView_detalleSA.CurrentRow.Cells["Cantidad"].Value.ToString());
+            DetalleSA.cantidadSolicitada = Int32.Parse(dataGridView_detalleSA.CurrentRow.Cells["Cantidad"].Value.ToString());
             DetalleSA_Ctr.ActualizarDetalleSA(DetalleSA);
             msj1(DetalleSA);
             CargarListaDetalleSolicitudAbastecimiento();
@@ -303,7 +308,6 @@ namespace sisgaapTestWF
         {
             panel_registro.Visible = false;
             panel_SupervisorA.Visible = true;
-            CargarListaSolicitudAbastecimiento();
         }
 
         private void button_modificar_solicitud_Click(object sender, EventArgs e)
@@ -315,11 +319,11 @@ namespace sisgaapTestWF
             SA.codigoSolicitud = DataGridView_VistaPrincipal.CurrentRow.Cells["Solicitud"].Value.ToString();
             SActr.CargarSA(SA);
             textBox_redactor.Text = SA.redactor;
-            textBox_descripcion.Text=SA.descripcion;
+            textBox_descripcion.Text = SA.descripcion;
             textBox_asunto.Text = SA.asunto;
-            textBox_observacion.Text=SA.observacion;
+            textBox_observacion.Text = SA.observacion;
             dateTime_SA.Value = SA.fechaEntrega;
-            CargarListaDetalleSolicitudAbastecimiento();
+
         }
 
         private void button_actualizar_Click(object sender, EventArgs e)
@@ -348,10 +352,10 @@ namespace sisgaapTestWF
         private void button_eliminar_solicitud_Click(object sender, EventArgs e)
         {
             DetalleSA.codigoSolicitud = DataGridView_VistaPrincipal.CurrentRow.Cells["Solicitud"].Value.ToString();
-            SA.codigoSolicitud= DataGridView_VistaPrincipal.CurrentRow.Cells["Solicitud"].Value.ToString();
+            SA.codigoSolicitud = DataGridView_VistaPrincipal.CurrentRow.Cells["Solicitud"].Value.ToString();
             DetalleSA_Ctr.EliminarAllDetalleSA(DetalleSA);
             SActr.EliminarSA(SA);
-            CargarListaSolicitudAbastecimiento();
+            CargarListaSolicitudProduccion();
         }
     }
 }

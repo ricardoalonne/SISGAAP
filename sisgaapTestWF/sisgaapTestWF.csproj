@@ -52,6 +52,12 @@
     <Compile Include="SupervisorAlmacen.Designer.cs">
       <DependentUpon>SupervisorAlmacen.cs</DependentUpon>
     </Compile>
+    <Compile Include="SupervisorProduccion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SupervisorProduccion.Designer.cs">
+      <DependentUpon>SupervisorProduccion.cs</DependentUpon>
+    </Compile>
     <Compile Include="wmSystem.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -71,6 +77,9 @@
     </Compile>
     <EmbeddedResource Include="SupervisorAlmacen.resx">
       <DependentUpon>SupervisorAlmacen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SupervisorProduccion.resx">
+      <DependentUpon>SupervisorProduccion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="wmSystem.resx">
       <DependentUpon>wmSystem.cs</DependentUpon>
