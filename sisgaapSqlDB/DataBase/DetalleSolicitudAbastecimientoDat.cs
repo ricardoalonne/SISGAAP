@@ -42,7 +42,7 @@ namespace sisgaapSqlDB.DataBase
         }
         public void UpdateDetalle_SA(DetalleSolicitudAbastecimiento objDetalleSA)
         {
-            string update = "UPDATE T_CE_Detalle_Solicitud_Abastecimiento SET cantidad='" + objDetalleSA.cantidadSolicitada + "' WHERE codigoSolicitud='" + objDetalleSA.codigoSolicitud + "' and codigoRepuesto='" + objDetalleSA.codigoRepuesto+"'";
+            string update = "UPDATE T_CE_Detalle_Solicitud_Abastecimiento SET cantidadSolicitada='" + objDetalleSA.cantidadSolicitada + "' WHERE codigoSolicitud='" + objDetalleSA.codigoSolicitud + "' and codigoRepuesto='" + objDetalleSA.codigoRepuesto+"'";
             SqlCommand command = new SqlCommand(update, conexionBD);
             conexionBD.Open();
             command.ExecuteNonQuery();

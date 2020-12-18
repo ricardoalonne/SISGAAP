@@ -42,7 +42,7 @@ namespace sisgaapCoreWF.Controllers
             {
                 objDetalleSA.error = 1; //cantidad invalidad!!
             }
-            objDetalleSA.error = 77;
+            objDetalleSA.error = 88;
             objDetalleSAdat.UpdateDetalle_SA(objDetalleSA);
         }
         public DataSet Detalles_SA_dataset(DetalleSolicitudAbastecimiento detalleSA)

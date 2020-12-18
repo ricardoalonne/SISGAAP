@@ -210,9 +210,16 @@ namespace sisgaapTestWF
                 case 1:
                     MessageBox.Show("ERROR! cantidad invalidad!!");
                     break;
-
+                case 2:
+                    MessageBox.Show("ERROR! Producto existente en el detalle!!");
+                    break;
                 case 77:
                     MessageBox.Show("REGISTRO EXITOSO!!");
+                    textBox_codigo_Repuesto.Clear();
+                    textBox_cantidad_detalle_sa.Clear();
+                    break;
+                case 88:
+                    MessageBox.Show("Actualización EXITOSA!!");
                     textBox_codigo_Repuesto.Clear();
                     textBox_cantidad_detalle_sa.Clear();
                     break;
@@ -221,8 +228,7 @@ namespace sisgaapTestWF
         private void CargarListaDetalleSolicitudAbastecimiento()
         {
             DetalleSA.codigoSolicitud = SA.codigoSolicitud;
-            var listaDetalleSA = DetalleSA_Ctr.Detalle_SA_datatable(DetalleSA);
-            DataGridView_VistaPrincipal.DataSource = listaDetalleSA;
+            dataGridView_detalleSA.DataSource = DetalleSA_Ctr.Detalle_SA_datatable(DetalleSA);
         }
         private void cargarDetalles()
         {
@@ -236,11 +242,11 @@ namespace sisgaapTestWF
         private void button_GuardardetalleSA_Click(object sender, EventArgs e)
         {
             bool correcto = true;
-            if (textBox_cantidad_detalle_sa.Text == "" || textBox_codigo_Repuesto.Text == "")
-            {
-                MessageBox.Show("ERROR!! ESPACIOS EN BLANCO!!");
-                return;
-            }
+            //if (textBox_cantidad_detalle_sa.Text == "" || textBox_codigo_Repuesto.Text == "")
+            //{
+            //    MessageBox.Show("ERROR!! ESPACIOS EN BLANCO!!");
+            //    return;
+            //}
             string letra = "";
             for (int i = 0; i < textBox_cantidad_detalle_sa.Text.Length; i++)
             {
@@ -255,7 +261,7 @@ namespace sisgaapTestWF
                 MessageBox.Show("ERROR!! Se ingresó letras en la cantidad solicitada");
                 return;
             }
-            DetalleSA.codigoSolicitud = dataGridView_detalleSA.CurrentRow.Cells["Solicitud"].Value.ToString();
+            DetalleSA.codigoSolicitud = SA.codigoSolicitud;
             DetalleSA.codigoRepuesto = dataGridView_detalleSA.CurrentRow.Cells["Codigo"].Value.ToString();
             DetalleSA.cantidadSolicitada =Int32.Parse( dataGridView_detalleSA.CurrentRow.Cells["Cantidad"].Value.ToString());
             DetalleSA_Ctr.ActualizarDetalleSA(DetalleSA);
@@ -265,7 +271,7 @@ namespace sisgaapTestWF
 
         private void button_EliminardetalleSA_Click(object sender, EventArgs e)
         {
-            DetalleSA.codigoSolicitud = dataGridView_detalleSA.CurrentRow.Cells["Solicitud"].Value.ToString();
+            DetalleSA.codigoSolicitud = SA.codigoSolicitud;
             DetalleSA_Ctr.EliminarAllDetalleSA(DetalleSA);
             CargarListaDetalleSolicitudAbastecimiento();
         }
