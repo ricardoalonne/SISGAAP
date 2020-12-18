@@ -20,6 +20,7 @@ namespace sisgaapCoreWF.Controllers
         public void RegistrarSA(SolicitudAbastecimiento objSA)
         {
             DateTime fechaEntrega = objSA.fechaEntrega;
+            bool correcto = true;
             if (fechaEntrega <= DateTime.Now)
             {
                 objSA.error = 1;//fecha Invalida!!
@@ -38,6 +39,15 @@ namespace sisgaapCoreWF.Controllers
             else if (objSA.observacion.Length > 50)
             {
                 objSA.error = 4; //observación supero los 50 caracteres!!
+                return;
+            }
+            for (int i = 0; i < objSA.redactor.Length; i++)
+            {
+                correcto = char.IsLetter(objSA.redactor.Trim()[i]);
+            }
+            if (!correcto)
+            {
+                objSA.error = 5;
                 return;
             }
             objSA.error = 77;
@@ -80,6 +90,10 @@ namespace sisgaapCoreWF.Controllers
         public DataTable ListarSolicitudesAbastecimiento()//retorna una tabla con todas las solicitudes de Abastecimiento
         {
             return objSAdat.select_SA();
+        }
+        public string TraerUltimoCodigoSA()
+        {
+             return objSAdat.TraerCodigoSA();
         }
     }
 }

@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using sisgaapCoreWF.Controllers;
 using System.Data.SqlClient;
 using sisgaapCore.Entities;
+using sisgaapCore;
+
 
 namespace sisgaapTestWF
 {
@@ -20,23 +22,29 @@ namespace sisgaapTestWF
         {            
             InitializeComponent();
             panel_Menu.BackColor = Color.FromArgb(125, Color.Black);
+            
         }
         SolicitudAbastecimientoCtr SActr = new SolicitudAbastecimientoCtr();
         DetalleSolicitudAbastecimiento DetalleSA = new DetalleSolicitudAbastecimiento();
         DetalleSolicitudAbastecimientoCtr DetalleSA_Ctr = new DetalleSolicitudAbastecimientoCtr();
-       // SolicitudProduccionCtr SPctr = new SolicitudProduccionCtr();
+        SolicitudAbastecimiento SA = new SolicitudAbastecimiento();
+        
+        SqlCommand cmd;
         private void button_actualizarSA_Click(object sender, EventArgs e)
         {
 
-            if (panel_SupervisorA.Visible == true) { panel_SupervisorA.Visible = false; panel_vista.Visible = false; }
+            if (panel_SupervisorA.Visible == true) { panel_SupervisorA.Visible = false; panel_vista.Visible = false; panel_registro.Visible = false; }
             else
             {
-                panel_SupervisorA.Visible = true; CargarListaSolicitudAbastecimiento();// panel_vista.Visible = false;
+                panel_SupervisorA.Visible = true; CargarListaSolicitudAbastecimiento(); panel_vista.Visible = false;
                 ComboBox_Filtro.Items.Add("Asunto");
                 ComboBox_Filtro.Items.Add("Redactor");
                 ComboBox_Filtro.Items.Add("Emision");
                 ComboBox_Filtro.Items.Add("Entrega");
                 ComboBox_Filtro.Items.Add("Estado");
+                panel_registro.Visible = false;
+                panel_Solicitud.Visible = true;
+                panel_Detalle_Solicitud.Visible = false;
             }
         }
         private void CargarListaSolicitudAbastecimiento()
@@ -63,6 +71,7 @@ namespace sisgaapTestWF
         private void button_visualizarSA_Click(object sender, EventArgs e)
         {
             panel_vista.Visible = true;
+            panel_SupervisorA.Visible = false;
             if (DataGridView_VistaPrincipal.SelectedRows.Count > 0)
             {
                 string fechaE = DataGridView_VistaPrincipal.CurrentRow.Cells["Emision"].Value.ToString();
@@ -81,7 +90,7 @@ namespace sisgaapTestWF
                 textBox_vista.Text = "El código de solicitud es:" + DataGridView_VistaPrincipal.CurrentRow.Cells["Solicitud"].Value.ToString() + "\r\n\n" +
                                      "De asunto es: " + DataGridView_VistaPrincipal.CurrentRow.Cells["Asunto"].Value.ToString() + "\r\n\n\n\n" +
                                      "Redactor: " + DataGridView_VistaPrincipal.CurrentRow.Cells["Redactor"].Value.ToString() + "\r\n\n\n\n\n\n\n" +
-                                     "Fecha Emisión: " + separador[0] + "       " + "Fecha Entrega" + separador1[0] +"\r\n"+"\r\n" +
+                                     "Fecha Emisión: " + separador[0] + "     " + "Fecha Entrega: " + separador1[0] +"\r\n"+"\r\n" +
                                      detalle
                                      ;
             }
@@ -90,6 +99,132 @@ namespace sisgaapTestWF
         private void button_cerrarVista_Click(object sender, EventArgs e)
         {
             panel_vista.Visible = false;
+            panel_SupervisorA.Visible = true;
+        }
+
+        private void button_cancelar_Click(object sender, EventArgs e)
+        {
+            panel_registro.Visible = false;
+        }
+
+        private void button_Continuar_Click(object sender, EventArgs e)
+        {
+            if (textBox_redactor.Text == "" || textBox_asunto.Text == "" )
+            {
+                MessageBox.Show("ERROR!! ESPACIOS EN BLANCO!!");
+                return;
+            }
+            SA.asunto = textBox_asunto.Text;
+            SA.redactor = textBox_redactor.Text;
+            SA.descripcion = textBox_descripcion.Text;
+            SA.observacion = textBox_observacion.Text;
+            SA.fechaEntrega = dateTime_SA.Value;
+            SActr.RegistrarSA(SA);
+            msj(SA);
+            SA.codigoSolicitud= SActr.TraerUltimoCodigoSA();
+            CargarListaDetalleSolicitudAbastecimiento();
+        }
+        public void msj(SolicitudAbastecimiento p)
+        {
+            switch (p.error)
+            {
+                case 1:
+                    MessageBox.Show("ERROR! fecha Invalida!!");
+                    break;
+                case 2:
+                    MessageBox.Show("ERROR! Descripción supero los 50 caracteres!!");
+                    break;
+                case 3:
+                    MessageBox.Show("ERROR! Asunto supero los 50 caracteres!!");
+                    break;
+                case 4:
+                    MessageBox.Show("EERROR! observación supero los 50 caracteres!!");
+                    break;
+                case 5:
+                    MessageBox.Show("EERROR! Redactor tiene números!!");
+                    break;
+                case 77:
+                    MessageBox.Show("REGISTRO EXITOSO!!");
+                    textBox_asunto.Clear();
+                    textBox_redactor.Clear();
+                    textBox_descripcion.Clear();
+                    panel_Solicitud.Visible = false;
+                    panel_Detalle_Solicitud.Visible = true;
+                    break;
+            }
+        }
+        private void panel_registro_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+        
+        private void button_CancelarTodo_Click(object sender, EventArgs e)
+        {
+            DetalleSA.codigoSolicitud = DataGridView_VistaPrincipal.CurrentRow.Cells["Solicitud"].Value.ToString();
+            DetalleSA_Ctr.EliminarAllDetalleSA(DetalleSA);
+            SActr.EliminarSA(SA);
+            panel_Solicitud.Visible = true;
+            panel_Detalle_Solicitud.Visible = false;
+            panel_registro.Visible = false;
+        }
+
+        private void Button_NuevaSolicitud_Click(object sender, EventArgs e)
+        {
+            panel_SupervisorA.Visible = false;
+            panel_registro.Visible = true;
+        }
+
+        private void button_agregar_detalleSA_Click(object sender, EventArgs e)
+        {
+            bool correcto = true;
+            if (textBox_cantidad_detalle_sa.Text == "" || textBox_codigo_Repuesto.Text == "")
+            {
+                MessageBox.Show("ERROR!! ESPACIOS EN BLANCO!!");
+                return;
+            }
+            for (int i = 0; i < textBox_cantidad_detalle_sa.Text.Length; i++)
+            {
+                correcto = char.IsNumber(textBox_cantidad_detalle_sa.Text.Trim()[i]);
+            }
+            if (!correcto)
+            {
+                MessageBox.Show("ERROR!! Se ingresó letras en la cantidad solicitada");
+                return;
+            }
+            DetalleSA.codigoSolicitud = SA.codigoSolicitud;
+            DetalleSA.codigoRepuesto = textBox_codigo_Repuesto.Text;
+            DetalleSA.cantidadSolicitada =Convert.ToInt32( textBox_cantidad_detalle_sa.Text);
+            DetalleSA_Ctr.RegistrarDetalleSA(DetalleSA);
+            msj1(SA);
+            CargarListaDetalleSolicitudAbastecimiento();
+        }
+        public void msj1(SolicitudAbastecimiento p)
+        {
+            switch (p.error)
+            {
+                case 1:
+                    MessageBox.Show("ERROR! cantidad invalidad!!");
+                    break;
+                case 77:
+                    MessageBox.Show("REGISTRO EXITOSO!!");
+                    textBox_codigo_Repuesto.Clear();
+                    textBox_cantidad_detalle_sa.Clear();
+                    break;
+            }
+        }
+        private void CargarListaDetalleSolicitudAbastecimiento()
+        {
+            DetalleSA.codigoSolicitud = SA.codigoSolicitud;
+            var listaDetalleSA = DetalleSA_Ctr.Detalles_SA_dataset(DetalleSA);
+            DataGridView_VistaPrincipal.DataSource = listaDetalleSA;
+        }
+        private void cargarDetalles()
+        {
+            DetalleSA.codigoSolicitud = SA.codigoSolicitud;
+            var listaDetalleSA = DetalleSA_Ctr.Detalles_SA_dataset(DetalleSA);
+            DataGridView_VistaPrincipal.DataSource = listaDetalleSA;
+            // viewDetalle.Columns[viewDetalle.Columns.Count - 1].Visible = false;
+           // viewDetalle.Columns[0].Visible = false;
         }
     }
 }

@@ -32,6 +32,14 @@ namespace sisgaapSqlDB.DataBase
             command.ExecuteNonQuery();
             conexionBD.Close();
         }
+        public void DeleteAllDetalle_SA(DetalleSolicitudAbastecimiento objDetalleSA)
+        {
+            string delete = "DELETE T_CE_Detalle_Solicitud_Abastecimiento WHERE codigoSolicitud='" + objDetalleSA.codigoSolicitud+"'";
+            SqlCommand command = new SqlCommand(delete, conexionBD);
+            conexionBD.Open();
+            command.ExecuteNonQuery();
+            conexionBD.Close();
+        }
         public void UpdateDetalle_SA(DetalleSolicitudAbastecimiento objDetalleSA)
         {
             string update = "UPDATE T_CE_Detalle_Solicitud_Abastecimiento SET cantidad='" + objDetalleSA.cantidadSolicitada + "' WHERE codigoSolicitud='" + objDetalleSA.codigoSolicitud + "' and codigoRepuesto='" + objDetalleSA.codigoRepuesto+"'";

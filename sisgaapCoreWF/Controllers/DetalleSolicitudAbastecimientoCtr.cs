@@ -43,5 +43,9 @@ namespace sisgaapCoreWF.Controllers
         {
             return objDetalleSAdat.DetalleSA_dataset(detalleSA);
         }
+        public void EliminarAllDetalleSA(DetalleSolicitudAbastecimiento objDetalleSA)
+        {
+            objDetalleSAdat.DeleteAllDetalle_SA(objDetalleSA);
+        }
     }
 }

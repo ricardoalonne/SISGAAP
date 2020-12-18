@@ -16,5 +16,6 @@ namespace sisgaapCore{
         public string estado { get; set; }
         public string redactor { get; set; }
         public int error { get; set; }
+        
     }
 }

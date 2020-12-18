@@ -83,6 +83,21 @@ namespace sisgaapSqlDB.DataBase
             conexionBD.Close();
             return dt;
         }
-        
+        public string TraerCodigoSA()
+        {
+            string codigo="";
+            SqlCommand cmd = new SqlCommand("ultimo_codigo_sa ", conexionBD);
+            cmd.CommandType = CommandType.StoredProcedure;
+            conexionBD.Open();
+            SqlDataReader reader = cmd.ExecuteReader();
+            bool hayRegistros = reader.Read();
+            if (hayRegistros)
+            {
+                codigo = (string)reader[0];
+                
+            }
+            conexionBD.Close();
+            return codigo;
+        }
     }
 }
