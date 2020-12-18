@@ -40,7 +40,6 @@ namespace sisgaapSystemWF.Components.Documentos.Solicitud
             this.RadioButton_Produccion = new System.Windows.Forms.RadioButton();
             this.RadioButton_Merma = new System.Windows.Forms.RadioButton();
             this.Panel_Busqueda = new System.Windows.Forms.Panel();
-            this.SearchBar_BarraBusqueda = new sisgaapSystemWF.Components.SISGAAP.SearchBar();
             this.Button_NuevaSolicitud = new System.Windows.Forms.Button();
             this.Button_RefrescarTabla = new System.Windows.Forms.Button();
             this.Button_EliminarSolicitud = new System.Windows.Forms.Button();
@@ -54,6 +53,7 @@ namespace sisgaapSystemWF.Components.Documentos.Solicitud
             this.Panel_Separator = new System.Windows.Forms.Panel();
             this.DataGridView_VistaPrincipal = new System.Windows.Forms.DataGridView();
             this.ToolTip_DetailButton = new System.Windows.Forms.ToolTip(this.components);
+            this.searchInSolicitud_BarraBusqueda = new sisgaapSystemWF.Components.Documentos.Solicitud.SearchInSolicitud();
             this.FlowLayoutPanel_BarraMenu.SuspendLayout();
             this.Panel_Busqueda.SuspendLayout();
             this.Panel_TablaContenido.SuspendLayout();
@@ -167,7 +167,7 @@ namespace sisgaapSystemWF.Components.Documentos.Solicitud
             // 
             // Panel_Busqueda
             // 
-            this.Panel_Busqueda.Controls.Add(this.SearchBar_BarraBusqueda);
+            this.Panel_Busqueda.Controls.Add(this.searchInSolicitud_BarraBusqueda);
             this.Panel_Busqueda.Controls.Add(this.Button_NuevaSolicitud);
             this.Panel_Busqueda.Dock = System.Windows.Forms.DockStyle.Top;
             this.Panel_Busqueda.Location = new System.Drawing.Point(0, 40);
@@ -175,20 +175,10 @@ namespace sisgaapSystemWF.Components.Documentos.Solicitud
             this.Panel_Busqueda.Size = new System.Drawing.Size(800, 40);
             this.Panel_Busqueda.TabIndex = 3;
             // 
-            // SearchBar_BarraBusqueda
-            // 
-            this.SearchBar_BarraBusqueda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.SearchBar_BarraBusqueda.DataSource = null;
-            this.SearchBar_BarraBusqueda.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SearchBar_BarraBusqueda.Location = new System.Drawing.Point(0, 0);
-            this.SearchBar_BarraBusqueda.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.SearchBar_BarraBusqueda.MessageSearchBox = "Buscar en el sistema e internet.";
-            this.SearchBar_BarraBusqueda.Name = "SearchBar_BarraBusqueda";
-            this.SearchBar_BarraBusqueda.Size = new System.Drawing.Size(596, 40);
-            this.SearchBar_BarraBusqueda.TabIndex = 5;
-            // 
             // Button_NuevaSolicitud
             // 
+            this.Button_NuevaSolicitud.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.Button_NuevaSolicitud.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.Button_NuevaSolicitud.FlatAppearance.BorderSize = 0;
             this.Button_NuevaSolicitud.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -240,6 +230,7 @@ namespace sisgaapSystemWF.Components.Documentos.Solicitud
             this.Button_EliminarSolicitud.TabIndex = 6;
             this.ToolTip_DetailButton.SetToolTip(this.Button_EliminarSolicitud, "Eliminar Solicitud");
             this.Button_EliminarSolicitud.UseVisualStyleBackColor = false;
+            this.Button_EliminarSolicitud.Click += new System.EventHandler(this.Button_EliminarSolicitud_Click);
             // 
             // Button_CargarExcelBD
             // 
@@ -296,6 +287,7 @@ namespace sisgaapSystemWF.Components.Documentos.Solicitud
             this.Button_VerSolicitud.TabIndex = 6;
             this.ToolTip_DetailButton.SetToolTip(this.Button_VerSolicitud, "Ver Solicitud");
             this.Button_VerSolicitud.UseVisualStyleBackColor = false;
+            this.Button_VerSolicitud.Click += new System.EventHandler(this.Button_VerSolicitud_Click);
             // 
             // Button_GuardarCambios
             // 
@@ -413,6 +405,21 @@ namespace sisgaapSystemWF.Components.Documentos.Solicitud
             this.DataGridView_VistaPrincipal.Size = new System.Drawing.Size(740, 409);
             this.DataGridView_VistaPrincipal.TabIndex = 2;
             // 
+            // searchInSolicitud_BarraBusqueda
+            // 
+            this.searchInSolicitud_BarraBusqueda.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.searchInSolicitud_BarraBusqueda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.searchInSolicitud_BarraBusqueda.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchInSolicitud_BarraBusqueda.Location = new System.Drawing.Point(0, 0);
+            this.searchInSolicitud_BarraBusqueda.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.searchInSolicitud_BarraBusqueda.MessageSearchBox = "Buscar en el sistema e internet.";
+            this.searchInSolicitud_BarraBusqueda.Name = "searchInSolicitud_BarraBusqueda";
+            this.searchInSolicitud_BarraBusqueda.SearchIn = "";
+            this.searchInSolicitud_BarraBusqueda.Size = new System.Drawing.Size(596, 40);
+            this.searchInSolicitud_BarraBusqueda.TabIndex = 5;
+            // 
             // Solicitud
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
@@ -453,9 +460,9 @@ namespace sisgaapSystemWF.Components.Documentos.Solicitud
         private System.Windows.Forms.Button Button_CargarExcelBD;
         private System.Windows.Forms.Button Button_ExportarExcelDB;
         private System.Windows.Forms.Button Button_GuardarCambios;
-        private SISGAAP.SearchBar SearchBar_BarraBusqueda;
         private System.Windows.Forms.FlowLayoutPanel FlowLayoutPanel_Acciones;
         private System.Windows.Forms.Panel Panel_Separator;
         private System.Windows.Forms.ToolTip ToolTip_DetailButton;
+        private SearchInSolicitud searchInSolicitud_BarraBusqueda;
     }
 }

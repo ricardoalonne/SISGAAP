@@ -21,8 +21,8 @@ namespace sisgaapSystemWF.Components.SISGAAP
 
         private string messageSearchBox = "Buscar en el sistema e internet.";
         private ControlController controlController;
-        private DataGridView dgv;
-        private object dataSource;
+
+        public DataGridView dgv;
 
         private void SearchBar_BackColorChanged(object sender, EventArgs e) {
             this.ComboBox_Filtro.BackColor = this.BackColor;
@@ -36,9 +36,21 @@ namespace sisgaapSystemWF.Components.SISGAAP
 
         private void Button_Buscar_Click(object sender, EventArgs e) => Search();
 
-        private void ComboBox_Filtro_SelectedIndexChanged(object sender, EventArgs e) {
-            //options = database.ConsultColumnLead(ComboBox_Filtro.Text); //Toma el combobox filtro para obtener la columna y guarda todos los elementos de esa columna
-            //controlController.AutoComplete(TextBox_Búsqueda, options);
+        //---------------------------------------------------------------------------------------------
+        public string MessageSearchBox {
+            set {
+                messageSearchBox = value;
+                TextBox_Búsqueda.Text = messageSearchBox;
+            }
+            get => messageSearchBox;
+        }
+
+        public string SearchText{
+            get => TextBox_Búsqueda.Text;
+        }
+
+        public string FilterText{
+            get => ComboBox_Filtro.Text;
         }
 
         //---------------------------------------------------------------------------------------------
@@ -47,21 +59,9 @@ namespace sisgaapSystemWF.Components.SISGAAP
 
         public void RefreshDataGridView() => dgv.Refresh();
 
-        public object DataSource {
-            set => dataSource = value;
-            get => dataSource;
-        }
-
-        public string MessageSearchBox{
-            set { 
-                messageSearchBox = value; 
-                TextBox_Búsqueda.Text = messageSearchBox; 
-            }
-            get => messageSearchBox;
-        }
-
         public void LoadItemsFilter(string[] items){
             controlController.ChangeItems(ComboBox_Filtro, items);
+            ComboBox_Filtro.Text = items[0];
         }
 
         public void SearchBoxInteractive() {
@@ -100,8 +100,7 @@ namespace sisgaapSystemWF.Components.SISGAAP
 
         }
 
-        public void Search() { 
-
+        public virtual void Search() {
         }
     }
 }

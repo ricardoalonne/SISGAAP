@@ -36,6 +36,7 @@ namespace sisgaapSystemWF.Views.Documentos
             this.Panel_Opciones = new System.Windows.Forms.Panel();
             this.Button_GuardarComo = new System.Windows.Forms.Button();
             this.Button_Cerrar = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.Panel_Contenedor.SuspendLayout();
             this.TableLayoutPanel_Documento.SuspendLayout();
             this.Panel_Opciones.SuspendLayout();
@@ -83,6 +84,7 @@ namespace sisgaapSystemWF.Views.Documentos
             // Panel_Opciones
             // 
             this.Panel_Opciones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.Panel_Opciones.Controls.Add(this.panel1);
             this.Panel_Opciones.Controls.Add(this.Button_GuardarComo);
             this.Panel_Opciones.Controls.Add(this.Button_Cerrar);
             this.Panel_Opciones.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -133,6 +135,17 @@ namespace sisgaapSystemWF.Views.Documentos
             this.Button_Cerrar.UseVisualStyleBackColor = false;
             this.Button_Cerrar.Click += new System.EventHandler(this.Button_Cerrar_Click);
             // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Location = new System.Drawing.Point(146, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(620, 45);
+            this.panel1.TabIndex = 4;
+            this.panel1.Visible = false;
+            // 
             // VisualizarDocumento
             // 
             this.AllowDrop = true;
@@ -166,5 +179,6 @@ namespace sisgaapSystemWF.Views.Documentos
         private System.Windows.Forms.Panel Panel_Opciones;
         private System.Windows.Forms.Button Button_GuardarComo;
         private System.Windows.Forms.Button Button_Cerrar;
+        private System.Windows.Forms.Panel panel1;
     }
 }

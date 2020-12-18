@@ -36,8 +36,12 @@
     <ApplicationIcon>WM_icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="PeinUIWFA">
+      <HintPath>..\.dll\PeinUI for Windows Forms Application\PeinUIWFA.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -54,11 +58,47 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Complements\Console\SisgaapConsole.cs" />
+    <Compile Include="Components\Documentos\Solicitud\Abastecimiento\RedactarSolicitudAbastecimiento.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\Documentos\Solicitud\Abastecimiento\RedactarSolicitudAbastecimiento.Designer.cs">
+      <DependentUpon>RedactarSolicitudAbastecimiento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\Documentos\Solicitud\Produccion\RedactarSolicitudProduccion.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\Documentos\Solicitud\Produccion\RedactarSolicitudProduccion.Designer.cs">
+      <DependentUpon>RedactarSolicitudProduccion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\Documentos\Solicitud\RedactarSolicitud.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\Documentos\Solicitud\RedactarSolicitud.Designer.cs">
+      <DependentUpon>RedactarSolicitud.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\Documentos\Solicitud\SearchInSolicitud.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\Documentos\Solicitud\SearchInSolicitud.Designer.cs">
+      <DependentUpon>SearchInSolicitud.cs</DependentUpon>
+    </Compile>
     <Compile Include="Components\Documentos\Solicitud\Solicitud.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Components\Documentos\Solicitud\Solicitud.Designer.cs">
       <DependentUpon>Solicitud.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\SISGAAP\CategoryPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\SISGAAP\CategoryPanel.Designer.cs">
+      <DependentUpon>CategoryPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\SISGAAP\Crud.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\SISGAAP\Crud.Designer.cs">
+      <DependentUpon>Crud.cs</DependentUpon>
     </Compile>
     <Compile Include="Components\SISGAAP\SearchBar.cs">
       <SubType>UserControl</SubType>
@@ -71,6 +111,12 @@
     </Compile>
     <Compile Include="Views\Documentos\Documentos.Designer.cs">
       <DependentUpon>Documentos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Documentos\RedactarDocumento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Documentos\RedactarDocumento.Designer.cs">
+      <DependentUpon>RedactarDocumento.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Documentos\VisualizarDocumento.cs">
       <SubType>Form</SubType>
@@ -86,8 +132,23 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Components\Documentos\Solicitud\Abastecimiento\RedactarSolicitudAbastecimiento.resx">
+      <DependentUpon>RedactarSolicitudAbastecimiento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\Documentos\Solicitud\Produccion\RedactarSolicitudProduccion.resx">
+      <DependentUpon>RedactarSolicitudProduccion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\Documentos\Solicitud\RedactarSolicitud.resx">
+      <DependentUpon>RedactarSolicitud.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Components\Documentos\Solicitud\Solicitud.resx">
       <DependentUpon>Solicitud.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\SISGAAP\CategoryPanel.resx">
+      <DependentUpon>CategoryPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\SISGAAP\Crud.resx">
+      <DependentUpon>Crud.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Components\SISGAAP\SearchBar.resx">
       <DependentUpon>SearchBar.cs</DependentUpon>
@@ -103,6 +164,9 @@
     </Compile>
     <EmbeddedResource Include="Views\Documentos\Documentos.resx">
       <DependentUpon>Documentos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Documentos\RedactarDocumento.resx">
+      <DependentUpon>RedactarDocumento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Documentos\VisualizarDocumento.resx">
       <DependentUpon>VisualizarDocumento.cs</DependentUpon>
@@ -139,9 +203,7 @@
     <Folder Include="Components\Documentos\Orden\Compra\" />
     <Folder Include="Components\Documentos\Orden\Merma\" />
     <Folder Include="Components\Documentos\Orden\Produccion\" />
-    <Folder Include="Components\Documentos\Solicitud\Abastecimiento\" />
     <Folder Include="Components\Documentos\Solicitud\Merma\" />
-    <Folder Include="Components\Documentos\Solicitud\Produccion\" />
     <Folder Include="Components\Inventario\" />
     <Folder Include="Components\Login\" />
     <Folder Include="Components\Pedidos\" />

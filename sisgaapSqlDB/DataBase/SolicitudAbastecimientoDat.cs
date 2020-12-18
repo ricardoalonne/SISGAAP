@@ -67,6 +67,10 @@ namespace sisgaapSqlDB.DataBase
             dt = new DataTable();
             daAdaptador.Fill(dt);
             conexionBD.Close();
+            foreach (DataRow row in dt.Rows){
+                row["Emision"] = DateTime.Parse(row["Emision"].ToString()).ToShortDateString();
+                row["Entrega"] = DateTime.Parse(row["Entrega"].ToString()).ToShortDateString();
+            }
             return dt;
         }
         public DataTable select_SAxCB(string dato,string letra)

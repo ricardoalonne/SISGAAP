@@ -22,7 +22,7 @@ namespace sisgaapSystemWF
         private Documentos documentos;
 
         private void Button_DocumentosSA_Click(object sender, EventArgs e){
-            documentos = new Documentos("Solicitud","Abastecimiento");
+            documentos = new Documentos("Solicitud", "Abastecimiento");
             documentos.Show();
         }
 
@@ -35,5 +35,7 @@ namespace sisgaapSystemWF
             VisualizarDocumento vdoc = new VisualizarDocumento();
             vdoc.Show();
         }
+
+        
     }
 }

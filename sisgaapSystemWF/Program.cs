@@ -17,6 +17,7 @@ namespace sisgaapSystemWF
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new wmSystem());
+            //Application.Run(new sisgaapSystemWF.Views.Documentos.Documentos("Solicitud", "Abastecimiento"));
         }
     }
 }

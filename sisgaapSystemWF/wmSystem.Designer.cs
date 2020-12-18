@@ -81,7 +81,7 @@ namespace sisgaapSystemWF
             this.Button_VisualizarDocumento.Name = "Button_VisualizarDocumento";
             this.Button_VisualizarDocumento.Size = new System.Drawing.Size(230, 43);
             this.Button_VisualizarDocumento.TabIndex = 8;
-            this.Button_VisualizarDocumento.Text = "Documentos: Visualizar Documento";
+            this.Button_VisualizarDocumento.Text = "Visualizar Documento";
             this.Button_VisualizarDocumento.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Button_VisualizarDocumento.UseVisualStyleBackColor = false;
             this.Button_VisualizarDocumento.Click += new System.EventHandler(this.Button_VisualizarDocumento_Click);

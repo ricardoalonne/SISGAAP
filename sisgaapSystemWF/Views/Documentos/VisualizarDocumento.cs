@@ -22,20 +22,12 @@ namespace sisgaapSystemWF.Views.Documentos
             InitializeComponent();
         }
 
-        private string documento = "";
+        private string documento = "", documentName = "documentoWM";
         private PDFGenerator docpdf;
+        private bool landscape = false;
 
         private void VisualizarDocumento_Load(object sender, EventArgs e){
             RichTextBox_Documento.Select(RichTextBox_Documento.Text.Length, 0);
-        }
-
-        public string Documento {
-            set {
-                documento = value;
-                RichTextBox_Documento.Text = documento;
-                RichTextBox_Documento.Select(RichTextBox_Documento.Text.Length, 0);
-            }
-            get => documento;
         }
 
         private void VisualizarDocumento_DragEnter(object sender, DragEventArgs e){
@@ -58,19 +50,20 @@ namespace sisgaapSystemWF.Views.Documentos
                 MessageBox.Show("Actualmente el sistema no soporta el abrir archivos PDF y DOCX.", "Incompatibilidad con .docx y .pdf", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
-
         private void Button_GuardarComo_Click(object sender, EventArgs e){
             SaveFileDialog svd = new SaveFileDialog {
                 Title = "Documentos - Guardar Como",
                 Filter = "Archivo Documentos|*.pdf;*.doc;*.docx;*.txt;*.wmdoc",
                 InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments),
-                FileName = "documentoWM",
+                FileName = documentName,
                 AddExtension = true,
             };
             try {
                 if (svd.ShowDialog() == DialogResult.OK) {
                     if (svd.FileName.EndsWith(".pdf")){
                         docpdf = new PDFGenerator(RichTextBox_Documento.Text, svd.FileName);
+                        docpdf.Font(RichTextBox_Documento.Font);
+                        docpdf.Landscape(landscape);
                         docpdf.Print();
                     }
                     else {
@@ -91,5 +84,31 @@ namespace sisgaapSystemWF.Views.Documentos
         }
 
         private void Button_Cerrar_Click(object sender, EventArgs e) => this.Close();
+
+        //---------------------------------------------------------------------------------------------------------------------------------------
+        public Font DocumentFont {
+            get => RichTextBox_Documento.Font;
+            set => RichTextBox_Documento.Font = value;
+        }
+
+        public string Documento {
+            set {
+                documento = value;
+                RichTextBox_Documento.Text = documento;
+                RichTextBox_Documento.Select(RichTextBox_Documento.Text.Length, 0);
+            }
+            get => documento;
+        }
+        
+        public string DocumentName {
+            set => documentName = value;
+            get => documentName;
+        }
+
+        public bool Landscape{
+            set => landscape = value;
+            get => landscape;
+        }
+
     }
 }

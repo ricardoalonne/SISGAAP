@@ -73,12 +73,9 @@ namespace sisgaapTestWF
         {
             panel_vista.Visible = true;
             panel_SupervisorA.Visible = false;
-            if (DataGridView_VistaPrincipal.SelectedRows.Count > 0)
-            {
-                string fechaE = DataGridView_VistaPrincipal.CurrentRow.Cells["Emision"].Value.ToString();
-                string[] separador = fechaE.Split(' ');
-                string fechaEt = DataGridView_VistaPrincipal.CurrentRow.Cells["Entrega"].Value.ToString();
-                string[] separador1 = fechaEt.Split(' ');
+            if (DataGridView_VistaPrincipal.SelectedRows.Count > 0){
+                string fechaEmision = DateTime.Parse(DataGridView_VistaPrincipal.CurrentRow.Cells["Emision"].Value.ToString()).ToShortDateString();
+                string fechaEntrega = DateTime.Parse(DataGridView_VistaPrincipal.CurrentRow.Cells["Entrega"].Value.ToString()).ToShortDateString();
                 DetalleSA.codigoSolicitud = DataGridView_VistaPrincipal.CurrentRow.Cells["Solicitud"].Value.ToString();
                 int count = DetalleSA_Ctr.Detalles_SA_dataset(DetalleSA).Tables[0].Rows.Count;
                 string detalle = string.Format("{0,-15} {1,-30} {2,-10} {3,-10} {4,4}","Codigo","Nombre","Marca","Modelo","Cantidad") + "\r\n";
@@ -92,7 +89,7 @@ namespace sisgaapTestWF
                 textBox_vista.Text = "El código de solicitud es:" + DataGridView_VistaPrincipal.CurrentRow.Cells["Solicitud"].Value.ToString() + "\r\n\n" +
                                      "De asunto es: " + DataGridView_VistaPrincipal.CurrentRow.Cells["Asunto"].Value.ToString() + "\r\n\n\n\n" +
                                      "Redactor: " + DataGridView_VistaPrincipal.CurrentRow.Cells["Redactor"].Value.ToString() + "\r\n\n\n\n\n\n\n" +
-                                     "Fecha Emisión: " + separador[0] + "     " + "Fecha Entrega: " + separador1[0] +"\r\n"+"\r\n" +
+                                     "Fecha Emisión: " + fechaEmision + "     " + "Fecha Entrega: " + fechaEntrega + "\r\n"+"\r\n" +
                                      detalle
                                      ;
             }
