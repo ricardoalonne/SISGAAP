@@ -89,6 +89,7 @@ namespace sisgaapTestWF
             this.buttonCerrar.TabIndex = 0;
             this.buttonCerrar.Text = "X";
             this.buttonCerrar.UseVisualStyleBackColor = true;
+            this.buttonCerrar.Click += new System.EventHandler(this.buttonCerrar_Click);
             // 
             // panel_Usuario
             // 
@@ -104,10 +105,10 @@ namespace sisgaapTestWF
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(984, 561);
-            this.Controls.Add(this.panel_Usuario);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.buttonSP);
             this.Controls.Add(this.buttonSA);
+            this.Controls.Add(this.panel_Usuario);
             this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);

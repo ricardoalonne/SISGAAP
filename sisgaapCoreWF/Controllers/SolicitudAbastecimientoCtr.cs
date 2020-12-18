@@ -80,7 +80,7 @@ namespace sisgaapCoreWF.Controllers
                 objSA.error = 4; //observación supero los 50 caracteres!!
                 return;
             }
-            objSA.error = 77;
+            objSA.error = 88;
             objSAdat.UpdateSolicitudAbastecimiento(objSA);
         }
         public DataTable ConsultaSolicitudAbastecimiento(string dato, string letra)
@@ -94,6 +94,14 @@ namespace sisgaapCoreWF.Controllers
         public string TraerUltimoCodigoSA()
         {
              return objSAdat.TraerCodigoSA();
+        }
+        public void CargarUltimoSA(SolicitudAbastecimiento objSA)
+        {
+            objSAdat.ObtenerUltimoSA(objSA);
+        }
+        public void CargarSA(SolicitudAbastecimiento objSA)
+        {
+            objSAdat.ObtenerSA(objSA);
         }
     }
 }

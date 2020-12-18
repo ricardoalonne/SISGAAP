@@ -32,7 +32,7 @@ namespace sisgaapSqlDB.DataBase
         }
         public void UpdateSolicitudAbastecimiento(SolicitudAbastecimiento objSA)
         {
-            string update = "UPDATE T_CE_Solicitud_Abastecimiento SET asunto='" + objSA.asunto + "', observacion='" + objSA.observacion +",descripcion='"+objSA.descripcion+ "', fechaEntrega='" + objSA.fechaEntrega+"' Where codigoSolicitud='"+objSA.codigoSolicitud+"'";
+            string update = "UPDATE T_CE_Solicitud_Abastecimiento SET asunto='" + objSA.asunto + "', observacion='" + objSA.observacion +"',descripcion='"+objSA.descripcion+ "', fechaEntrega='" + objSA.fechaEntrega.Date.ToString("yyyy/MM/dd")+"' Where codigoSolicitud='"+objSA.codigoSolicitud+"'";
             SqlCommand command = new SqlCommand(update, conexionBD);
             conexionBD.Open();
             command.ExecuteNonQuery();
@@ -98,6 +98,41 @@ namespace sisgaapSqlDB.DataBase
             }
             conexionBD.Close();
             return codigo;
+        }
+        public void ObtenerSA(SolicitudAbastecimiento objsa)
+        {
+            SqlCommand cmd = new SqlCommand("SELECT * from T_CE_Solicitud_Abastecimiento where codigoSolicitud='"+objsa.codigoSolicitud+"'", conexionBD);
+            conexionBD.Open();
+            SqlDataReader reader = cmd.ExecuteReader();
+            bool hayRegistros = reader.Read();
+            if (hayRegistros)
+            {
+                objsa.asunto = (string)reader[1];
+                objsa.redactor = (string)reader[8];
+                objsa.descripcion = (string)reader[2];
+                objsa.observacion = (string)reader[5];
+                objsa.fechaEntrega = (DateTime)reader[4];
+
+            }
+            conexionBD.Close();
+        }
+        public void ObtenerUltimoSA(SolicitudAbastecimiento objsa)
+        {
+            SqlCommand cmd = new SqlCommand("ultimo_codigo_sa ", conexionBD);
+            cmd.CommandType = CommandType.StoredProcedure;
+            conexionBD.Open();
+            SqlDataReader reader = cmd.ExecuteReader();
+            bool hayRegistros = reader.Read();
+            if (hayRegistros)
+            {
+                objsa.asunto = (string)reader[1];
+                objsa.redactor = (string)reader[8];
+                objsa.descripcion = (string)reader[2];
+                objsa.observacion = (string)reader[5];
+                objsa.fechaEntrega = (DateTime)reader[4];
+
+            }
+            conexionBD.Close();
         }
     }
 }

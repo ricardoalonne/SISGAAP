@@ -33,5 +33,10 @@ namespace sisgaapTestWF
             this.panel_Usuario.Tag = fh;
             fh.Show();
         }
+
+        private void buttonCerrar_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
