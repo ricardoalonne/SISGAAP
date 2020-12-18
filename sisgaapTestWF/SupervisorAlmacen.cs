@@ -253,6 +253,8 @@ namespace sisgaapTestWF
         {
             DetalleSA.codigoSolicitud = SA.codigoSolicitud;
             dataGridView_detalleSA.DataSource = DetalleSA_Ctr.Detalle_SA_datatable(DetalleSA);
+            dataGridView_detalleSA.Columns[0].ReadOnly = true;
+            dataGridView_detalleSA.Columns[1].ReadOnly = true;
         }
         private void cargarDetalles()
         {
@@ -304,6 +306,7 @@ namespace sisgaapTestWF
         {
             panel_registro.Visible = false;
             panel_SupervisorA.Visible = true;
+            CargarListaSolicitudAbastecimiento();
         }
 
         private void button_modificar_solicitud_Click(object sender, EventArgs e)
@@ -319,7 +322,7 @@ namespace sisgaapTestWF
             textBox_asunto.Text = SA.asunto;
             textBox_observacion.Text=SA.observacion;
             dateTime_SA.Value = SA.fechaEntrega;
-
+            CargarListaDetalleSolicitudAbastecimiento();
         }
 
         private void button_actualizar_Click(object sender, EventArgs e)

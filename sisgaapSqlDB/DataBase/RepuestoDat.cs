@@ -97,6 +97,7 @@ namespace sisgaapSqlDB.DataBase
                 objRepuesto.cantidad = (int)reader[7];
                 objRepuesto.cantidadMinima = (int)reader[8];
                 objRepuesto.calidad = (string)reader[9];
+                objRepuesto.condicion = (bool)reader[10];
                 objRepuesto.codigoCategoria = (string)reader[11];
             }
             conexionBD.Close();
