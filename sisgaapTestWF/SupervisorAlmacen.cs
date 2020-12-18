@@ -176,10 +176,18 @@ namespace sisgaapTestWF
 
         private void button_agregar_detalleSA_Click(object sender, EventArgs e)
         {
+            Repuesto objRepuesto = new Repuesto();
+            RepuestoCtr objRepuestoCtr = new RepuestoCtr();
             bool correcto = true;
             if (textBox_cantidad_detalle_sa.Text == "" || textBox_codigo_Repuesto.Text == "")
             {
                 MessageBox.Show("ERROR!! ESPACIOS EN BLANCO!!");
+                return;
+            }
+            objRepuesto.codigoRepuesto = textBox_codigo_Repuesto.Text;
+            if (!objRepuestoCtr.ExistenciaRepuesto(objRepuesto))
+            {
+                MessageBox.Show("ERROR!! REPUESTO INEXISTENTE!!");
                 return;
             }
             string letra = "";

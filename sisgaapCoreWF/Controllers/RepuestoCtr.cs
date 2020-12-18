@@ -86,5 +86,9 @@ namespace sisgaapCoreWF.Controllers
         {
             return objRepuestoDat.DTableSelectAllRepuestos();
         }
+        public bool ExistenciaRepuesto(Repuesto objRepuesto)
+        {
+            return objRepuestoDat.SelectRepuestoxCodigo(objRepuesto);
+        }
     }
 }
