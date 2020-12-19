@@ -98,5 +98,19 @@ namespace sisgaapSqlDB.DataBase
             conexionBD.Close();
             return hayRegistros;
         }
+        public bool SelectCodigoSAxDetalleSP(DetalleSolicitudProduccion objDetalleSP)
+        {
+            string Select = "select * from T_CE_Detalle_Solicitud_Produccion WHERE codigoSolicitud='" + objDetalleSP.codigoSolicitud + "' and T_CE_Detalle_Solicitud_Abastecimiento_codigoSolicitud='"+objDetalleSP.Detalle_Solicitud_Abastecimiento_codigoSolicitud+"'";
+            SqlCommand unComando = new SqlCommand(Select, conexionBD);
+            conexionBD.Open();
+            SqlDataReader reader = unComando.ExecuteReader();
+            bool hayRegistros = reader.Read();
+            if (hayRegistros)
+            {
+                objDetalleSP.codigoRepuesto = (string)reader[2];
+            }
+            conexionBD.Close();
+            return hayRegistros;
+        }
     }
 }

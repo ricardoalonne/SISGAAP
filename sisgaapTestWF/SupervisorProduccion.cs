@@ -115,6 +115,7 @@ namespace sisgaapTestWF
 
         private void button_Continuar_Click(object sender, EventArgs e)
         {
+            SolicitudAbastecimientoCtr SActr = new SolicitudAbastecimientoCtr();
             
             if (textBox_redactor.Text == "" || textBox_asunto.Text == "")
             {
@@ -125,6 +126,11 @@ namespace sisgaapTestWF
             if (!SActr.ExistenciaSolicitud(SA))
             {
                 MessageBox.Show("ERROR!! SOLICITUD INEXISTENTE!!");
+                return;
+            }
+            else if (SActr.ExisteSP_con_SA(SA))
+            {
+                MessageBox.Show("ERROR!! YA SE ELABORO UNA SOLICITUD DE PRODUCCIÓN CON EL CODIGO DE SOLICITUD ["+SA.codigoSolicitud+"]!!");
                 return;
             }
             SP.asunto = textBox_asunto.Text;

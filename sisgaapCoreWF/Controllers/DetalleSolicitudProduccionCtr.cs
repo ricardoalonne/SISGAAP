@@ -57,7 +57,9 @@ namespace sisgaapCoreWF.Controllers
         {
             objDetalleSPdat.DeleteAllDetalle_SP(objDetalleSP);
         }
-
-        
+        public bool ExistenciaSA_SP(DetalleSolicitudProduccion objDetalleSP)
+        {
+            return objDetalleSPdat.SelectCodigoSAxDetalleSP(objDetalleSP);
+        }
     }
 }

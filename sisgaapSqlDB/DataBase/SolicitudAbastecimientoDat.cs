@@ -159,5 +159,19 @@ namespace sisgaapSqlDB.DataBase
             conexionBD.Close();
             return hayRegistros;
         }
+        public bool SelectCodigoSAxSP(SolicitudAbastecimiento objsa)
+        {
+            string Select = "select * from T_CE_Detalle_Solicitud_Produccion WHERE T_CE_Detalle_Solicitud_Abastecimiento_codigoSolicitud='" + objsa.codigoSolicitud + "'";
+            SqlCommand unComando = new SqlCommand(Select, conexionBD);
+            conexionBD.Open();
+            SqlDataReader reader = unComando.ExecuteReader();
+            bool hayRegistros = reader.Read();
+            if (hayRegistros)
+            {
+                objsa.codigoSolicitud = (string)reader[3];
+            }
+            conexionBD.Close();
+            return hayRegistros;
+        }
     }
 }

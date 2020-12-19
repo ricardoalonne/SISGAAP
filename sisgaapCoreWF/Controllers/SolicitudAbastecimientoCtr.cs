@@ -107,5 +107,9 @@ namespace sisgaapCoreWF.Controllers
         {
             return objSAdat.SelectSolicitudxCodigo(objSA);
         }
+        public bool ExisteSP_con_SA(SolicitudAbastecimiento objSA)
+        {
+            return objSAdat.SelectCodigoSAxSP(objSA);
+        }
     }
 }

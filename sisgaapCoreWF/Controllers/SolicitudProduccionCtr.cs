@@ -83,6 +83,6 @@ namespace sisgaapCoreWF.Controllers
         public string TraerUltimoCodigoSP()
         {
             return objSPdat.TraerCodigoSP();
-        }
+        }       
     }
 }
