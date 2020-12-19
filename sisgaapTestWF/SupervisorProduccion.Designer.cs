@@ -29,11 +29,15 @@ namespace sisgaapTestWF
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle37 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle38 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle39 = new System.Windows.Forms.DataGridViewCellStyle();
             this.button_actualizarSA = new System.Windows.Forms.Button();
             this.panel_Menu = new System.Windows.Forms.Panel();
+            this.button_Registrar = new System.Windows.Forms.Button();
+            this.button_actualizar_todo = new System.Windows.Forms.Button();
+            this.button_GuardardetalleSA = new System.Windows.Forms.Button();
+            this.button_EliminardetalleSA = new System.Windows.Forms.Button();
             this.panel_SupervisorA = new System.Windows.Forms.Panel();
             this.button_eliminar_solicitud = new System.Windows.Forms.Button();
             this.button_guardar_tabla = new System.Windows.Forms.Button();
@@ -47,21 +51,30 @@ namespace sisgaapTestWF
             this.DataGridView_VistaPrincipal = new System.Windows.Forms.DataGridView();
             this.button_visualizarSA = new System.Windows.Forms.Button();
             this.panel_registro = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button = new System.Windows.Forms.Button();
             this.panel_Detalle_Solicitud = new System.Windows.Forms.Panel();
+            this.panel_agregar_detalle = new System.Windows.Forms.Panel();
+            this.button_restablecer = new System.Windows.Forms.Button();
+            this.button_producir = new System.Windows.Forms.Button();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.textBox_cantidad_sugerida = new System.Windows.Forms.TextBox();
+            this.textBox_cantidad_detalle_sa = new System.Windows.Forms.TextBox();
+            this.textBox_modelo_repuesto = new System.Windows.Forms.TextBox();
+            this.textBox_marca_repuesto = new System.Windows.Forms.TextBox();
+            this.textBox_codigo_repuesto = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.button_continuar_detalle = new System.Windows.Forms.Button();
             this.button_agregar_detalleSA = new System.Windows.Forms.Button();
             this.dataGridView_detalleSA = new System.Windows.Forms.DataGridView();
-            this.button_EliminardetalleSA = new System.Windows.Forms.Button();
-            this.button_GuardardetalleSA = new System.Windows.Forms.Button();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.textBox_cantidad_detalle_sa = new System.Windows.Forms.TextBox();
             this.button_CancelarTodo = new System.Windows.Forms.Button();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.textBox_codigo_Repuesto = new System.Windows.Forms.TextBox();
-            this.button_actualizar_todo = new System.Windows.Forms.Button();
-            this.button_Registrar = new System.Windows.Forms.Button();
             this.panel_Solicitud = new System.Windows.Forms.Panel();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.textBox_solicitud_abastecimiento = new System.Windows.Forms.TextBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.textBox_observacion = new System.Windows.Forms.TextBox();
             this.button_cancelar = new System.Windows.Forms.Button();
@@ -72,11 +85,20 @@ namespace sisgaapTestWF
             this.textBox_asunto = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.textBox_redactor = new System.Windows.Forms.TextBox();
-            this.button_actualizar = new System.Windows.Forms.Button();
             this.button_Continuar = new System.Windows.Forms.Button();
+            this.button_actualizar = new System.Windows.Forms.Button();
+            this.panel_produccion = new System.Windows.Forms.Panel();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.dataGridView_produccion = new System.Windows.Forms.DataGridView();
+            this.button5 = new System.Windows.Forms.Button();
             this.panel_vista = new System.Windows.Forms.Panel();
             this.button_cerrarVista = new System.Windows.Forms.Button();
             this.textBox_vista = new System.Windows.Forms.TextBox();
+            this.button_producir_todo = new System.Windows.Forms.Button();
+            this.button_cancelar_produccion = new System.Windows.Forms.Button();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.textBox_costo_producir = new System.Windows.Forms.TextBox();
             this.panel_Menu.SuspendLayout();
             this.panel_SupervisorA.SuspendLayout();
             this.group_Busqueda.SuspendLayout();
@@ -84,15 +106,19 @@ namespace sisgaapTestWF
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView_VistaPrincipal)).BeginInit();
             this.panel_registro.SuspendLayout();
             this.panel_Detalle_Solicitud.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_detalleSA)).BeginInit();
+            this.panel_agregar_detalle.SuspendLayout();
             this.groupBox4.SuspendLayout();
-            this.groupBox6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_detalleSA)).BeginInit();
             this.panel_Solicitud.SuspendLayout();
+            this.groupBox7.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.panel_produccion.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_produccion)).BeginInit();
             this.panel_vista.SuspendLayout();
+            this.groupBox6.SuspendLayout();
             this.SuspendLayout();
             // 
             // button_actualizarSA
@@ -114,11 +140,55 @@ namespace sisgaapTestWF
             // 
             this.panel_Menu.BackColor = System.Drawing.Color.Green;
             this.panel_Menu.Controls.Add(this.button_actualizarSA);
+            this.panel_Menu.Controls.Add(this.button_Registrar);
+            this.panel_Menu.Controls.Add(this.button_actualizar_todo);
             this.panel_Menu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel_Menu.Location = new System.Drawing.Point(0, 0);
             this.panel_Menu.Name = "panel_Menu";
             this.panel_Menu.Size = new System.Drawing.Size(111, 498);
             this.panel_Menu.TabIndex = 1;
+            // 
+            // button_Registrar
+            // 
+            this.button_Registrar.Location = new System.Drawing.Point(1, 143);
+            this.button_Registrar.Name = "button_Registrar";
+            this.button_Registrar.Size = new System.Drawing.Size(107, 25);
+            this.button_Registrar.TabIndex = 5;
+            this.button_Registrar.Text = "Registrar";
+            this.button_Registrar.UseVisualStyleBackColor = true;
+            this.button_Registrar.Visible = false;
+            this.button_Registrar.Click += new System.EventHandler(this.button_Registrar_Click);
+            // 
+            // button_actualizar_todo
+            // 
+            this.button_actualizar_todo.Location = new System.Drawing.Point(1, 112);
+            this.button_actualizar_todo.Name = "button_actualizar_todo";
+            this.button_actualizar_todo.Size = new System.Drawing.Size(107, 25);
+            this.button_actualizar_todo.TabIndex = 10;
+            this.button_actualizar_todo.Text = "Actualizar";
+            this.button_actualizar_todo.UseVisualStyleBackColor = true;
+            this.button_actualizar_todo.Visible = false;
+            this.button_actualizar_todo.Click += new System.EventHandler(this.button_actualizar_todo_Click);
+            // 
+            // button_GuardardetalleSA
+            // 
+            this.button_GuardardetalleSA.Location = new System.Drawing.Point(318, 319);
+            this.button_GuardardetalleSA.Name = "button_GuardardetalleSA";
+            this.button_GuardardetalleSA.Size = new System.Drawing.Size(107, 25);
+            this.button_GuardardetalleSA.TabIndex = 6;
+            this.button_GuardardetalleSA.Text = "Guardar";
+            this.button_GuardardetalleSA.UseVisualStyleBackColor = true;
+            this.button_GuardardetalleSA.Click += new System.EventHandler(this.button_GuardardetalleSA_Click);
+            // 
+            // button_EliminardetalleSA
+            // 
+            this.button_EliminardetalleSA.Location = new System.Drawing.Point(185, 319);
+            this.button_EliminardetalleSA.Name = "button_EliminardetalleSA";
+            this.button_EliminardetalleSA.Size = new System.Drawing.Size(107, 25);
+            this.button_EliminardetalleSA.TabIndex = 7;
+            this.button_EliminardetalleSA.Text = "Eliminar";
+            this.button_EliminardetalleSA.UseVisualStyleBackColor = true;
+            this.button_EliminardetalleSA.Click += new System.EventHandler(this.button_EliminardetalleSA_Click);
             // 
             // panel_SupervisorA
             // 
@@ -259,7 +329,7 @@ namespace sisgaapTestWF
             this.Button_NuevaSolicitud.Name = "Button_NuevaSolicitud";
             this.Button_NuevaSolicitud.Size = new System.Drawing.Size(196, 33);
             this.Button_NuevaSolicitud.TabIndex = 5;
-            this.Button_NuevaSolicitud.Text = "Solicitud Abastecimiento";
+            this.Button_NuevaSolicitud.Text = "Solicitud Produccion";
             this.Button_NuevaSolicitud.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Button_NuevaSolicitud.UseVisualStyleBackColor = false;
             this.Button_NuevaSolicitud.Click += new System.EventHandler(this.Button_NuevaSolicitud_Click);
@@ -271,35 +341,35 @@ namespace sisgaapTestWF
             this.DataGridView_VistaPrincipal.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
             this.DataGridView_VistaPrincipal.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DataGridView_VistaPrincipal.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(210)))), ((int)(((byte)(210)))));
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DataGridView_VistaPrincipal.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle37.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle37.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(210)))), ((int)(((byte)(210)))));
+            dataGridViewCellStyle37.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle37.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle37.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle37.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle37.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DataGridView_VistaPrincipal.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle37;
             this.DataGridView_VistaPrincipal.ColumnHeadersHeight = 35;
             this.DataGridView_VistaPrincipal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DataGridView_VistaPrincipal.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle38.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle38.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle38.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle38.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle38.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle38.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle38.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DataGridView_VistaPrincipal.DefaultCellStyle = dataGridViewCellStyle38;
             this.DataGridView_VistaPrincipal.EnableHeadersVisualStyles = false;
             this.DataGridView_VistaPrincipal.GridColor = System.Drawing.Color.Silver;
             this.DataGridView_VistaPrincipal.Location = new System.Drawing.Point(12, 165);
             this.DataGridView_VistaPrincipal.Name = "DataGridView_VistaPrincipal";
             this.DataGridView_VistaPrincipal.RowHeadersVisible = false;
             this.DataGridView_VistaPrincipal.RowHeadersWidth = 51;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(164)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DataGridView_VistaPrincipal.RowsDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle39.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle39.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            dataGridViewCellStyle39.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(164)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle39.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DataGridView_VistaPrincipal.RowsDefaultCellStyle = dataGridViewCellStyle39;
             this.DataGridView_VistaPrincipal.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DataGridView_VistaPrincipal.Size = new System.Drawing.Size(714, 204);
             this.DataGridView_VistaPrincipal.TabIndex = 3;
@@ -324,10 +394,12 @@ namespace sisgaapTestWF
             // panel_registro
             // 
             this.panel_registro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
+            this.panel_registro.Controls.Add(this.button1);
             this.panel_registro.Controls.Add(this.button2);
             this.panel_registro.Controls.Add(this.button);
             this.panel_registro.Controls.Add(this.panel_Detalle_Solicitud);
             this.panel_registro.Controls.Add(this.panel_Solicitud);
+            this.panel_registro.Controls.Add(this.panel_produccion);
             this.panel_registro.Location = new System.Drawing.Point(111, 0);
             this.panel_registro.Name = "panel_registro";
             this.panel_registro.Size = new System.Drawing.Size(864, 498);
@@ -335,15 +407,26 @@ namespace sisgaapTestWF
             this.panel_registro.Visible = false;
             this.panel_registro.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_registro_Paint);
             // 
+            // button1
+            // 
+            this.button1.Enabled = false;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(230, 0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(237, 23);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "Produccion";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // button2
             // 
             this.button2.Enabled = false;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(375, 1);
+            this.button2.Location = new System.Drawing.Point(473, 1);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(357, 23);
+            this.button2.Size = new System.Drawing.Size(259, 23);
             this.button2.TabIndex = 1;
-            this.button2.Text = "Detalle";
+            this.button2.Text = "No Produccion";
             this.button2.UseVisualStyleBackColor = true;
             // 
             // button
@@ -352,30 +435,165 @@ namespace sisgaapTestWF
             this.button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button.Location = new System.Drawing.Point(0, 1);
             this.button.Name = "button";
-            this.button.Size = new System.Drawing.Size(369, 23);
+            this.button.Size = new System.Drawing.Size(224, 23);
             this.button.TabIndex = 0;
             this.button.Text = "Solicitud ";
             this.button.UseVisualStyleBackColor = true;
             // 
             // panel_Detalle_Solicitud
             // 
+            this.panel_Detalle_Solicitud.Controls.Add(this.panel_agregar_detalle);
+            this.panel_Detalle_Solicitud.Controls.Add(this.button_continuar_detalle);
             this.panel_Detalle_Solicitud.Controls.Add(this.button_agregar_detalleSA);
             this.panel_Detalle_Solicitud.Controls.Add(this.dataGridView_detalleSA);
-            this.panel_Detalle_Solicitud.Controls.Add(this.button_EliminardetalleSA);
-            this.panel_Detalle_Solicitud.Controls.Add(this.button_GuardardetalleSA);
-            this.panel_Detalle_Solicitud.Controls.Add(this.groupBox4);
             this.panel_Detalle_Solicitud.Controls.Add(this.button_CancelarTodo);
-            this.panel_Detalle_Solicitud.Controls.Add(this.groupBox6);
-            this.panel_Detalle_Solicitud.Controls.Add(this.button_actualizar_todo);
-            this.panel_Detalle_Solicitud.Controls.Add(this.button_Registrar);
             this.panel_Detalle_Solicitud.Location = new System.Drawing.Point(1, 25);
             this.panel_Detalle_Solicitud.Name = "panel_Detalle_Solicitud";
             this.panel_Detalle_Solicitud.Size = new System.Drawing.Size(863, 473);
             this.panel_Detalle_Solicitud.TabIndex = 3;
+            this.panel_Detalle_Solicitud.Visible = false;
+            // 
+            // panel_agregar_detalle
+            // 
+            this.panel_agregar_detalle.Controls.Add(this.groupBox6);
+            this.panel_agregar_detalle.Controls.Add(this.button_cancelar_produccion);
+            this.panel_agregar_detalle.Controls.Add(this.button_producir_todo);
+            this.panel_agregar_detalle.Controls.Add(this.button_producir);
+            this.panel_agregar_detalle.Controls.Add(this.groupBox4);
+            this.panel_agregar_detalle.Controls.Add(this.textBox_cantidad_detalle_sa);
+            this.panel_agregar_detalle.Controls.Add(this.textBox_modelo_repuesto);
+            this.panel_agregar_detalle.Controls.Add(this.textBox_marca_repuesto);
+            this.panel_agregar_detalle.Controls.Add(this.textBox_codigo_repuesto);
+            this.panel_agregar_detalle.Controls.Add(this.label4);
+            this.panel_agregar_detalle.Controls.Add(this.label3);
+            this.panel_agregar_detalle.Controls.Add(this.label2);
+            this.panel_agregar_detalle.Controls.Add(this.label1);
+            this.panel_agregar_detalle.Location = new System.Drawing.Point(148, 11);
+            this.panel_agregar_detalle.Name = "panel_agregar_detalle";
+            this.panel_agregar_detalle.Size = new System.Drawing.Size(382, 344);
+            this.panel_agregar_detalle.TabIndex = 11;
+            this.panel_agregar_detalle.Visible = false;
+            // 
+            // button_restablecer
+            // 
+            this.button_restablecer.Location = new System.Drawing.Point(146, 17);
+            this.button_restablecer.Name = "button_restablecer";
+            this.button_restablecer.Size = new System.Drawing.Size(115, 25);
+            this.button_restablecer.TabIndex = 10;
+            this.button_restablecer.Text = "Restablecer";
+            this.button_restablecer.UseVisualStyleBackColor = true;
+            this.button_restablecer.Click += new System.EventHandler(this.button_restablecer_Click);
+            // 
+            // button_producir
+            // 
+            this.button_producir.Location = new System.Drawing.Point(255, 305);
+            this.button_producir.Name = "button_producir";
+            this.button_producir.Size = new System.Drawing.Size(115, 25);
+            this.button_producir.TabIndex = 9;
+            this.button_producir.Text = "Producir";
+            this.button_producir.UseVisualStyleBackColor = true;
+            this.button_producir.Click += new System.EventHandler(this.button_producir_Click);
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.button_restablecer);
+            this.groupBox4.Controls.Add(this.textBox_cantidad_sugerida);
+            this.groupBox4.Location = new System.Drawing.Point(34, 157);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(284, 59);
+            this.groupBox4.TabIndex = 8;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Cantidad Sugerida";
+            // 
+            // textBox_cantidad_sugerida
+            // 
+            this.textBox_cantidad_sugerida.Location = new System.Drawing.Point(14, 23);
+            this.textBox_cantidad_sugerida.Name = "textBox_cantidad_sugerida";
+            this.textBox_cantidad_sugerida.Size = new System.Drawing.Size(114, 20);
+            this.textBox_cantidad_sugerida.TabIndex = 0;
+            this.textBox_cantidad_sugerida.Text = "0";
+            // 
+            // textBox_cantidad_detalle_sa
+            // 
+            this.textBox_cantidad_detalle_sa.Enabled = false;
+            this.textBox_cantidad_detalle_sa.Location = new System.Drawing.Point(169, 121);
+            this.textBox_cantidad_detalle_sa.Name = "textBox_cantidad_detalle_sa";
+            this.textBox_cantidad_detalle_sa.Size = new System.Drawing.Size(168, 20);
+            this.textBox_cantidad_detalle_sa.TabIndex = 7;
+            // 
+            // textBox_modelo_repuesto
+            // 
+            this.textBox_modelo_repuesto.Enabled = false;
+            this.textBox_modelo_repuesto.Location = new System.Drawing.Point(109, 91);
+            this.textBox_modelo_repuesto.Name = "textBox_modelo_repuesto";
+            this.textBox_modelo_repuesto.Size = new System.Drawing.Size(228, 20);
+            this.textBox_modelo_repuesto.TabIndex = 6;
+            // 
+            // textBox_marca_repuesto
+            // 
+            this.textBox_marca_repuesto.Enabled = false;
+            this.textBox_marca_repuesto.Location = new System.Drawing.Point(109, 58);
+            this.textBox_marca_repuesto.Name = "textBox_marca_repuesto";
+            this.textBox_marca_repuesto.Size = new System.Drawing.Size(228, 20);
+            this.textBox_marca_repuesto.TabIndex = 5;
+            // 
+            // textBox_codigo_repuesto
+            // 
+            this.textBox_codigo_repuesto.Enabled = false;
+            this.textBox_codigo_repuesto.Location = new System.Drawing.Point(109, 25);
+            this.textBox_codigo_repuesto.Name = "textBox_codigo_repuesto";
+            this.textBox_codigo_repuesto.Size = new System.Drawing.Size(228, 20);
+            this.textBox_codigo_repuesto.TabIndex = 4;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(35, 128);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(128, 13);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "CANTIDAD SOLICITADA";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(35, 94);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(53, 13);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "MODELO";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(35, 61);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(45, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "MARCA";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(35, 28);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(49, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "CODIGO";
+            // 
+            // button_continuar_detalle
+            // 
+            this.button_continuar_detalle.Location = new System.Drawing.Point(618, 319);
+            this.button_continuar_detalle.Name = "button_continuar_detalle";
+            this.button_continuar_detalle.Size = new System.Drawing.Size(107, 25);
+            this.button_continuar_detalle.TabIndex = 10;
+            this.button_continuar_detalle.Text = "Confirmar";
+            this.button_continuar_detalle.UseVisualStyleBackColor = true;
+            this.button_continuar_detalle.Visible = false;
             // 
             // button_agregar_detalleSA
             // 
-            this.button_agregar_detalleSA.Location = new System.Drawing.Point(615, 26);
+            this.button_agregar_detalleSA.Location = new System.Drawing.Point(618, 24);
             this.button_agregar_detalleSA.Name = "button_agregar_detalleSA";
             this.button_agregar_detalleSA.Size = new System.Drawing.Size(107, 25);
             this.button_agregar_detalleSA.TabIndex = 9;
@@ -399,47 +617,12 @@ namespace sisgaapTestWF
             this.dataGridView_detalleSA.GridColor = System.Drawing.Color.Silver;
             this.dataGridView_detalleSA.Location = new System.Drawing.Point(11, 73);
             this.dataGridView_detalleSA.Name = "dataGridView_detalleSA";
+            this.dataGridView_detalleSA.ReadOnly = true;
             this.dataGridView_detalleSA.RowHeadersVisible = false;
             this.dataGridView_detalleSA.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView_detalleSA.Size = new System.Drawing.Size(714, 235);
             this.dataGridView_detalleSA.TabIndex = 8;
-            // 
-            // button_EliminardetalleSA
-            // 
-            this.button_EliminardetalleSA.Location = new System.Drawing.Point(261, 314);
-            this.button_EliminardetalleSA.Name = "button_EliminardetalleSA";
-            this.button_EliminardetalleSA.Size = new System.Drawing.Size(107, 25);
-            this.button_EliminardetalleSA.TabIndex = 7;
-            this.button_EliminardetalleSA.Text = "Eliminar";
-            this.button_EliminardetalleSA.UseVisualStyleBackColor = true;
-            this.button_EliminardetalleSA.Click += new System.EventHandler(this.button_EliminardetalleSA_Click);
-            // 
-            // button_GuardardetalleSA
-            // 
-            this.button_GuardardetalleSA.Location = new System.Drawing.Point(413, 314);
-            this.button_GuardardetalleSA.Name = "button_GuardardetalleSA";
-            this.button_GuardardetalleSA.Size = new System.Drawing.Size(107, 25);
-            this.button_GuardardetalleSA.TabIndex = 6;
-            this.button_GuardardetalleSA.Text = "Guardar";
-            this.button_GuardardetalleSA.UseVisualStyleBackColor = true;
-            this.button_GuardardetalleSA.Click += new System.EventHandler(this.button_GuardardetalleSA_Click);
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.textBox_cantidad_detalle_sa);
-            this.groupBox4.Location = new System.Drawing.Point(315, 11);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(284, 47);
-            this.groupBox4.TabIndex = 1;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Cantidad";
-            // 
-            // textBox_cantidad_detalle_sa
-            // 
-            this.textBox_cantidad_detalle_sa.Location = new System.Drawing.Point(15, 16);
-            this.textBox_cantidad_detalle_sa.Name = "textBox_cantidad_detalle_sa";
-            this.textBox_cantidad_detalle_sa.Size = new System.Drawing.Size(251, 20);
-            this.textBox_cantidad_detalle_sa.TabIndex = 0;
+            this.dataGridView_detalleSA.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_detalleSA_CellContentClick);
             // 
             // button_CancelarTodo
             // 
@@ -451,59 +634,38 @@ namespace sisgaapTestWF
             this.button_CancelarTodo.UseVisualStyleBackColor = true;
             this.button_CancelarTodo.Click += new System.EventHandler(this.button_CancelarTodo_Click);
             // 
-            // groupBox6
-            // 
-            this.groupBox6.Controls.Add(this.textBox_codigo_Repuesto);
-            this.groupBox6.Location = new System.Drawing.Point(11, 11);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(284, 47);
-            this.groupBox6.TabIndex = 0;
-            this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "Código de Repuesto";
-            // 
-            // textBox_codigo_Repuesto
-            // 
-            this.textBox_codigo_Repuesto.Location = new System.Drawing.Point(15, 16);
-            this.textBox_codigo_Repuesto.Name = "textBox_codigo_Repuesto";
-            this.textBox_codigo_Repuesto.Size = new System.Drawing.Size(251, 20);
-            this.textBox_codigo_Repuesto.TabIndex = 0;
-            // 
-            // button_actualizar_todo
-            // 
-            this.button_actualizar_todo.Location = new System.Drawing.Point(570, 314);
-            this.button_actualizar_todo.Name = "button_actualizar_todo";
-            this.button_actualizar_todo.Size = new System.Drawing.Size(107, 25);
-            this.button_actualizar_todo.TabIndex = 10;
-            this.button_actualizar_todo.Text = "Actualizar";
-            this.button_actualizar_todo.UseVisualStyleBackColor = true;
-            this.button_actualizar_todo.Visible = false;
-            this.button_actualizar_todo.Click += new System.EventHandler(this.button_actualizar_todo_Click);
-            // 
-            // button_Registrar
-            // 
-            this.button_Registrar.Location = new System.Drawing.Point(570, 314);
-            this.button_Registrar.Name = "button_Registrar";
-            this.button_Registrar.Size = new System.Drawing.Size(107, 25);
-            this.button_Registrar.TabIndex = 5;
-            this.button_Registrar.Text = "Registrar";
-            this.button_Registrar.UseVisualStyleBackColor = true;
-            this.button_Registrar.Visible = false;
-            this.button_Registrar.Click += new System.EventHandler(this.button_Registrar_Click);
-            // 
             // panel_Solicitud
             // 
+            this.panel_Solicitud.Controls.Add(this.groupBox7);
             this.panel_Solicitud.Controls.Add(this.groupBox5);
             this.panel_Solicitud.Controls.Add(this.button_cancelar);
             this.panel_Solicitud.Controls.Add(this.groupBox3);
             this.panel_Solicitud.Controls.Add(this.dateTime_SA);
             this.panel_Solicitud.Controls.Add(this.groupBox2);
             this.panel_Solicitud.Controls.Add(this.groupBox1);
-            this.panel_Solicitud.Controls.Add(this.button_actualizar);
             this.panel_Solicitud.Controls.Add(this.button_Continuar);
+            this.panel_Solicitud.Controls.Add(this.button_actualizar);
             this.panel_Solicitud.Location = new System.Drawing.Point(1, 25);
             this.panel_Solicitud.Name = "panel_Solicitud";
             this.panel_Solicitud.Size = new System.Drawing.Size(863, 473);
             this.panel_Solicitud.TabIndex = 2;
+            // 
+            // groupBox7
+            // 
+            this.groupBox7.Controls.Add(this.textBox_solicitud_abastecimiento);
+            this.groupBox7.Location = new System.Drawing.Point(17, 11);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(260, 47);
+            this.groupBox7.TabIndex = 1;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "Solicitud";
+            // 
+            // textBox_solicitud_abastecimiento
+            // 
+            this.textBox_solicitud_abastecimiento.Location = new System.Drawing.Point(6, 16);
+            this.textBox_solicitud_abastecimiento.Name = "textBox_solicitud_abastecimiento";
+            this.textBox_solicitud_abastecimiento.Size = new System.Drawing.Size(248, 20);
+            this.textBox_solicitud_abastecimiento.TabIndex = 0;
             // 
             // groupBox5
             // 
@@ -579,19 +741,30 @@ namespace sisgaapTestWF
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.textBox_redactor);
-            this.groupBox1.Location = new System.Drawing.Point(11, 11);
+            this.groupBox1.Location = new System.Drawing.Point(283, 11);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(536, 47);
+            this.groupBox1.Size = new System.Drawing.Size(264, 47);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Redactor";
             // 
             // textBox_redactor
             // 
-            this.textBox_redactor.Location = new System.Drawing.Point(15, 16);
+            this.textBox_redactor.Location = new System.Drawing.Point(6, 16);
             this.textBox_redactor.Name = "textBox_redactor";
-            this.textBox_redactor.Size = new System.Drawing.Size(502, 20);
+            this.textBox_redactor.Size = new System.Drawing.Size(252, 20);
             this.textBox_redactor.TabIndex = 0;
+            // 
+            // button_Continuar
+            // 
+            this.button_Continuar.Location = new System.Drawing.Point(560, 319);
+            this.button_Continuar.Name = "button_Continuar";
+            this.button_Continuar.Size = new System.Drawing.Size(107, 25);
+            this.button_Continuar.TabIndex = 5;
+            this.button_Continuar.Text = "Continuar";
+            this.button_Continuar.UseVisualStyleBackColor = true;
+            this.button_Continuar.Visible = false;
+            this.button_Continuar.Click += new System.EventHandler(this.button_Continuar_Click);
             // 
             // button_actualizar
             // 
@@ -604,16 +777,70 @@ namespace sisgaapTestWF
             this.button_actualizar.Visible = false;
             this.button_actualizar.Click += new System.EventHandler(this.button_actualizar_Click);
             // 
-            // button_Continuar
+            // panel_produccion
             // 
-            this.button_Continuar.Location = new System.Drawing.Point(560, 319);
-            this.button_Continuar.Name = "button_Continuar";
-            this.button_Continuar.Size = new System.Drawing.Size(107, 25);
-            this.button_Continuar.TabIndex = 5;
-            this.button_Continuar.Text = "Continuar";
-            this.button_Continuar.UseVisualStyleBackColor = true;
-            this.button_Continuar.Visible = false;
-            this.button_Continuar.Click += new System.EventHandler(this.button_Continuar_Click);
+            this.panel_produccion.Controls.Add(this.button3);
+            this.panel_produccion.Controls.Add(this.button_EliminardetalleSA);
+            this.panel_produccion.Controls.Add(this.button_GuardardetalleSA);
+            this.panel_produccion.Controls.Add(this.button4);
+            this.panel_produccion.Controls.Add(this.dataGridView_produccion);
+            this.panel_produccion.Controls.Add(this.button5);
+            this.panel_produccion.Location = new System.Drawing.Point(1, 25);
+            this.panel_produccion.Name = "panel_produccion";
+            this.panel_produccion.Size = new System.Drawing.Size(863, 473);
+            this.panel_produccion.TabIndex = 5;
+            this.panel_produccion.Visible = false;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(615, 322);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(107, 25);
+            this.button3.TabIndex = 10;
+            this.button3.Text = "Confirmar";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Visible = false;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(618, 24);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(107, 25);
+            this.button4.TabIndex = 9;
+            this.button4.Text = "Agregar";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView_produccion
+            // 
+            this.dataGridView_produccion.AllowUserToAddRows = false;
+            this.dataGridView_produccion.AllowUserToResizeRows = false;
+            this.dataGridView_produccion.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView_produccion.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView_produccion.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.dataGridView_produccion.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView_produccion.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dataGridView_produccion.ColumnHeadersHeight = 35;
+            this.dataGridView_produccion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dataGridView_produccion.EnableHeadersVisualStyles = false;
+            this.dataGridView_produccion.GridColor = System.Drawing.Color.Silver;
+            this.dataGridView_produccion.Location = new System.Drawing.Point(11, 73);
+            this.dataGridView_produccion.Name = "dataGridView_produccion";
+            this.dataGridView_produccion.ReadOnly = true;
+            this.dataGridView_produccion.RowHeadersVisible = false;
+            this.dataGridView_produccion.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView_produccion.Size = new System.Drawing.Size(714, 235);
+            this.dataGridView_produccion.TabIndex = 8;
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(11, 319);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(115, 25);
+            this.button5.TabIndex = 4;
+            this.button5.Text = "Cancelar";
+            this.button5.UseVisualStyleBackColor = true;
             // 
             // panel_vista
             // 
@@ -653,6 +880,43 @@ namespace sisgaapTestWF
             this.textBox_vista.Size = new System.Drawing.Size(684, 309);
             this.textBox_vista.TabIndex = 0;
             // 
+            // button_producir_todo
+            // 
+            this.button_producir_todo.Location = new System.Drawing.Point(135, 304);
+            this.button_producir_todo.Name = "button_producir_todo";
+            this.button_producir_todo.Size = new System.Drawing.Size(115, 25);
+            this.button_producir_todo.TabIndex = 11;
+            this.button_producir_todo.Text = "Producir Todo";
+            this.button_producir_todo.UseVisualStyleBackColor = true;
+            this.button_producir_todo.Click += new System.EventHandler(this.button_producir_todo_Click);
+            // 
+            // button_cancelar_produccion
+            // 
+            this.button_cancelar_produccion.Location = new System.Drawing.Point(8, 301);
+            this.button_cancelar_produccion.Name = "button_cancelar_produccion";
+            this.button_cancelar_produccion.Size = new System.Drawing.Size(115, 25);
+            this.button_cancelar_produccion.TabIndex = 12;
+            this.button_cancelar_produccion.Text = "Cancelar";
+            this.button_cancelar_produccion.UseVisualStyleBackColor = true;
+            this.button_cancelar_produccion.Click += new System.EventHandler(this.button_cancelar_produccion_Click);
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.textBox_costo_producir);
+            this.groupBox6.Location = new System.Drawing.Point(34, 231);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(163, 59);
+            this.groupBox6.TabIndex = 11;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Costo";
+            // 
+            // textBox_costo_producir
+            // 
+            this.textBox_costo_producir.Location = new System.Drawing.Point(14, 23);
+            this.textBox_costo_producir.Name = "textBox_costo_producir";
+            this.textBox_costo_producir.Size = new System.Drawing.Size(114, 20);
+            this.textBox_costo_producir.TabIndex = 0;
+            // 
             // SupervisorProduccion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -675,12 +939,14 @@ namespace sisgaapTestWF
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView_VistaPrincipal)).EndInit();
             this.panel_registro.ResumeLayout(false);
             this.panel_Detalle_Solicitud.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_detalleSA)).EndInit();
+            this.panel_agregar_detalle.ResumeLayout(false);
+            this.panel_agregar_detalle.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
-            this.groupBox6.ResumeLayout(false);
-            this.groupBox6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_detalleSA)).EndInit();
             this.panel_Solicitud.ResumeLayout(false);
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox7.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             this.groupBox3.ResumeLayout(false);
@@ -689,8 +955,12 @@ namespace sisgaapTestWF
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.panel_produccion.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_produccion)).EndInit();
             this.panel_vista.ResumeLayout(false);
             this.panel_vista.PerformLayout();
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -727,13 +997,8 @@ namespace sisgaapTestWF
         private System.Windows.Forms.Panel panel_Detalle_Solicitud;
         private System.Windows.Forms.Button button_Registrar;
         private System.Windows.Forms.Button button_CancelarTodo;
-        private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.TextBox textBox_codigo_Repuesto;
-        private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.TextBox textBox_cantidad_detalle_sa;
         private System.Windows.Forms.Button button_EliminardetalleSA;
         private System.Windows.Forms.Button button_GuardardetalleSA;
-        private System.Windows.Forms.DataGridView dataGridView_detalleSA;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.TextBox textBox_observacion;
         private System.Windows.Forms.Button button_agregar_detalleSA;
@@ -742,5 +1007,32 @@ namespace sisgaapTestWF
         private System.Windows.Forms.Button button_actualizar_todo;
         private System.Windows.Forms.Button button_eliminar_solicitud;
         private System.Windows.Forms.Button button_guardar_tabla;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.TextBox textBox_solicitud_abastecimiento;
+        private System.Windows.Forms.Button button_continuar_detalle;
+        private System.Windows.Forms.Panel panel_produccion;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.DataGridView dataGridView_produccion;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Panel panel_agregar_detalle;
+        private System.Windows.Forms.Button button_restablecer;
+        private System.Windows.Forms.Button button_producir;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.TextBox textBox_cantidad_sugerida;
+        private System.Windows.Forms.TextBox textBox_cantidad_detalle_sa;
+        private System.Windows.Forms.TextBox textBox_modelo_repuesto;
+        private System.Windows.Forms.TextBox textBox_marca_repuesto;
+        private System.Windows.Forms.TextBox textBox_codigo_repuesto;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridView dataGridView_detalleSA;
+        private System.Windows.Forms.Button button_cancelar_produccion;
+        private System.Windows.Forms.Button button_producir_todo;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.TextBox textBox_costo_producir;
     }
 }

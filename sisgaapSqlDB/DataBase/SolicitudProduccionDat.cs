@@ -47,6 +47,7 @@ namespace sisgaapSqlDB.DataBase
             command.ExecuteNonQuery();
             conexionBD.Close();
         }
+
         public DataTable SP(SolicitudProducción objSP)
         {
             DataTable dt = null;
@@ -82,6 +83,22 @@ namespace sisgaapSqlDB.DataBase
             daAdaptador.Fill(dt);
             conexionBD.Close();
             return dt;
+        }
+        public string TraerCodigoSP()
+        {
+            string codigo = "";
+            SqlCommand cmd = new SqlCommand("ultimo_codigo_sp ", conexionBD);
+            cmd.CommandType = CommandType.StoredProcedure;
+            conexionBD.Open();
+            SqlDataReader reader = cmd.ExecuteReader();
+            bool hayRegistros = reader.Read();
+            if (hayRegistros)
+            {
+                codigo = (string)reader[0];
+
+            }
+            conexionBD.Close();
+            return codigo;
         }
     }
 }

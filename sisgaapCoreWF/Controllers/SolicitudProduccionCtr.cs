@@ -80,5 +80,9 @@ namespace sisgaapCoreWF.Controllers
         {
             return objSPdat.select_SP();
         }
+        public string TraerUltimoCodigoSP()
+        {
+            return objSPdat.TraerCodigoSP();
+        }
     }
 }

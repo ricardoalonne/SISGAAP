@@ -18,7 +18,7 @@ namespace sisgaapSqlDB.DataBase
         }
         public void InsertarDetalle_SP(DetalleSolicitudProduccion objDetalleSP)
         {
-            string insert = "INSERT INTO T_CE_Detalle_Solicitud_Produccion VALUES(" + objDetalleSP.cantidadSugerida + "," + objDetalleSP.costoUnitario + "','" + objDetalleSP.codigoSolicitud+"','" + objDetalleSP.Detalle_Solicitud_Abastecimiento_codigoSolicitud +"','" + objDetalleSP.codigoRepuesto + "')";
+            string insert = "INSERT INTO T_CE_Detalle_Solicitud_Produccion VALUES(" + objDetalleSP.cantidadSugerida + "," + objDetalleSP.costoUnitario + ",'" + objDetalleSP.codigoSolicitud+"','" + objDetalleSP.Detalle_Solicitud_Abastecimiento_codigoSolicitud +"','" + objDetalleSP.codigoRepuesto + "')";
             SqlCommand command = new SqlCommand(insert, conexionBD);
             conexionBD.Open();
             command.ExecuteNonQuery();
@@ -61,6 +61,42 @@ namespace sisgaapSqlDB.DataBase
             daAdaptador.Fill(dt);
             conexionBD.Close();
             return dt;
+        }
+        public void DeleteAllDetalle_SP(DetalleSolicitudProduccion objDetalleSP)
+        {
+            string delete = "DELETE T_CE_Detalle_Solicitud_Produccion WHERE codigoSolicitud='" + objDetalleSP.codigoSolicitud + "'";
+            SqlCommand command = new SqlCommand(delete, conexionBD);
+            conexionBD.Open();
+            command.ExecuteNonQuery();
+            conexionBD.Close();
+        }
+        public bool SelectRepuestoxDetalleSP(DetalleSolicitudProduccion objDetalleSP)
+        {
+            string Select = "select * from T_CE_Detalle_Solicitud_Produccion WHERE codigoRepuesto ='" + objDetalleSP.codigoRepuesto + "'";
+            SqlCommand unComando = new SqlCommand(Select, conexionBD);
+            conexionBD.Open();
+            SqlDataReader reader = unComando.ExecuteReader();
+            bool hayRegistros = reader.Read();
+            if (hayRegistros)
+            {
+                objDetalleSP.codigoRepuesto = (string)reader[4];
+            }
+            conexionBD.Close();
+            return hayRegistros;
+        }
+        public bool SelectRepuestoxDetalleSA(DetalleSolicitudProduccion objDetalleSP)
+        {
+            string Select = "select * from T_CE_Detalle_Solicitud_Abastecimiento WHERE codigoRepuesto ='" + objDetalleSP.codigoRepuesto + "' and codigoSolicitud='"+objDetalleSP.Detalle_Solicitud_Abastecimiento_codigoSolicitud + "'";
+            SqlCommand unComando = new SqlCommand(Select, conexionBD);
+            conexionBD.Open();
+            SqlDataReader reader = unComando.ExecuteReader();
+            bool hayRegistros = reader.Read();
+            if (hayRegistros)
+            {
+                objDetalleSP.codigoRepuesto = (string)reader[2];
+            }
+            conexionBD.Close();
+            return hayRegistros;
         }
     }
 }

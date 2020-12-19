@@ -250,6 +250,7 @@ namespace sisgaapTestWF
         {
             DetalleSA.codigoSolicitud = SA.codigoSolicitud;
             dataGridView_detalleSA.DataSource = DetalleSA_Ctr.Detalle_SA_datatable(DetalleSA);
+            dataGridView_detalleSA.Columns[0].Visible = false;
             dataGridView_detalleSA.Columns[0].ReadOnly = true;
             dataGridView_detalleSA.Columns[1].ReadOnly = true;
         }

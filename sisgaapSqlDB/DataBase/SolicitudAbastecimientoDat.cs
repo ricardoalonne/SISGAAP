@@ -138,5 +138,26 @@ namespace sisgaapSqlDB.DataBase
             }
             conexionBD.Close();
         }
+        public bool SelectSolicitudxCodigo(SolicitudAbastecimiento objsa)
+        {
+            string Select = "select * from T_CE_Solicitud_Abastecimiento WHERE codigoSolicitud ='" + objsa.codigoSolicitud + "'";
+            SqlCommand unComando = new SqlCommand(Select, conexionBD);
+            conexionBD.Open();
+            SqlDataReader reader = unComando.ExecuteReader();
+            bool hayRegistros = reader.Read();
+            if (hayRegistros)
+            {
+                objsa.codigoSolicitud = (string)reader[0];
+                objsa.asunto = (string)reader[1];
+                objsa.descripcion = (string)reader[2];
+                objsa.fechaEntrega = (DateTime)reader[4];
+                objsa.observacion = (string)reader[5];
+                objsa.totalRepuestos = (int)reader[6];
+                objsa.estado = (string)reader[7];
+                objsa.redactor = (string)reader[8];
+            }
+            conexionBD.Close();
+            return hayRegistros;
+        }
     }
 }

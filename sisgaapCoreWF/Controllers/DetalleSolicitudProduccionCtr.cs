@@ -18,9 +18,20 @@ namespace sisgaapCoreWF.Controllers
         }
         public void RegistrarDetalleSP(DetalleSolicitudProduccion objDetalleSP)
         {
+            bool correcto = true;
             if (objDetalleSP.cantidadSugerida <= 0)
             {
                 objDetalleSP.error = 1; //cantidad invalidad!!
+            }
+            if (objDetalleSP.costoUnitario <= 0)
+            {
+                objDetalleSP.error = 2; //costo invalido!!
+            }
+            correcto = objDetalleSPdat.SelectRepuestoxDetalleSA(objDetalleSP) && !objDetalleSPdat.SelectRepuestoxDetalleSP(objDetalleSP);
+            if (!correcto)
+            {
+                objDetalleSP.error = 3; //codigo de repuesto invalido!!
+                return;
             }
             objDetalleSP.error = 77;
             objDetalleSPdat.InsertarDetalle_SP(objDetalleSP);
@@ -29,7 +40,7 @@ namespace sisgaapCoreWF.Controllers
         {
             objDetalleSPdat.DeleteDetalle_SP(objDetalleSP);
         }
-        public void ActualizarDetalleSA(DetalleSolicitudProduccion objDetalleSP)
+        public void ActualizarDetalleSP(DetalleSolicitudProduccion objDetalleSP)
         {
             if (objDetalleSP.cantidadSugerida <= 0)
             {
@@ -42,5 +53,11 @@ namespace sisgaapCoreWF.Controllers
         {
             return objDetalleSPdat.DetalleSP_dataset(detalleSP);
         }
+        public void EliminarAllDetalleSP(DetalleSolicitudProduccion objDetalleSP)
+        {
+            objDetalleSPdat.DeleteAllDetalle_SP(objDetalleSP);
+        }
+
+        
     }
 }

@@ -10,8 +10,8 @@ namespace sisgaapSqlDB.DataBase
     {
         public static string CadenaConexion
         {
-            get { return "data source= HAZIELPRIALÉ\\SCORPIODIGITAL; initial catalog=BD_SISGAAP; integrated security = true"; }
-            //get { return "data source= (Local); initial catalog=BD_SISGAAP; integrated security = true"; }
+            //get { return "data source= HAZIELPRIALÉ\\SCORPIODIGITAL; initial catalog=BD_SISGAAP; integrated security = true"; }
+            get { return "data source= (Local); initial catalog=BD_SISGAAP; integrated security = true"; }
         }
 
     }
