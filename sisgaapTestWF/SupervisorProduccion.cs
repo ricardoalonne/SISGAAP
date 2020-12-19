@@ -169,7 +169,7 @@ namespace sisgaapTestWF
                     textBox_descripcion.Clear();
                     panel_Solicitud.Visible = false;
                     panel_Detalle_Solicitud.Visible = true;
-                    button_Registrar.Visible = true;
+                    //button_Registrar.Visible = true;
                     button_Continuar.Visible = false;
                     break;
                 case 88:
@@ -281,6 +281,12 @@ namespace sisgaapTestWF
             DetalleSA.codigoSolicitud = SA.codigoSolicitud;
             dataGridView_detalleSA.DataSource = DetalleSA_Ctr.Detalle_SA_datatable(DetalleSA);
             dataGridView_detalleSA.Columns[0].Visible = false;
+        }
+        private void CargarListaDetalleSolicitudProduccion()
+        {
+            DetalleSP.codigoSolicitud = SP.codigoSolicitud;
+            dataGridView_produccion.DataSource = DetalleSP_Ctr.Detalle_SP_datatable(DetalleSP);
+            dataGridView_produccion.Columns[0].Visible = false;
         }
         private void cargarDetalles()
         {
@@ -452,6 +458,20 @@ namespace sisgaapTestWF
         private void dataGridView_detalleSA_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            panel_registro.Visible = false;
+            panel_SupervisorA.Visible = true;
+        }
+
+        private void button_continuar_detalle_Click(object sender, EventArgs e)
+        {
+            //panel_registro.Visible = false;
+            panel_Detalle_Solicitud.Visible = false;
+            panel_produccion.Visible = true;
+            CargarListaDetalleSolicitudProduccion();
         }
     }
 }

@@ -61,5 +61,9 @@ namespace sisgaapCoreWF.Controllers
         {
             return objDetalleSPdat.SelectCodigoSAxDetalleSP(objDetalleSP);
         }
+        public DataTable Detalle_SP_datatable(DetalleSolicitudProduccion objDetalleSP)
+        {
+            return objDetalleSPdat.DetalleSP(objDetalleSP);
+        }
     }
 }

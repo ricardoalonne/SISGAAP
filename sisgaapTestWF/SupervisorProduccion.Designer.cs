@@ -29,9 +29,9 @@ namespace sisgaapTestWF
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
             this.button_actualizarSA = new System.Windows.Forms.Button();
             this.panel_Menu = new System.Windows.Forms.Panel();
             this.button_Registrar = new System.Windows.Forms.Button();
@@ -54,6 +54,26 @@ namespace sisgaapTestWF
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button = new System.Windows.Forms.Button();
+            this.panel_Solicitud = new System.Windows.Forms.Panel();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.textBox_solicitud_abastecimiento = new System.Windows.Forms.TextBox();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.textBox_observacion = new System.Windows.Forms.TextBox();
+            this.button_cancelar = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.textBox_descripcion = new System.Windows.Forms.TextBox();
+            this.dateTime_SA = new System.Windows.Forms.DateTimePicker();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.textBox_asunto = new System.Windows.Forms.TextBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.textBox_redactor = new System.Windows.Forms.TextBox();
+            this.button_Continuar = new System.Windows.Forms.Button();
+            this.button_actualizar = new System.Windows.Forms.Button();
+            this.panel_produccion = new System.Windows.Forms.Panel();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.dataGridView_produccion = new System.Windows.Forms.DataGridView();
+            this.button5 = new System.Windows.Forms.Button();
             this.panel_Detalle_Solicitud = new System.Windows.Forms.Panel();
             this.panel_agregar_detalle = new System.Windows.Forms.Panel();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
@@ -76,26 +96,6 @@ namespace sisgaapTestWF
             this.button_agregar_detalleSA = new System.Windows.Forms.Button();
             this.dataGridView_detalleSA = new System.Windows.Forms.DataGridView();
             this.button_CancelarTodo = new System.Windows.Forms.Button();
-            this.panel_Solicitud = new System.Windows.Forms.Panel();
-            this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.textBox_solicitud_abastecimiento = new System.Windows.Forms.TextBox();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.textBox_observacion = new System.Windows.Forms.TextBox();
-            this.button_cancelar = new System.Windows.Forms.Button();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.textBox_descripcion = new System.Windows.Forms.TextBox();
-            this.dateTime_SA = new System.Windows.Forms.DateTimePicker();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBox_asunto = new System.Windows.Forms.TextBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox_redactor = new System.Windows.Forms.TextBox();
-            this.button_Continuar = new System.Windows.Forms.Button();
-            this.button_actualizar = new System.Windows.Forms.Button();
-            this.panel_produccion = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.dataGridView_produccion = new System.Windows.Forms.DataGridView();
-            this.button5 = new System.Windows.Forms.Button();
             this.panel_vista = new System.Windows.Forms.Panel();
             this.button_cerrarVista = new System.Windows.Forms.Button();
             this.textBox_vista = new System.Windows.Forms.TextBox();
@@ -105,11 +105,6 @@ namespace sisgaapTestWF
             this.Panel_BarraBusqueda.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView_VistaPrincipal)).BeginInit();
             this.panel_registro.SuspendLayout();
-            this.panel_Detalle_Solicitud.SuspendLayout();
-            this.panel_agregar_detalle.SuspendLayout();
-            this.groupBox6.SuspendLayout();
-            this.groupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_detalleSA)).BeginInit();
             this.panel_Solicitud.SuspendLayout();
             this.groupBox7.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -118,6 +113,11 @@ namespace sisgaapTestWF
             this.groupBox1.SuspendLayout();
             this.panel_produccion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_produccion)).BeginInit();
+            this.panel_Detalle_Solicitud.SuspendLayout();
+            this.panel_agregar_detalle.SuspendLayout();
+            this.groupBox6.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_detalleSA)).BeginInit();
             this.panel_vista.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -127,10 +127,9 @@ namespace sisgaapTestWF
             this.button_actualizarSA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_actualizarSA.ForeColor = System.Drawing.Color.White;
             this.button_actualizarSA.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button_actualizarSA.Location = new System.Drawing.Point(0, 6);
-            this.button_actualizarSA.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button_actualizarSA.Location = new System.Drawing.Point(0, 5);
             this.button_actualizarSA.Name = "button_actualizarSA";
-            this.button_actualizarSA.Size = new System.Drawing.Size(148, 68);
+            this.button_actualizarSA.Size = new System.Drawing.Size(111, 55);
             this.button_actualizarSA.TabIndex = 0;
             this.button_actualizarSA.Text = "Actualizar Solicitud Produccion";
             this.button_actualizarSA.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -145,17 +144,15 @@ namespace sisgaapTestWF
             this.panel_Menu.Controls.Add(this.button_actualizar_todo);
             this.panel_Menu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel_Menu.Location = new System.Drawing.Point(0, 0);
-            this.panel_Menu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel_Menu.Name = "panel_Menu";
-            this.panel_Menu.Size = new System.Drawing.Size(148, 613);
+            this.panel_Menu.Size = new System.Drawing.Size(111, 498);
             this.panel_Menu.TabIndex = 1;
             // 
             // button_Registrar
             // 
-            this.button_Registrar.Location = new System.Drawing.Point(1, 176);
-            this.button_Registrar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button_Registrar.Location = new System.Drawing.Point(1, 143);
             this.button_Registrar.Name = "button_Registrar";
-            this.button_Registrar.Size = new System.Drawing.Size(143, 31);
+            this.button_Registrar.Size = new System.Drawing.Size(107, 25);
             this.button_Registrar.TabIndex = 5;
             this.button_Registrar.Text = "Registrar";
             this.button_Registrar.UseVisualStyleBackColor = true;
@@ -164,10 +161,9 @@ namespace sisgaapTestWF
             // 
             // button_actualizar_todo
             // 
-            this.button_actualizar_todo.Location = new System.Drawing.Point(1, 138);
-            this.button_actualizar_todo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button_actualizar_todo.Location = new System.Drawing.Point(1, 106);
             this.button_actualizar_todo.Name = "button_actualizar_todo";
-            this.button_actualizar_todo.Size = new System.Drawing.Size(143, 31);
+            this.button_actualizar_todo.Size = new System.Drawing.Size(107, 25);
             this.button_actualizar_todo.TabIndex = 10;
             this.button_actualizar_todo.Text = "Actualizar";
             this.button_actualizar_todo.UseVisualStyleBackColor = true;
@@ -176,24 +172,24 @@ namespace sisgaapTestWF
             // 
             // button_GuardardetalleSA
             // 
-            this.button_GuardardetalleSA.Location = new System.Drawing.Point(424, 393);
-            this.button_GuardardetalleSA.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button_GuardardetalleSA.Location = new System.Drawing.Point(318, 319);
             this.button_GuardardetalleSA.Name = "button_GuardardetalleSA";
-            this.button_GuardardetalleSA.Size = new System.Drawing.Size(143, 31);
+            this.button_GuardardetalleSA.Size = new System.Drawing.Size(107, 25);
             this.button_GuardardetalleSA.TabIndex = 6;
             this.button_GuardardetalleSA.Text = "Guardar";
             this.button_GuardardetalleSA.UseVisualStyleBackColor = true;
+            this.button_GuardardetalleSA.Visible = false;
             this.button_GuardardetalleSA.Click += new System.EventHandler(this.button_GuardardetalleSA_Click);
             // 
             // button_EliminardetalleSA
             // 
-            this.button_EliminardetalleSA.Location = new System.Drawing.Point(247, 393);
-            this.button_EliminardetalleSA.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button_EliminardetalleSA.Location = new System.Drawing.Point(185, 319);
             this.button_EliminardetalleSA.Name = "button_EliminardetalleSA";
-            this.button_EliminardetalleSA.Size = new System.Drawing.Size(143, 31);
+            this.button_EliminardetalleSA.Size = new System.Drawing.Size(107, 25);
             this.button_EliminardetalleSA.TabIndex = 7;
             this.button_EliminardetalleSA.Text = "Eliminar";
             this.button_EliminardetalleSA.UseVisualStyleBackColor = true;
+            this.button_EliminardetalleSA.Visible = false;
             this.button_EliminardetalleSA.Click += new System.EventHandler(this.button_EliminardetalleSA_Click);
             // 
             // panel_SupervisorA
@@ -206,33 +202,32 @@ namespace sisgaapTestWF
             this.panel_SupervisorA.Controls.Add(this.Button_NuevaSolicitud);
             this.panel_SupervisorA.Controls.Add(this.DataGridView_VistaPrincipal);
             this.panel_SupervisorA.Controls.Add(this.button_visualizarSA);
-            this.panel_SupervisorA.Location = new System.Drawing.Point(148, 0);
-            this.panel_SupervisorA.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel_SupervisorA.Location = new System.Drawing.Point(111, 0);
             this.panel_SupervisorA.Name = "panel_SupervisorA";
-            this.panel_SupervisorA.Size = new System.Drawing.Size(1152, 613);
+            this.panel_SupervisorA.Size = new System.Drawing.Size(864, 498);
             this.panel_SupervisorA.TabIndex = 2;
             this.panel_SupervisorA.Visible = false;
             // 
             // button_eliminar_solicitud
             // 
-            this.button_eliminar_solicitud.Location = new System.Drawing.Point(4, 155);
-            this.button_eliminar_solicitud.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button_eliminar_solicitud.Location = new System.Drawing.Point(3, 126);
             this.button_eliminar_solicitud.Name = "button_eliminar_solicitud";
-            this.button_eliminar_solicitud.Size = new System.Drawing.Size(143, 41);
+            this.button_eliminar_solicitud.Size = new System.Drawing.Size(107, 33);
             this.button_eliminar_solicitud.TabIndex = 94;
             this.button_eliminar_solicitud.Text = "Eliminar";
             this.button_eliminar_solicitud.UseVisualStyleBackColor = true;
+            this.button_eliminar_solicitud.Visible = false;
             this.button_eliminar_solicitud.Click += new System.EventHandler(this.button_eliminar_solicitud_Click);
             // 
             // button_guardar_tabla
             // 
-            this.button_guardar_tabla.Location = new System.Drawing.Point(156, 155);
-            this.button_guardar_tabla.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button_guardar_tabla.Location = new System.Drawing.Point(117, 126);
             this.button_guardar_tabla.Name = "button_guardar_tabla";
-            this.button_guardar_tabla.Size = new System.Drawing.Size(143, 41);
+            this.button_guardar_tabla.Size = new System.Drawing.Size(107, 33);
             this.button_guardar_tabla.TabIndex = 93;
             this.button_guardar_tabla.Text = "Guardar";
             this.button_guardar_tabla.UseVisualStyleBackColor = true;
+            this.button_guardar_tabla.Visible = false;
             // 
             // button_modificar_solicitud
             // 
@@ -242,14 +237,14 @@ namespace sisgaapTestWF
             this.button_modificar_solicitud.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.button_modificar_solicitud.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_modificar_solicitud.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button_modificar_solicitud.Location = new System.Drawing.Point(313, 155);
-            this.button_modificar_solicitud.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button_modificar_solicitud.Location = new System.Drawing.Point(235, 126);
             this.button_modificar_solicitud.Name = "button_modificar_solicitud";
-            this.button_modificar_solicitud.Size = new System.Drawing.Size(148, 41);
+            this.button_modificar_solicitud.Size = new System.Drawing.Size(111, 33);
             this.button_modificar_solicitud.TabIndex = 92;
             this.button_modificar_solicitud.Text = "Modificar Solicitud";
             this.button_modificar_solicitud.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button_modificar_solicitud.UseVisualStyleBackColor = false;
+            this.button_modificar_solicitud.Visible = false;
             this.button_modificar_solicitud.Click += new System.EventHandler(this.button_modificar_solicitud_Click);
             // 
             // group_Busqueda
@@ -257,11 +252,9 @@ namespace sisgaapTestWF
             this.group_Busqueda.Controls.Add(this.Panel_BarraBusqueda);
             this.group_Busqueda.Controls.Add(this.ComboBox_Filtro);
             this.group_Busqueda.Font = new System.Drawing.Font("Century", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.group_Busqueda.Location = new System.Drawing.Point(8, 31);
-            this.group_Busqueda.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.group_Busqueda.Location = new System.Drawing.Point(6, 25);
             this.group_Busqueda.Name = "group_Busqueda";
-            this.group_Busqueda.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.group_Busqueda.Size = new System.Drawing.Size(855, 89);
+            this.group_Busqueda.Size = new System.Drawing.Size(641, 72);
             this.group_Busqueda.TabIndex = 89;
             this.group_Busqueda.TabStop = false;
             this.group_Busqueda.Text = "Búsqueda de Solicitudes de Produccion";
@@ -274,10 +267,10 @@ namespace sisgaapTestWF
             this.Panel_BarraBusqueda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.Panel_BarraBusqueda.Controls.Add(this.TextBox_Búsqueda);
             this.Panel_BarraBusqueda.Controls.Add(this.Button_Buscar);
-            this.Panel_BarraBusqueda.Location = new System.Drawing.Point(24, 31);
-            this.Panel_BarraBusqueda.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Panel_BarraBusqueda.Location = new System.Drawing.Point(18, 25);
+            this.Panel_BarraBusqueda.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Panel_BarraBusqueda.Name = "Panel_BarraBusqueda";
-            this.Panel_BarraBusqueda.Size = new System.Drawing.Size(577, 49);
+            this.Panel_BarraBusqueda.Size = new System.Drawing.Size(433, 40);
             this.Panel_BarraBusqueda.TabIndex = 87;
             // 
             // TextBox_Búsqueda
@@ -288,10 +281,10 @@ namespace sisgaapTestWF
             this.TextBox_Búsqueda.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TextBox_Búsqueda.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Italic);
             this.TextBox_Búsqueda.ForeColor = System.Drawing.Color.Gray;
-            this.TextBox_Búsqueda.Location = new System.Drawing.Point(19, 11);
-            this.TextBox_Búsqueda.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.TextBox_Búsqueda.Location = new System.Drawing.Point(14, 9);
+            this.TextBox_Búsqueda.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.TextBox_Búsqueda.Name = "TextBox_Búsqueda";
-            this.TextBox_Búsqueda.Size = new System.Drawing.Size(427, 25);
+            this.TextBox_Búsqueda.Size = new System.Drawing.Size(320, 20);
             this.TextBox_Búsqueda.TabIndex = 82;
             // 
             // Button_Buscar
@@ -306,10 +299,10 @@ namespace sisgaapTestWF
             this.Button_Buscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Button_Buscar.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.Button_Buscar.ForeColor = System.Drawing.Color.White;
-            this.Button_Buscar.Location = new System.Drawing.Point(511, 1);
-            this.Button_Buscar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Button_Buscar.Location = new System.Drawing.Point(383, 1);
+            this.Button_Buscar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Button_Buscar.Name = "Button_Buscar";
-            this.Button_Buscar.Size = new System.Drawing.Size(65, 47);
+            this.Button_Buscar.Size = new System.Drawing.Size(49, 38);
             this.Button_Buscar.TabIndex = 83;
             this.Button_Buscar.UseVisualStyleBackColor = false;
             this.Button_Buscar.Click += new System.EventHandler(this.Button_Buscar_Click);
@@ -322,10 +315,10 @@ namespace sisgaapTestWF
             this.ComboBox_Filtro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ComboBox_Filtro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ComboBox_Filtro.FormattingEnabled = true;
-            this.ComboBox_Filtro.Location = new System.Drawing.Point(623, 39);
-            this.ComboBox_Filtro.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.ComboBox_Filtro.Location = new System.Drawing.Point(467, 32);
+            this.ComboBox_Filtro.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ComboBox_Filtro.Name = "ComboBox_Filtro";
-            this.ComboBox_Filtro.Size = new System.Drawing.Size(199, 31);
+            this.ComboBox_Filtro.Size = new System.Drawing.Size(150, 26);
             this.ComboBox_Filtro.TabIndex = 88;
             this.ComboBox_Filtro.SelectedIndexChanged += new System.EventHandler(this.ComboBox_Filtro_SelectedIndexChanged);
             // 
@@ -337,10 +330,9 @@ namespace sisgaapTestWF
             this.Button_NuevaSolicitud.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.Button_NuevaSolicitud.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Button_NuevaSolicitud.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Button_NuevaSolicitud.Location = new System.Drawing.Point(703, 155);
-            this.Button_NuevaSolicitud.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Button_NuevaSolicitud.Location = new System.Drawing.Point(527, 126);
             this.Button_NuevaSolicitud.Name = "Button_NuevaSolicitud";
-            this.Button_NuevaSolicitud.Size = new System.Drawing.Size(261, 41);
+            this.Button_NuevaSolicitud.Size = new System.Drawing.Size(196, 33);
             this.Button_NuevaSolicitud.TabIndex = 5;
             this.Button_NuevaSolicitud.Text = "Solicitud Produccion";
             this.Button_NuevaSolicitud.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -354,38 +346,37 @@ namespace sisgaapTestWF
             this.DataGridView_VistaPrincipal.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
             this.DataGridView_VistaPrincipal.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DataGridView_VistaPrincipal.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(210)))), ((int)(((byte)(210)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DataGridView_VistaPrincipal.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle34.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle34.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(210)))), ((int)(((byte)(210)))));
+            dataGridViewCellStyle34.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle34.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle34.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle34.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle34.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DataGridView_VistaPrincipal.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle34;
             this.DataGridView_VistaPrincipal.ColumnHeadersHeight = 35;
             this.DataGridView_VistaPrincipal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DataGridView_VistaPrincipal.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle35.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle35.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle35.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle35.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle35.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle35.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle35.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DataGridView_VistaPrincipal.DefaultCellStyle = dataGridViewCellStyle35;
             this.DataGridView_VistaPrincipal.EnableHeadersVisualStyles = false;
             this.DataGridView_VistaPrincipal.GridColor = System.Drawing.Color.Silver;
-            this.DataGridView_VistaPrincipal.Location = new System.Drawing.Point(16, 203);
-            this.DataGridView_VistaPrincipal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DataGridView_VistaPrincipal.Location = new System.Drawing.Point(12, 165);
             this.DataGridView_VistaPrincipal.Name = "DataGridView_VistaPrincipal";
             this.DataGridView_VistaPrincipal.RowHeadersVisible = false;
             this.DataGridView_VistaPrincipal.RowHeadersWidth = 51;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(164)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DataGridView_VistaPrincipal.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle36.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle36.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            dataGridViewCellStyle36.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(164)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle36.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DataGridView_VistaPrincipal.RowsDefaultCellStyle = dataGridViewCellStyle36;
             this.DataGridView_VistaPrincipal.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DataGridView_VistaPrincipal.Size = new System.Drawing.Size(952, 251);
+            this.DataGridView_VistaPrincipal.Size = new System.Drawing.Size(714, 204);
             this.DataGridView_VistaPrincipal.TabIndex = 3;
             // 
             // button_visualizarSA
@@ -396,10 +387,9 @@ namespace sisgaapTestWF
             this.button_visualizarSA.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.button_visualizarSA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_visualizarSA.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button_visualizarSA.Location = new System.Drawing.Point(500, 155);
-            this.button_visualizarSA.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button_visualizarSA.Location = new System.Drawing.Point(375, 126);
             this.button_visualizarSA.Name = "button_visualizarSA";
-            this.button_visualizarSA.Size = new System.Drawing.Size(192, 41);
+            this.button_visualizarSA.Size = new System.Drawing.Size(144, 33);
             this.button_visualizarSA.TabIndex = 91;
             this.button_visualizarSA.Text = "Visualizar Solicitud";
             this.button_visualizarSA.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -415,10 +405,9 @@ namespace sisgaapTestWF
             this.panel_registro.Controls.Add(this.panel_Solicitud);
             this.panel_registro.Controls.Add(this.panel_produccion);
             this.panel_registro.Controls.Add(this.panel_Detalle_Solicitud);
-            this.panel_registro.Location = new System.Drawing.Point(148, 0);
-            this.panel_registro.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel_registro.Location = new System.Drawing.Point(111, 0);
             this.panel_registro.Name = "panel_registro";
-            this.panel_registro.Size = new System.Drawing.Size(1152, 613);
+            this.panel_registro.Size = new System.Drawing.Size(864, 498);
             this.panel_registro.TabIndex = 2;
             this.panel_registro.Visible = false;
             this.panel_registro.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_registro_Paint);
@@ -427,10 +416,9 @@ namespace sisgaapTestWF
             // 
             this.button1.Enabled = false;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(307, 0);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Location = new System.Drawing.Point(230, 0);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(316, 28);
+            this.button1.Size = new System.Drawing.Size(237, 23);
             this.button1.TabIndex = 4;
             this.button1.Text = "Produccion";
             this.button1.UseVisualStyleBackColor = true;
@@ -439,10 +427,9 @@ namespace sisgaapTestWF
             // 
             this.button2.Enabled = false;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(631, 1);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2.Location = new System.Drawing.Point(473, 1);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(345, 28);
+            this.button2.Size = new System.Drawing.Size(259, 23);
             this.button2.TabIndex = 1;
             this.button2.Text = "No Produccion";
             this.button2.UseVisualStyleBackColor = true;
@@ -452,268 +439,11 @@ namespace sisgaapTestWF
             this.button.Enabled = false;
             this.button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button.Location = new System.Drawing.Point(0, 1);
-            this.button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button.Name = "button";
-            this.button.Size = new System.Drawing.Size(299, 28);
+            this.button.Size = new System.Drawing.Size(224, 23);
             this.button.TabIndex = 0;
             this.button.Text = "Solicitud ";
             this.button.UseVisualStyleBackColor = true;
-            // 
-            // panel_Detalle_Solicitud
-            // 
-            this.panel_Detalle_Solicitud.Controls.Add(this.panel_agregar_detalle);
-            this.panel_Detalle_Solicitud.Controls.Add(this.button_continuar_detalle);
-            this.panel_Detalle_Solicitud.Controls.Add(this.button_agregar_detalleSA);
-            this.panel_Detalle_Solicitud.Controls.Add(this.dataGridView_detalleSA);
-            this.panel_Detalle_Solicitud.Controls.Add(this.button_CancelarTodo);
-            this.panel_Detalle_Solicitud.Location = new System.Drawing.Point(1, 31);
-            this.panel_Detalle_Solicitud.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.panel_Detalle_Solicitud.Name = "panel_Detalle_Solicitud";
-            this.panel_Detalle_Solicitud.Size = new System.Drawing.Size(1151, 582);
-            this.panel_Detalle_Solicitud.TabIndex = 3;
-            this.panel_Detalle_Solicitud.Visible = false;
-            // 
-            // panel_agregar_detalle
-            // 
-            this.panel_agregar_detalle.Controls.Add(this.groupBox6);
-            this.panel_agregar_detalle.Controls.Add(this.button_cancelar_produccion);
-            this.panel_agregar_detalle.Controls.Add(this.button_producir_todo);
-            this.panel_agregar_detalle.Controls.Add(this.button_producir);
-            this.panel_agregar_detalle.Controls.Add(this.groupBox4);
-            this.panel_agregar_detalle.Controls.Add(this.textBox_cantidad_detalle_sa);
-            this.panel_agregar_detalle.Controls.Add(this.textBox_modelo_repuesto);
-            this.panel_agregar_detalle.Controls.Add(this.textBox_marca_repuesto);
-            this.panel_agregar_detalle.Controls.Add(this.textBox_codigo_repuesto);
-            this.panel_agregar_detalle.Controls.Add(this.label4);
-            this.panel_agregar_detalle.Controls.Add(this.label3);
-            this.panel_agregar_detalle.Controls.Add(this.label2);
-            this.panel_agregar_detalle.Controls.Add(this.label1);
-            this.panel_agregar_detalle.Location = new System.Drawing.Point(197, 14);
-            this.panel_agregar_detalle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.panel_agregar_detalle.Name = "panel_agregar_detalle";
-            this.panel_agregar_detalle.Size = new System.Drawing.Size(509, 423);
-            this.panel_agregar_detalle.TabIndex = 11;
-            this.panel_agregar_detalle.Visible = false;
-            // 
-            // groupBox6
-            // 
-            this.groupBox6.Controls.Add(this.textBox_costo_producir);
-            this.groupBox6.Location = new System.Drawing.Point(45, 284);
-            this.groupBox6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox6.Size = new System.Drawing.Size(217, 73);
-            this.groupBox6.TabIndex = 11;
-            this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "Costo";
-            // 
-            // textBox_costo_producir
-            // 
-            this.textBox_costo_producir.Location = new System.Drawing.Point(19, 28);
-            this.textBox_costo_producir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBox_costo_producir.Name = "textBox_costo_producir";
-            this.textBox_costo_producir.Size = new System.Drawing.Size(151, 22);
-            this.textBox_costo_producir.TabIndex = 0;
-            // 
-            // button_cancelar_produccion
-            // 
-            this.button_cancelar_produccion.Location = new System.Drawing.Point(11, 370);
-            this.button_cancelar_produccion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button_cancelar_produccion.Name = "button_cancelar_produccion";
-            this.button_cancelar_produccion.Size = new System.Drawing.Size(153, 31);
-            this.button_cancelar_produccion.TabIndex = 12;
-            this.button_cancelar_produccion.Text = "Cancelar";
-            this.button_cancelar_produccion.UseVisualStyleBackColor = true;
-            this.button_cancelar_produccion.Click += new System.EventHandler(this.button_cancelar_produccion_Click);
-            // 
-            // button_producir_todo
-            // 
-            this.button_producir_todo.Location = new System.Drawing.Point(180, 374);
-            this.button_producir_todo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button_producir_todo.Name = "button_producir_todo";
-            this.button_producir_todo.Size = new System.Drawing.Size(153, 31);
-            this.button_producir_todo.TabIndex = 11;
-            this.button_producir_todo.Text = "Producir Todo";
-            this.button_producir_todo.UseVisualStyleBackColor = true;
-            this.button_producir_todo.Click += new System.EventHandler(this.button_producir_todo_Click);
-            // 
-            // button_producir
-            // 
-            this.button_producir.Location = new System.Drawing.Point(340, 375);
-            this.button_producir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button_producir.Name = "button_producir";
-            this.button_producir.Size = new System.Drawing.Size(153, 31);
-            this.button_producir.TabIndex = 9;
-            this.button_producir.Text = "Producir";
-            this.button_producir.UseVisualStyleBackColor = true;
-            this.button_producir.Click += new System.EventHandler(this.button_producir_Click);
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.button_restablecer);
-            this.groupBox4.Controls.Add(this.textBox_cantidad_sugerida);
-            this.groupBox4.Location = new System.Drawing.Point(45, 193);
-            this.groupBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox4.Size = new System.Drawing.Size(379, 73);
-            this.groupBox4.TabIndex = 8;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Cantidad Sugerida";
-            // 
-            // button_restablecer
-            // 
-            this.button_restablecer.Location = new System.Drawing.Point(195, 21);
-            this.button_restablecer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button_restablecer.Name = "button_restablecer";
-            this.button_restablecer.Size = new System.Drawing.Size(153, 31);
-            this.button_restablecer.TabIndex = 10;
-            this.button_restablecer.Text = "Restablecer";
-            this.button_restablecer.UseVisualStyleBackColor = true;
-            this.button_restablecer.Click += new System.EventHandler(this.button_restablecer_Click);
-            // 
-            // textBox_cantidad_sugerida
-            // 
-            this.textBox_cantidad_sugerida.Location = new System.Drawing.Point(19, 28);
-            this.textBox_cantidad_sugerida.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBox_cantidad_sugerida.Name = "textBox_cantidad_sugerida";
-            this.textBox_cantidad_sugerida.Size = new System.Drawing.Size(151, 22);
-            this.textBox_cantidad_sugerida.TabIndex = 0;
-            this.textBox_cantidad_sugerida.Text = "0";
-            // 
-            // textBox_cantidad_detalle_sa
-            // 
-            this.textBox_cantidad_detalle_sa.Enabled = false;
-            this.textBox_cantidad_detalle_sa.Location = new System.Drawing.Point(225, 149);
-            this.textBox_cantidad_detalle_sa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBox_cantidad_detalle_sa.Name = "textBox_cantidad_detalle_sa";
-            this.textBox_cantidad_detalle_sa.Size = new System.Drawing.Size(223, 22);
-            this.textBox_cantidad_detalle_sa.TabIndex = 7;
-            // 
-            // textBox_modelo_repuesto
-            // 
-            this.textBox_modelo_repuesto.Enabled = false;
-            this.textBox_modelo_repuesto.Location = new System.Drawing.Point(145, 112);
-            this.textBox_modelo_repuesto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBox_modelo_repuesto.Name = "textBox_modelo_repuesto";
-            this.textBox_modelo_repuesto.Size = new System.Drawing.Size(303, 22);
-            this.textBox_modelo_repuesto.TabIndex = 6;
-            // 
-            // textBox_marca_repuesto
-            // 
-            this.textBox_marca_repuesto.Enabled = false;
-            this.textBox_marca_repuesto.Location = new System.Drawing.Point(145, 71);
-            this.textBox_marca_repuesto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBox_marca_repuesto.Name = "textBox_marca_repuesto";
-            this.textBox_marca_repuesto.Size = new System.Drawing.Size(303, 22);
-            this.textBox_marca_repuesto.TabIndex = 5;
-            // 
-            // textBox_codigo_repuesto
-            // 
-            this.textBox_codigo_repuesto.Enabled = false;
-            this.textBox_codigo_repuesto.Location = new System.Drawing.Point(145, 31);
-            this.textBox_codigo_repuesto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBox_codigo_repuesto.Name = "textBox_codigo_repuesto";
-            this.textBox_codigo_repuesto.Size = new System.Drawing.Size(303, 22);
-            this.textBox_codigo_repuesto.TabIndex = 4;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(47, 158);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(161, 17);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "CANTIDAD SOLICITADA";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(47, 116);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(68, 17);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "MODELO";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(47, 75);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(56, 17);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "MARCA";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(47, 34);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(63, 17);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "CODIGO";
-            // 
-            // button_continuar_detalle
-            // 
-            this.button_continuar_detalle.Location = new System.Drawing.Point(824, 393);
-            this.button_continuar_detalle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button_continuar_detalle.Name = "button_continuar_detalle";
-            this.button_continuar_detalle.Size = new System.Drawing.Size(143, 31);
-            this.button_continuar_detalle.TabIndex = 10;
-            this.button_continuar_detalle.Text = "Confirmar";
-            this.button_continuar_detalle.UseVisualStyleBackColor = true;
-            this.button_continuar_detalle.Visible = false;
-            // 
-            // button_agregar_detalleSA
-            // 
-            this.button_agregar_detalleSA.Location = new System.Drawing.Point(824, 30);
-            this.button_agregar_detalleSA.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button_agregar_detalleSA.Name = "button_agregar_detalleSA";
-            this.button_agregar_detalleSA.Size = new System.Drawing.Size(143, 31);
-            this.button_agregar_detalleSA.TabIndex = 9;
-            this.button_agregar_detalleSA.Text = "Agregar";
-            this.button_agregar_detalleSA.UseVisualStyleBackColor = true;
-            this.button_agregar_detalleSA.Click += new System.EventHandler(this.button_agregar_detalleSA_Click);
-            // 
-            // dataGridView_detalleSA
-            // 
-            this.dataGridView_detalleSA.AllowUserToResizeRows = false;
-            this.dataGridView_detalleSA.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView_detalleSA.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView_detalleSA.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.dataGridView_detalleSA.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView_detalleSA.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dataGridView_detalleSA.ColumnHeadersHeight = 35;
-            this.dataGridView_detalleSA.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dataGridView_detalleSA.EnableHeadersVisualStyles = false;
-            this.dataGridView_detalleSA.GridColor = System.Drawing.Color.Silver;
-            this.dataGridView_detalleSA.Location = new System.Drawing.Point(15, 90);
-            this.dataGridView_detalleSA.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.dataGridView_detalleSA.Name = "dataGridView_detalleSA";
-            this.dataGridView_detalleSA.ReadOnly = true;
-            this.dataGridView_detalleSA.RowHeadersVisible = false;
-            this.dataGridView_detalleSA.RowHeadersWidth = 51;
-            this.dataGridView_detalleSA.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView_detalleSA.Size = new System.Drawing.Size(952, 289);
-            this.dataGridView_detalleSA.TabIndex = 8;
-            this.dataGridView_detalleSA.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_detalleSA_CellContentClick);
-            // 
-            // button_CancelarTodo
-            // 
-            this.button_CancelarTodo.Location = new System.Drawing.Point(15, 386);
-            this.button_CancelarTodo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button_CancelarTodo.Name = "button_CancelarTodo";
-            this.button_CancelarTodo.Size = new System.Drawing.Size(153, 31);
-            this.button_CancelarTodo.TabIndex = 4;
-            this.button_CancelarTodo.Text = "Cancelar";
-            this.button_CancelarTodo.UseVisualStyleBackColor = true;
-            this.button_CancelarTodo.Click += new System.EventHandler(this.button_CancelarTodo_Click);
             // 
             // panel_Solicitud
             // 
@@ -726,59 +456,51 @@ namespace sisgaapTestWF
             this.panel_Solicitud.Controls.Add(this.groupBox1);
             this.panel_Solicitud.Controls.Add(this.button_Continuar);
             this.panel_Solicitud.Controls.Add(this.button_actualizar);
-            this.panel_Solicitud.Location = new System.Drawing.Point(1, 31);
-            this.panel_Solicitud.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel_Solicitud.Location = new System.Drawing.Point(1, 25);
             this.panel_Solicitud.Name = "panel_Solicitud";
-            this.panel_Solicitud.Size = new System.Drawing.Size(1151, 582);
+            this.panel_Solicitud.Size = new System.Drawing.Size(863, 473);
             this.panel_Solicitud.TabIndex = 2;
             // 
             // groupBox7
             // 
             this.groupBox7.Controls.Add(this.textBox_solicitud_abastecimiento);
-            this.groupBox7.Location = new System.Drawing.Point(23, 14);
-            this.groupBox7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox7.Location = new System.Drawing.Point(17, 11);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox7.Size = new System.Drawing.Size(347, 58);
+            this.groupBox7.Size = new System.Drawing.Size(260, 47);
             this.groupBox7.TabIndex = 1;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Solicitud";
             // 
             // textBox_solicitud_abastecimiento
             // 
-            this.textBox_solicitud_abastecimiento.Location = new System.Drawing.Point(8, 20);
-            this.textBox_solicitud_abastecimiento.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox_solicitud_abastecimiento.Location = new System.Drawing.Point(6, 16);
             this.textBox_solicitud_abastecimiento.Name = "textBox_solicitud_abastecimiento";
-            this.textBox_solicitud_abastecimiento.Size = new System.Drawing.Size(329, 22);
+            this.textBox_solicitud_abastecimiento.Size = new System.Drawing.Size(248, 20);
             this.textBox_solicitud_abastecimiento.TabIndex = 0;
             // 
             // groupBox5
             // 
             this.groupBox5.Controls.Add(this.textBox_observacion);
-            this.groupBox5.Location = new System.Drawing.Point(15, 267);
-            this.groupBox5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox5.Location = new System.Drawing.Point(11, 217);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox5.Size = new System.Drawing.Size(883, 114);
+            this.groupBox5.Size = new System.Drawing.Size(662, 93);
             this.groupBox5.TabIndex = 3;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Observación";
             // 
             // textBox_observacion
             // 
-            this.textBox_observacion.Location = new System.Drawing.Point(20, 20);
-            this.textBox_observacion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox_observacion.Location = new System.Drawing.Point(15, 16);
             this.textBox_observacion.Multiline = true;
             this.textBox_observacion.Name = "textBox_observacion";
-            this.textBox_observacion.Size = new System.Drawing.Size(853, 83);
+            this.textBox_observacion.Size = new System.Drawing.Size(641, 68);
             this.textBox_observacion.TabIndex = 0;
             // 
             // button_cancelar
             // 
-            this.button_cancelar.Location = new System.Drawing.Point(15, 389);
-            this.button_cancelar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button_cancelar.Location = new System.Drawing.Point(11, 316);
             this.button_cancelar.Name = "button_cancelar";
-            this.button_cancelar.Size = new System.Drawing.Size(153, 31);
+            this.button_cancelar.Size = new System.Drawing.Size(115, 25);
             this.button_cancelar.TabIndex = 4;
             this.button_cancelar.Text = "Cancelar";
             this.button_cancelar.UseVisualStyleBackColor = true;
@@ -787,91 +509,78 @@ namespace sisgaapTestWF
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.textBox_descripcion);
-            this.groupBox3.Location = new System.Drawing.Point(15, 145);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox3.Location = new System.Drawing.Point(11, 118);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox3.Size = new System.Drawing.Size(883, 114);
+            this.groupBox3.Size = new System.Drawing.Size(662, 93);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Descripcion";
             // 
             // textBox_descripcion
             // 
-            this.textBox_descripcion.Location = new System.Drawing.Point(20, 20);
-            this.textBox_descripcion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox_descripcion.Location = new System.Drawing.Point(15, 16);
             this.textBox_descripcion.Multiline = true;
             this.textBox_descripcion.Name = "textBox_descripcion";
-            this.textBox_descripcion.Size = new System.Drawing.Size(853, 83);
+            this.textBox_descripcion.Size = new System.Drawing.Size(641, 68);
             this.textBox_descripcion.TabIndex = 0;
             // 
             // dateTime_SA
             // 
             this.dateTime_SA.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTime_SA.Location = new System.Drawing.Point(747, 30);
-            this.dateTime_SA.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dateTime_SA.Location = new System.Drawing.Point(560, 24);
             this.dateTime_SA.Name = "dateTime_SA";
-            this.dateTime_SA.Size = new System.Drawing.Size(141, 22);
+            this.dateTime_SA.Size = new System.Drawing.Size(107, 20);
             this.dateTime_SA.TabIndex = 2;
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.textBox_asunto);
-            this.groupBox2.Location = new System.Drawing.Point(15, 80);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Location = new System.Drawing.Point(11, 65);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox2.Size = new System.Drawing.Size(883, 58);
+            this.groupBox2.Size = new System.Drawing.Size(662, 47);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Asunto";
             // 
             // textBox_asunto
             // 
-            this.textBox_asunto.Location = new System.Drawing.Point(20, 20);
-            this.textBox_asunto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox_asunto.Location = new System.Drawing.Point(15, 16);
             this.textBox_asunto.Name = "textBox_asunto";
-            this.textBox_asunto.Size = new System.Drawing.Size(853, 22);
+            this.textBox_asunto.Size = new System.Drawing.Size(641, 20);
             this.textBox_asunto.TabIndex = 0;
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.textBox_redactor);
-            this.groupBox1.Location = new System.Drawing.Point(377, 14);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Location = new System.Drawing.Point(283, 11);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox1.Size = new System.Drawing.Size(352, 58);
+            this.groupBox1.Size = new System.Drawing.Size(264, 47);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Redactor";
             // 
             // textBox_redactor
             // 
-            this.textBox_redactor.Location = new System.Drawing.Point(8, 20);
-            this.textBox_redactor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox_redactor.Location = new System.Drawing.Point(6, 16);
             this.textBox_redactor.Name = "textBox_redactor";
-            this.textBox_redactor.Size = new System.Drawing.Size(335, 22);
+            this.textBox_redactor.Size = new System.Drawing.Size(252, 20);
             this.textBox_redactor.TabIndex = 0;
             // 
             // button_Continuar
             // 
-            this.button_Continuar.Location = new System.Drawing.Point(747, 393);
-            this.button_Continuar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button_Continuar.Location = new System.Drawing.Point(560, 319);
             this.button_Continuar.Name = "button_Continuar";
-            this.button_Continuar.Size = new System.Drawing.Size(143, 31);
+            this.button_Continuar.Size = new System.Drawing.Size(107, 25);
             this.button_Continuar.TabIndex = 5;
             this.button_Continuar.Text = "Continuar";
             this.button_Continuar.UseVisualStyleBackColor = true;
-            this.button_Continuar.Visible = false;
             this.button_Continuar.Click += new System.EventHandler(this.button_Continuar_Click);
             // 
             // button_actualizar
             // 
-            this.button_actualizar.Location = new System.Drawing.Point(747, 393);
-            this.button_actualizar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button_actualizar.Location = new System.Drawing.Point(560, 319);
             this.button_actualizar.Name = "button_actualizar";
-            this.button_actualizar.Size = new System.Drawing.Size(143, 31);
+            this.button_actualizar.Size = new System.Drawing.Size(107, 25);
             this.button_actualizar.TabIndex = 6;
             this.button_actualizar.Text = "Actualizar";
             this.button_actualizar.UseVisualStyleBackColor = true;
@@ -886,30 +595,27 @@ namespace sisgaapTestWF
             this.panel_produccion.Controls.Add(this.button4);
             this.panel_produccion.Controls.Add(this.dataGridView_produccion);
             this.panel_produccion.Controls.Add(this.button5);
-            this.panel_produccion.Location = new System.Drawing.Point(1, 31);
-            this.panel_produccion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel_produccion.Location = new System.Drawing.Point(1, 25);
             this.panel_produccion.Name = "panel_produccion";
-            this.panel_produccion.Size = new System.Drawing.Size(1151, 582);
+            this.panel_produccion.Size = new System.Drawing.Size(863, 473);
             this.panel_produccion.TabIndex = 5;
             this.panel_produccion.Visible = false;
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(820, 396);
-            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button3.Location = new System.Drawing.Point(615, 322);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(143, 31);
+            this.button3.Size = new System.Drawing.Size(107, 25);
             this.button3.TabIndex = 10;
             this.button3.Text = "Confirmar";
             this.button3.UseVisualStyleBackColor = true;
-            this.button3.Visible = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(824, 30);
-            this.button4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button4.Location = new System.Drawing.Point(618, 24);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(143, 31);
+            this.button4.Size = new System.Drawing.Size(107, 25);
             this.button4.TabIndex = 9;
             this.button4.Text = "Agregar";
             this.button4.UseVisualStyleBackColor = true;
@@ -929,35 +635,267 @@ namespace sisgaapTestWF
             this.dataGridView_produccion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridView_produccion.EnableHeadersVisualStyles = false;
             this.dataGridView_produccion.GridColor = System.Drawing.Color.Silver;
-            this.dataGridView_produccion.Location = new System.Drawing.Point(15, 90);
-            this.dataGridView_produccion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView_produccion.Location = new System.Drawing.Point(11, 73);
             this.dataGridView_produccion.Name = "dataGridView_produccion";
             this.dataGridView_produccion.ReadOnly = true;
             this.dataGridView_produccion.RowHeadersVisible = false;
             this.dataGridView_produccion.RowHeadersWidth = 51;
             this.dataGridView_produccion.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView_produccion.Size = new System.Drawing.Size(952, 289);
+            this.dataGridView_produccion.Size = new System.Drawing.Size(714, 235);
             this.dataGridView_produccion.TabIndex = 8;
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(15, 393);
-            this.button5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button5.Location = new System.Drawing.Point(11, 319);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(153, 31);
+            this.button5.Size = new System.Drawing.Size(115, 25);
             this.button5.TabIndex = 4;
             this.button5.Text = "Cancelar";
             this.button5.UseVisualStyleBackColor = true;
+            // 
+            // panel_Detalle_Solicitud
+            // 
+            this.panel_Detalle_Solicitud.Controls.Add(this.panel_agregar_detalle);
+            this.panel_Detalle_Solicitud.Controls.Add(this.button_continuar_detalle);
+            this.panel_Detalle_Solicitud.Controls.Add(this.button_agregar_detalleSA);
+            this.panel_Detalle_Solicitud.Controls.Add(this.dataGridView_detalleSA);
+            this.panel_Detalle_Solicitud.Controls.Add(this.button_CancelarTodo);
+            this.panel_Detalle_Solicitud.Location = new System.Drawing.Point(1, 25);
+            this.panel_Detalle_Solicitud.Name = "panel_Detalle_Solicitud";
+            this.panel_Detalle_Solicitud.Size = new System.Drawing.Size(863, 473);
+            this.panel_Detalle_Solicitud.TabIndex = 3;
+            this.panel_Detalle_Solicitud.Visible = false;
+            // 
+            // panel_agregar_detalle
+            // 
+            this.panel_agregar_detalle.Controls.Add(this.groupBox6);
+            this.panel_agregar_detalle.Controls.Add(this.button_cancelar_produccion);
+            this.panel_agregar_detalle.Controls.Add(this.button_producir_todo);
+            this.panel_agregar_detalle.Controls.Add(this.button_producir);
+            this.panel_agregar_detalle.Controls.Add(this.groupBox4);
+            this.panel_agregar_detalle.Controls.Add(this.textBox_cantidad_detalle_sa);
+            this.panel_agregar_detalle.Controls.Add(this.textBox_modelo_repuesto);
+            this.panel_agregar_detalle.Controls.Add(this.textBox_marca_repuesto);
+            this.panel_agregar_detalle.Controls.Add(this.textBox_codigo_repuesto);
+            this.panel_agregar_detalle.Controls.Add(this.label4);
+            this.panel_agregar_detalle.Controls.Add(this.label3);
+            this.panel_agregar_detalle.Controls.Add(this.label2);
+            this.panel_agregar_detalle.Controls.Add(this.label1);
+            this.panel_agregar_detalle.Location = new System.Drawing.Point(148, 11);
+            this.panel_agregar_detalle.Name = "panel_agregar_detalle";
+            this.panel_agregar_detalle.Size = new System.Drawing.Size(382, 344);
+            this.panel_agregar_detalle.TabIndex = 11;
+            this.panel_agregar_detalle.Visible = false;
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.textBox_costo_producir);
+            this.groupBox6.Location = new System.Drawing.Point(34, 231);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(163, 59);
+            this.groupBox6.TabIndex = 11;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Costo";
+            // 
+            // textBox_costo_producir
+            // 
+            this.textBox_costo_producir.Location = new System.Drawing.Point(14, 23);
+            this.textBox_costo_producir.Name = "textBox_costo_producir";
+            this.textBox_costo_producir.Size = new System.Drawing.Size(114, 20);
+            this.textBox_costo_producir.TabIndex = 0;
+            // 
+            // button_cancelar_produccion
+            // 
+            this.button_cancelar_produccion.Location = new System.Drawing.Point(8, 301);
+            this.button_cancelar_produccion.Name = "button_cancelar_produccion";
+            this.button_cancelar_produccion.Size = new System.Drawing.Size(115, 25);
+            this.button_cancelar_produccion.TabIndex = 12;
+            this.button_cancelar_produccion.Text = "Cancelar";
+            this.button_cancelar_produccion.UseVisualStyleBackColor = true;
+            this.button_cancelar_produccion.Click += new System.EventHandler(this.button_cancelar_produccion_Click);
+            // 
+            // button_producir_todo
+            // 
+            this.button_producir_todo.Location = new System.Drawing.Point(135, 304);
+            this.button_producir_todo.Name = "button_producir_todo";
+            this.button_producir_todo.Size = new System.Drawing.Size(115, 25);
+            this.button_producir_todo.TabIndex = 11;
+            this.button_producir_todo.Text = "Producir Todo";
+            this.button_producir_todo.UseVisualStyleBackColor = true;
+            this.button_producir_todo.Visible = false;
+            this.button_producir_todo.Click += new System.EventHandler(this.button_producir_todo_Click);
+            // 
+            // button_producir
+            // 
+            this.button_producir.Location = new System.Drawing.Point(255, 305);
+            this.button_producir.Name = "button_producir";
+            this.button_producir.Size = new System.Drawing.Size(115, 25);
+            this.button_producir.TabIndex = 9;
+            this.button_producir.Text = "Producir";
+            this.button_producir.UseVisualStyleBackColor = true;
+            this.button_producir.Click += new System.EventHandler(this.button_producir_Click);
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.button_restablecer);
+            this.groupBox4.Controls.Add(this.textBox_cantidad_sugerida);
+            this.groupBox4.Location = new System.Drawing.Point(34, 157);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(284, 59);
+            this.groupBox4.TabIndex = 8;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Cantidad Sugerida";
+            // 
+            // button_restablecer
+            // 
+            this.button_restablecer.Location = new System.Drawing.Point(146, 17);
+            this.button_restablecer.Name = "button_restablecer";
+            this.button_restablecer.Size = new System.Drawing.Size(115, 25);
+            this.button_restablecer.TabIndex = 10;
+            this.button_restablecer.Text = "Restablecer";
+            this.button_restablecer.UseVisualStyleBackColor = true;
+            this.button_restablecer.Click += new System.EventHandler(this.button_restablecer_Click);
+            // 
+            // textBox_cantidad_sugerida
+            // 
+            this.textBox_cantidad_sugerida.Location = new System.Drawing.Point(14, 23);
+            this.textBox_cantidad_sugerida.Name = "textBox_cantidad_sugerida";
+            this.textBox_cantidad_sugerida.Size = new System.Drawing.Size(114, 20);
+            this.textBox_cantidad_sugerida.TabIndex = 0;
+            this.textBox_cantidad_sugerida.Text = "0";
+            // 
+            // textBox_cantidad_detalle_sa
+            // 
+            this.textBox_cantidad_detalle_sa.Enabled = false;
+            this.textBox_cantidad_detalle_sa.Location = new System.Drawing.Point(169, 121);
+            this.textBox_cantidad_detalle_sa.Name = "textBox_cantidad_detalle_sa";
+            this.textBox_cantidad_detalle_sa.Size = new System.Drawing.Size(168, 20);
+            this.textBox_cantidad_detalle_sa.TabIndex = 7;
+            // 
+            // textBox_modelo_repuesto
+            // 
+            this.textBox_modelo_repuesto.Enabled = false;
+            this.textBox_modelo_repuesto.Location = new System.Drawing.Point(109, 91);
+            this.textBox_modelo_repuesto.Name = "textBox_modelo_repuesto";
+            this.textBox_modelo_repuesto.Size = new System.Drawing.Size(228, 20);
+            this.textBox_modelo_repuesto.TabIndex = 6;
+            // 
+            // textBox_marca_repuesto
+            // 
+            this.textBox_marca_repuesto.Enabled = false;
+            this.textBox_marca_repuesto.Location = new System.Drawing.Point(109, 58);
+            this.textBox_marca_repuesto.Name = "textBox_marca_repuesto";
+            this.textBox_marca_repuesto.Size = new System.Drawing.Size(228, 20);
+            this.textBox_marca_repuesto.TabIndex = 5;
+            // 
+            // textBox_codigo_repuesto
+            // 
+            this.textBox_codigo_repuesto.Enabled = false;
+            this.textBox_codigo_repuesto.Location = new System.Drawing.Point(109, 25);
+            this.textBox_codigo_repuesto.Name = "textBox_codigo_repuesto";
+            this.textBox_codigo_repuesto.Size = new System.Drawing.Size(228, 20);
+            this.textBox_codigo_repuesto.TabIndex = 4;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(35, 128);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(128, 13);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "CANTIDAD SOLICITADA";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(35, 94);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(53, 13);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "MODELO";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(35, 61);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(45, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "MARCA";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(35, 28);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(49, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "CODIGO";
+            // 
+            // button_continuar_detalle
+            // 
+            this.button_continuar_detalle.Location = new System.Drawing.Point(618, 319);
+            this.button_continuar_detalle.Name = "button_continuar_detalle";
+            this.button_continuar_detalle.Size = new System.Drawing.Size(107, 25);
+            this.button_continuar_detalle.TabIndex = 10;
+            this.button_continuar_detalle.Text = "Confirmar";
+            this.button_continuar_detalle.UseVisualStyleBackColor = true;
+            this.button_continuar_detalle.UseWaitCursor = true;
+            this.button_continuar_detalle.Click += new System.EventHandler(this.button_continuar_detalle_Click);
+            // 
+            // button_agregar_detalleSA
+            // 
+            this.button_agregar_detalleSA.Location = new System.Drawing.Point(618, 24);
+            this.button_agregar_detalleSA.Name = "button_agregar_detalleSA";
+            this.button_agregar_detalleSA.Size = new System.Drawing.Size(107, 25);
+            this.button_agregar_detalleSA.TabIndex = 9;
+            this.button_agregar_detalleSA.Text = "Agregar";
+            this.button_agregar_detalleSA.UseVisualStyleBackColor = true;
+            this.button_agregar_detalleSA.Click += new System.EventHandler(this.button_agregar_detalleSA_Click);
+            // 
+            // dataGridView_detalleSA
+            // 
+            this.dataGridView_detalleSA.AllowUserToResizeRows = false;
+            this.dataGridView_detalleSA.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView_detalleSA.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView_detalleSA.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.dataGridView_detalleSA.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView_detalleSA.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dataGridView_detalleSA.ColumnHeadersHeight = 35;
+            this.dataGridView_detalleSA.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dataGridView_detalleSA.EnableHeadersVisualStyles = false;
+            this.dataGridView_detalleSA.GridColor = System.Drawing.Color.Silver;
+            this.dataGridView_detalleSA.Location = new System.Drawing.Point(11, 73);
+            this.dataGridView_detalleSA.Name = "dataGridView_detalleSA";
+            this.dataGridView_detalleSA.ReadOnly = true;
+            this.dataGridView_detalleSA.RowHeadersVisible = false;
+            this.dataGridView_detalleSA.RowHeadersWidth = 51;
+            this.dataGridView_detalleSA.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView_detalleSA.Size = new System.Drawing.Size(714, 235);
+            this.dataGridView_detalleSA.TabIndex = 8;
+            this.dataGridView_detalleSA.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_detalleSA_CellContentClick);
+            // 
+            // button_CancelarTodo
+            // 
+            this.button_CancelarTodo.Location = new System.Drawing.Point(11, 314);
+            this.button_CancelarTodo.Name = "button_CancelarTodo";
+            this.button_CancelarTodo.Size = new System.Drawing.Size(115, 25);
+            this.button_CancelarTodo.TabIndex = 4;
+            this.button_CancelarTodo.Text = "Cancelar";
+            this.button_CancelarTodo.UseVisualStyleBackColor = true;
+            this.button_CancelarTodo.Click += new System.EventHandler(this.button_CancelarTodo_Click);
             // 
             // panel_vista
             // 
             this.panel_vista.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
             this.panel_vista.Controls.Add(this.button_cerrarVista);
             this.panel_vista.Controls.Add(this.textBox_vista);
-            this.panel_vista.Location = new System.Drawing.Point(148, 0);
-            this.panel_vista.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.panel_vista.Location = new System.Drawing.Point(111, 0);
+            this.panel_vista.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel_vista.Name = "panel_vista";
-            this.panel_vista.Size = new System.Drawing.Size(1152, 613);
+            this.panel_vista.Size = new System.Drawing.Size(864, 498);
             this.panel_vista.TabIndex = 90;
             this.panel_vista.Visible = false;
             // 
@@ -966,10 +904,10 @@ namespace sisgaapTestWF
             this.button_cerrarVista.BackColor = System.Drawing.Color.Green;
             this.button_cerrarVista.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_cerrarVista.ForeColor = System.Drawing.Color.White;
-            this.button_cerrarVista.Location = new System.Drawing.Point(779, 414);
-            this.button_cerrarVista.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.button_cerrarVista.Location = new System.Drawing.Point(584, 336);
+            this.button_cerrarVista.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button_cerrarVista.Name = "button_cerrarVista";
-            this.button_cerrarVista.Size = new System.Drawing.Size(139, 41);
+            this.button_cerrarVista.Size = new System.Drawing.Size(104, 33);
             this.button_cerrarVista.TabIndex = 1;
             this.button_cerrarVista.Text = "Cerrar";
             this.button_cerrarVista.UseVisualStyleBackColor = false;
@@ -979,26 +917,25 @@ namespace sisgaapTestWF
             // 
             this.textBox_vista.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox_vista.Font = new System.Drawing.Font("Courier New", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_vista.Location = new System.Drawing.Point(23, 26);
-            this.textBox_vista.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.textBox_vista.Location = new System.Drawing.Point(17, 21);
+            this.textBox_vista.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox_vista.Multiline = true;
             this.textBox_vista.Name = "textBox_vista";
             this.textBox_vista.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.textBox_vista.Size = new System.Drawing.Size(912, 380);
+            this.textBox_vista.Size = new System.Drawing.Size(684, 309);
             this.textBox_vista.TabIndex = 0;
             // 
             // SupervisorProduccion
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Green;
-            this.ClientSize = new System.Drawing.Size(1300, 613);
+            this.ClientSize = new System.Drawing.Size(975, 498);
             this.Controls.Add(this.panel_Menu);
             this.Controls.Add(this.panel_registro);
             this.Controls.Add(this.panel_SupervisorA);
             this.Controls.Add(this.panel_vista);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "SupervisorProduccion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SupervisorProduccion";
@@ -1009,14 +946,6 @@ namespace sisgaapTestWF
             this.Panel_BarraBusqueda.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView_VistaPrincipal)).EndInit();
             this.panel_registro.ResumeLayout(false);
-            this.panel_Detalle_Solicitud.ResumeLayout(false);
-            this.panel_agregar_detalle.ResumeLayout(false);
-            this.panel_agregar_detalle.PerformLayout();
-            this.groupBox6.ResumeLayout(false);
-            this.groupBox6.PerformLayout();
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_detalleSA)).EndInit();
             this.panel_Solicitud.ResumeLayout(false);
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
@@ -1030,6 +959,14 @@ namespace sisgaapTestWF
             this.groupBox1.PerformLayout();
             this.panel_produccion.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_produccion)).EndInit();
+            this.panel_Detalle_Solicitud.ResumeLayout(false);
+            this.panel_agregar_detalle.ResumeLayout(false);
+            this.panel_agregar_detalle.PerformLayout();
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_detalleSA)).EndInit();
             this.panel_vista.ResumeLayout(false);
             this.panel_vista.PerformLayout();
             this.ResumeLayout(false);
