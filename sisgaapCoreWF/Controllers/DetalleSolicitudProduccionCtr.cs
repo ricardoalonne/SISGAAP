@@ -27,7 +27,7 @@ namespace sisgaapCoreWF.Controllers
             {
                 objDetalleSP.error = 2; //costo invalido!!
             }
-            correcto = objDetalleSPdat.SelectRepuestoxDetalleSA(objDetalleSP) && !objDetalleSPdat.SelectRepuestoxDetalleSP(objDetalleSP);
+            correcto = objDetalleSPdat.SelectRepuestoxDetalleSA(objDetalleSP) && !objDetalleSPdat.SelectRepuestoxDetalleSA(objDetalleSP);
             if (!correcto)
             {
                 objDetalleSP.error = 3; //codigo de repuesto invalido!!
