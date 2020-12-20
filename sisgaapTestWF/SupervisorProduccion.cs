@@ -85,11 +85,11 @@ namespace sisgaapTestWF
                 DetalleSP.codigoSolicitud = DataGridView_VistaPrincipal.CurrentRow.Cells["Solicitud"].Value.ToString();//DetalleSA.codigoSolicitud = DataGridView_VistaPrincipal.CurrentRow.Cells["Solicitud"].Value.ToString();
                 //Repuesto,Nombre,Marca,Modelo,[Cantidad Solicitada],[Cantidad Sugerida],Costo
                 int count = DetalleSP_Ctr.Detalles_SP_dataset(DetalleSP).Tables[0].Rows.Count;
-                string detalle = string.Format("{0,-15} {1,-30} {2,-10} {3,-10} {4,28} {5,15} {6,13}", "Codigo", "Nombre", "Marca", "Modelo", "Solicitada","Sugerida","Costo") + "\r\n";
+                string detalle = string.Format("{0,-15} {1,-30} {2,-10} {3,-10} {4,20} {5,15} {6,13}", "Codigo", "Nombre", "Marca", "Modelo", "Solicitada","Sugerida","Costo") + "\r\n";
                 for (int i = 0; i < count; i++)
                 {
                     //detalle += "\r\n"+DetalleSA_Ctr.Detalles_SA_dataset(DetalleSA).Tables[0].Rows[i][0].ToString() + "\t" + " | "+ DetalleSA_Ctr.Detalles_SA_dataset(DetalleSA).Tables[0].Rows[i][1].ToString() +"\t"+" | "+ DetalleSA_Ctr.Detalles_SA_dataset(DetalleSA).Tables[0].Rows[i][2].ToString();
-                    detalle += "\r\n" + string.Format("{0,-15} {1,-30} {2,-10} {3,-10} {4,8} {5,16} {6,24}", DetalleSP_Ctr.Detalles_SP_dataset(DetalleSP).Tables[0].Rows[i][0].ToString(), DetalleSP_Ctr.Detalles_SP_dataset(DetalleSP).Tables[0].Rows[i][1].ToString(), DetalleSP_Ctr.Detalles_SP_dataset(DetalleSP).Tables[0].Rows[i][2].ToString(),
+                    detalle += "\r\n" + string.Format("{0,-15} {1,-30} {2,-10} {3,-10} {4,20} {5,15} {6,13}", DetalleSP_Ctr.Detalles_SP_dataset(DetalleSP).Tables[0].Rows[i][0].ToString(), DetalleSP_Ctr.Detalles_SP_dataset(DetalleSP).Tables[0].Rows[i][1].ToString(), DetalleSP_Ctr.Detalles_SP_dataset(DetalleSP).Tables[0].Rows[i][2].ToString(),
                         DetalleSP_Ctr.Detalles_SP_dataset(DetalleSP).Tables[0].Rows[i][3].ToString(), DetalleSP_Ctr.Detalles_SP_dataset(DetalleSP).Tables[0].Rows[i][4].ToString(), DetalleSP_Ctr.Detalles_SP_dataset(DetalleSP).Tables[0].Rows[i][5].ToString(), DetalleSP_Ctr.Detalles_SP_dataset(DetalleSP).Tables[0].Rows[i][6].ToString());
                 }
                 //string detalle = DetalleSA_Ctr.Detalles_SA_dataset(DetalleSA).Tables[0].Rows[0];
@@ -305,7 +305,7 @@ namespace sisgaapTestWF
             //    MessageBox.Show("ERROR!! ESPACIOS EN BLANCO!!");
             //    return;
             //}
-            string letra = "";
+            string letra = ""; string letra2 = "";
             for (int i = 0; i < textBox_cantidad_detalle_sa.Text.Length; i++)
             {
                 correcto = char.IsNumber(textBox_cantidad_detalle_sa.Text.Trim()[i]);
@@ -316,13 +316,26 @@ namespace sisgaapTestWF
             }
             if (letra.Length > 0)
             {
-                MessageBox.Show("ERROR!! Se ingresó letras en la cantidad solicitada");
+                MessageBox.Show("ERROR!! Se ingresó letras o simbolos en la cantidad solicitada");
                 return;
             }
-            DetalleSA.codigoSolicitud = SA.codigoSolicitud;
-            DetalleSA.codigoRepuesto = dataGridView_detalleSA.CurrentRow.Cells["Codigo"].Value.ToString();
-            DetalleSA.cantidadSolicitada = Int32.Parse(dataGridView_detalleSA.CurrentRow.Cells["Cantidad"].Value.ToString());
-            DetalleSA_Ctr.ActualizarDetalleSA(DetalleSA);
+            DetalleSP.codigoSolicitud = SP.codigoSolicitud;
+            DetalleSP.codigoRepuesto = dataGridView_detalleSA.CurrentRow.Cells["Codigo"].Value.ToString();
+            for (int i = 0; i < dataGridView_detalleSA.CurrentRow.Cells["Cantidad"].Value.ToString().Length; i++)
+            {
+                correcto = char.IsNumber(dataGridView_detalleSA.CurrentRow.Cells["Cantidad"].Value.ToString().Trim()[i]);
+                if (!correcto)
+                {
+                    letra2 += textBox_cantidad_detalle_sa.Text.Trim()[i].ToString();
+                }
+            }
+            if (letra2.Length > 0)
+            {
+                MessageBox.Show("ERROR!! Se ingresó letras o simbolos en la cantidad solicitada");
+                return;
+            }
+            DetalleSP.cantidadSugerida = Int32.Parse(dataGridView_detalleSA.CurrentRow.Cells["Cantidad"].Value.ToString());
+            DetalleSP_Ctr.ActualizarDetalleSP(DetalleSP);
             msj1(DetalleSP);
             CargarListaDetalleSolicitudAbastecimiento();
         }

@@ -44,7 +44,7 @@ namespace sisgaapSqlDB.DataBase
         {
             DataTable dt = null;
             conexionBD.Open();
-            SqlCommand command = new SqlCommand("select Repuesto,Nombre,Cantidad,Costo from v_detalle_sp where Solicitud ='" + objDetalleSP.codigoSolicitud + "'", conexionBD);
+            SqlCommand command = new SqlCommand("select Repuesto,Nombre,[Cantidad Sugerida],Costo from v_detalle_sp where Solicitud ='" + objDetalleSP.codigoSolicitud + "'", conexionBD);
             SqlDataAdapter daAdaptador = new SqlDataAdapter(command);
             dt = new DataTable();
             daAdaptador.Fill(dt);
@@ -64,7 +64,7 @@ namespace sisgaapSqlDB.DataBase
         }
         public void DeleteAllDetalle_SP(DetalleSolicitudProduccion objDetalleSP)
         {
-            string delete = "DELETE T_CE_Detalle_Solicitud_Produccion WHERE codigoSolicitud='" + objDetalleSP.codigoSolicitud + "'";
+            string delete = "DELETE T_CE_Detalle_Solicitud_Produccion WHERE codigoSolicitud='" + objDetalleSP.codigoSolicitud + "' and codigoSolicitud='" + objDetalleSP.Detalle_Solicitud_Abastecimiento_codigoSolicitud + "'";
             SqlCommand command = new SqlCommand(delete, conexionBD);
             conexionBD.Open();
             command.ExecuteNonQuery();
@@ -72,7 +72,7 @@ namespace sisgaapSqlDB.DataBase
         }
         public bool SelectRepuestoxDetalleSP(DetalleSolicitudProduccion objDetalleSP)
         {
-            string Select = "select * from T_CE_Detalle_Solicitud_Produccion WHERE codigoRepuesto ='" + objDetalleSP.codigoRepuesto + "'";
+            string Select = "select * from T_CE_Detalle_Solicitud_Produccion WHERE codigoRepuesto ='" + objDetalleSP.codigoRepuesto + "' and codigoSolicitud='" + objDetalleSP.Detalle_Solicitud_Abastecimiento_codigoSolicitud + "'";
             SqlCommand unComando = new SqlCommand(Select, conexionBD);
             conexionBD.Open();
             SqlDataReader reader = unComando.ExecuteReader();
