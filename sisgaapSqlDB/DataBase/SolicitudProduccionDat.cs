@@ -33,7 +33,7 @@ namespace sisgaapSqlDB.DataBase
         }
         public void UpdateSolicitudProduccion(SolicitudProducción objSP)
         {
-            string update = "UPDATE T_CE_Solicitud_Produccion SET asunto='" + objSP.asunto + "', observacion='" + objSP.observacion + ",descripcion='" + objSP.descripcion + "', fechaEntrega='" + objSP.fechaEntrega.Date.ToString("yyyy/MM/dd") + "' Where codigoSolicitud='" + objSP.codigoSolicitud + "'";
+            string update = "UPDATE T_CE_Solicitud_Produccion SET asunto='" + objSP.asunto + "', observacion='" + objSP.observacion + "',descripcion='" + objSP.descripcion + "', fechaEntrega='" + objSP.fechaEntrega.Date.ToString("yyyy/MM/dd") + "' Where codigoSolicitud='" + objSP.codigoSolicitud + "'";
             SqlCommand command = new SqlCommand(update, conexionBD);
             conexionBD.Open();
             command.ExecuteNonQuery();

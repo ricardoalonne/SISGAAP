@@ -53,13 +53,12 @@ namespace sisgaapTestWF
         {
             DataGridView_VistaPrincipal.DataSource = SPctr.ListarSolicitudesProduccion();//SActr.ListarSolicitudesAbastecimiento();
             DataGridView_VistaPrincipal.Columns[0].Visible = false;
-            DataGridView_VistaPrincipal.Columns[3].Visible = false;
+            DataGridView_VistaPrincipal.Columns[1].ReadOnly = false;
+            DataGridView_VistaPrincipal.Columns[2].ReadOnly = true;
+            DataGridView_VistaPrincipal.Columns[3].ReadOnly = true;
             DataGridView_VistaPrincipal.Columns[4].ReadOnly = true;
             DataGridView_VistaPrincipal.Columns[5].ReadOnly = true;
             DataGridView_VistaPrincipal.Columns[6].ReadOnly = true;
-            DataGridView_VistaPrincipal.Columns[7].ReadOnly = true;
-            DataGridView_VistaPrincipal.Columns[8].ReadOnly = true;
-            DataGridView_VistaPrincipal.Columns[9].Visible = false;
         }
 
         private void Button_Buscar_Click(object sender, EventArgs e)
@@ -358,10 +357,11 @@ namespace sisgaapTestWF
         {
             panel_SupervisorA.Visible = false;
             panel_registro.Visible = true;
+            panel_Solicitud.Visible = true;
             button_actualizar.Visible = true;
             SP.codigoSolicitud= DataGridView_VistaPrincipal.CurrentRow.Cells["Solicitud"].Value.ToString();
             button_CancelarTodo.Visible = false;
-            DetalleSP.Detalle_Solicitud_Abastecimiento_codigoSolicitud = DataGridView_VistaPrincipal.CurrentRow.Cells["DetalleSolicitud"].Value.ToString();
+            //DetalleSP.Detalle_Solicitud_Abastecimiento_codigoSolicitud = DataGridView_VistaPrincipal.CurrentRow.Cells["DetalleSolicitud"].Value.ToString();
             SPctr.CargarSP(SP);
             textBox_solicitud_abastecimiento.Text = DetalleSP.Detalle_Solicitud_Abastecimiento_codigoSolicitud;
             textBox_redactor.Text = SP.redactor;
@@ -518,6 +518,7 @@ namespace sisgaapTestWF
         {
             panel_registro.Visible = false;
             panel_SupervisorA.Visible = true;
+            panel_produccion.Visible = false;
         }
 
         private void button_continuar_detalle_Click(object sender, EventArgs e)
@@ -554,9 +555,14 @@ namespace sisgaapTestWF
             SP.codigoSolicitud = DataGridView_VistaPrincipal.CurrentRow.Cells["Codigo"].Value.ToString();
             SP.asunto = DataGridView_VistaPrincipal.CurrentRow.Cells["Asunto"].Value.ToString();
             //SA.fechaEntrega =DateTime.Parse( DataGridView_VistaPrincipal.CurrentRow.Cells["Entrega"].Value.ToString());
-            SActr.GuardarSA(SA);
-            msj(SA);
-            CargarListaSolicitudAbastecimiento();
+            SPctr.ActualizarSP(SP);
+            msj(SP);
+            CargarListaDetalleSolicitudProduccion();
+        }
+
+        private void button_cerrar_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
