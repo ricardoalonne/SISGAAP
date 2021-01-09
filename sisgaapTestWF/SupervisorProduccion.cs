@@ -268,7 +268,7 @@ namespace sisgaapTestWF
         }
         private void CargarListaDetalleSolicitudAbastecimiento()
         {
-            DetalleSA.codigoSolicitud = SA.codigoSolicitud;
+            DetalleSA.codigoSolicitud = textBox_solicitud_abastecimiento.Text;
             dataGridView_detalleSA.DataSource = DetalleSA_Ctr.Detalle_SA_datatable(DetalleSA);
             dataGridView_detalleSA.Columns[0].Visible = false;
         }
@@ -361,7 +361,7 @@ namespace sisgaapTestWF
             button_actualizar.Visible = true;
             SP.codigoSolicitud= DataGridView_VistaPrincipal.CurrentRow.Cells["Solicitud"].Value.ToString();
             button_CancelarTodo.Visible = false;
-            //DetalleSP.Detalle_Solicitud_Abastecimiento_codigoSolicitud = DataGridView_VistaPrincipal.CurrentRow.Cells["DetalleSolicitud"].Value.ToString();
+            DetalleSP.Detalle_Solicitud_Abastecimiento_codigoSolicitud = DataGridView_VistaPrincipal.CurrentRow.Cells["DetalleSolicitud"].Value.ToString();
             SPctr.CargarSP(SP);
             textBox_solicitud_abastecimiento.Text = DetalleSP.Detalle_Solicitud_Abastecimiento_codigoSolicitud;
             textBox_redactor.Text = SP.redactor;
@@ -384,6 +384,7 @@ namespace sisgaapTestWF
             SP.descripcion = textBox_descripcion.Text;
             SP.observacion = textBox_observacion.Text;
             SP.fechaEntrega = dateTime_SA.Value.Date;
+            
             SPctr.ActualizarSP(SP);
             msj(SP);
             CargarListaDetalleSolicitudAbastecimiento();
