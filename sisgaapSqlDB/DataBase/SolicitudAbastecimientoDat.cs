@@ -173,5 +173,14 @@ namespace sisgaapSqlDB.DataBase
             conexionBD.Close();
             return hayRegistros;
         }
+
+        public void GuardarActualizacion_SA(SolicitudAbastecimiento objsa)
+        {
+            string update = "UPDATE T_CE_Solicitud_Abastecimiento SET asunto='" + objsa.asunto + "' WHERE codigoSolicitud='" + objsa.codigoSolicitud + "'";
+            SqlCommand command = new SqlCommand(update, conexionBD);
+            conexionBD.Open();
+            command.ExecuteNonQuery();
+            conexionBD.Close();
+        }
     }
 }

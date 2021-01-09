@@ -16,7 +16,7 @@ namespace sisgaapTestWF
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new wmSystem());
+            Application.Run(new LoginSISGAAP());
         }
     }
 }

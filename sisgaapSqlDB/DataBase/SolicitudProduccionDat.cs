@@ -33,7 +33,7 @@ namespace sisgaapSqlDB.DataBase
         }
         public void UpdateSolicitudProduccion(SolicitudProducción objSP)
         {
-            string update = "UPDATE T_CE_Solicitud_Produccion SET asunto='" + objSP.asunto + "', observacion='" + objSP.observacion + ",descripcion='" + objSP.descripcion + "', fechaEntrega='" + objSP.fechaEntrega + "' Where codigoSolicitud='" + objSP.codigoSolicitud + "'";
+            string update = "UPDATE T_CE_Solicitud_Produccion SET asunto='" + objSP.asunto + "', observacion='" + objSP.observacion + ",descripcion='" + objSP.descripcion + "', fechaEntrega='" + objSP.fechaEntrega.Date.ToString("yyyy/MM/dd") + "' Where codigoSolicitud='" + objSP.codigoSolicitud + "'";
             SqlCommand command = new SqlCommand(update, conexionBD);
             conexionBD.Open();
             command.ExecuteNonQuery();
@@ -99,6 +99,31 @@ namespace sisgaapSqlDB.DataBase
             }
             conexionBD.Close();
             return codigo;
+        }
+        public void ObtenerSP(SolicitudProducción objSP)
+        {
+            SqlCommand cmd = new SqlCommand("SELECT * from T_CE_Solicitud_Produccion where codigoSolicitud='" + objSP.codigoSolicitud + "'", conexionBD);
+            conexionBD.Open();
+            SqlDataReader reader = cmd.ExecuteReader();
+            bool hayRegistros = reader.Read();
+            if (hayRegistros)
+            {
+                objSP.asunto = (string)reader[1];
+                objSP.redactor = (string)reader[9];
+                objSP.descripcion = (string)reader[2];
+                objSP.observacion = (string)reader[5];
+                objSP.fechaEntrega = (DateTime)reader[4];
+
+            }
+            conexionBD.Close();
+        }
+        public void GuardarActualizacion_SP(SolicitudProducción objSP)
+        {
+            string update = "UPDATE T_CE_Solicitud_Produccion SET asunto='" + objSP.asunto + "' WHERE codigoSolicitud='" + objSP.codigoSolicitud + "'";
+            SqlCommand command = new SqlCommand(update, conexionBD);
+            conexionBD.Open();
+            command.ExecuteNonQuery();
+            conexionBD.Close();
         }
     }
 }

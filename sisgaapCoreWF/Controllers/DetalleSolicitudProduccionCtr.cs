@@ -44,9 +44,15 @@ namespace sisgaapCoreWF.Controllers
         {
             if (objDetalleSP.cantidadSugerida <= 0)
             {
-                objDetalleSP.error = 1; //cantidad invalidad!!
+                objDetalleSP.error = 1;
+                return;//cantidad invalidad!!
             }
-            objDetalleSP.error = 77;
+            if (objDetalleSP.costoUnitario <= 0)
+            {
+                objDetalleSP.error = 2;
+                return;//cantidad invalidad!!
+            }
+            objDetalleSP.error = 88;
             objDetalleSPdat.UpdateDetalle_SP(objDetalleSP);
         }
         public DataSet Detalles_SP_dataset(DetalleSolicitudProduccion detalleSP)

@@ -69,7 +69,7 @@ namespace sisgaapCoreWF.Controllers
                 objSP.error = 4; //observación supero los 50 caracteres!!
                 return;
             }
-            objSP.error = 77;
+            objSP.error = 88;
             objSPdat.UpdateSolicitudProduccion(objSP);
         }
         public DataTable ConsultaSolicitudProduccion(string dato, string letra)
@@ -83,6 +83,10 @@ namespace sisgaapCoreWF.Controllers
         public string TraerUltimoCodigoSP()
         {
             return objSPdat.TraerCodigoSP();
-        }       
+        }
+        public void CargarSP(SolicitudProducción objSP)
+        {
+            objSPdat.ObtenerSP(objSP);
+        }
     }
 }

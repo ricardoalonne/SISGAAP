@@ -111,5 +111,22 @@ namespace sisgaapCoreWF.Controllers
         {
             return objSAdat.SelectCodigoSAxSP(objSA);
         }
+        public void GuardarSA(SolicitudAbastecimiento objSA)
+        {
+            DateTime fechaEntrega = objSA.fechaEntrega;
+            if (fechaEntrega <= DateTime.Now)
+            {
+                objSA.error = 1;//fecha Invalida!!
+                return;
+            }
+            else if (objSA.asunto.Length > 50)
+            {
+                objSA.error = 3; //Asunto supero los 50 caracteres!!
+                return;
+            }
+
+            objSA.error = 99;
+            objSAdat.GuardarActualizacion_SA(objSA);
+        }
     }
 }

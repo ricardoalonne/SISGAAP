@@ -90,5 +90,9 @@ namespace sisgaapCoreWF.Controllers
         {
             return objRepuestoDat.SelectRepuestoxCodigo(objRepuesto);
         }
+        public DataTable ConsultaRepuesto(string dato, string letra)
+        {
+            return objRepuestoDat.select_RxCB(dato, letra);
+        }
     }
 }

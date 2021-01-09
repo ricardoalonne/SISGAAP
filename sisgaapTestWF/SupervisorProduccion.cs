@@ -54,6 +54,12 @@ namespace sisgaapTestWF
             DataGridView_VistaPrincipal.DataSource = SPctr.ListarSolicitudesProduccion();//SActr.ListarSolicitudesAbastecimiento();
             DataGridView_VistaPrincipal.Columns[0].Visible = false;
             DataGridView_VistaPrincipal.Columns[3].Visible = false;
+            DataGridView_VistaPrincipal.Columns[4].ReadOnly = true;
+            DataGridView_VistaPrincipal.Columns[5].ReadOnly = true;
+            DataGridView_VistaPrincipal.Columns[6].ReadOnly = true;
+            DataGridView_VistaPrincipal.Columns[7].ReadOnly = true;
+            DataGridView_VistaPrincipal.Columns[8].ReadOnly = true;
+            DataGridView_VistaPrincipal.Columns[9].Visible = false;
         }
 
         private void Button_Buscar_Click(object sender, EventArgs e)
@@ -111,6 +117,11 @@ namespace sisgaapTestWF
         private void button_cancelar_Click(object sender, EventArgs e)
         {
             panel_registro.Visible = false;
+            panel_SupervisorA.Visible = true;
+            textBox_redactor.Clear();
+            textBox_observacion.Clear();
+            textBox_descripcion.Clear();
+            
         }
 
         private void button_Continuar_Click(object sender, EventArgs e)
@@ -193,6 +204,7 @@ namespace sisgaapTestWF
         {
            // DetalleSA.codigoSolicitud = DataGridView_VistaPrincipal.CurrentRow.Cells["Solicitud"].Value.ToString();
             DetalleSP.codigoSolicitud = SP.codigoSolicitud;
+            DetalleSP.Detalle_Solicitud_Abastecimiento_codigoSolicitud= dataGridView_detalleSA.CurrentRow.Cells["Solicitud"].Value.ToString();
             DetalleSP_Ctr.EliminarAllDetalleSP(DetalleSP);
             SPctr.EliminarSP(SP);
             panel_Solicitud.Visible = true;
@@ -206,50 +218,17 @@ namespace sisgaapTestWF
             panel_registro.Visible = true;
             button_Continuar.Visible = true;
             button_CancelarTodo.Visible = true;
+            textBox_redactor.Text = labelnombre.Text + " " + labelapellido.Text;
         }
 
         private void button_agregar_detalleSA_Click(object sender, EventArgs e)
         {
-            //Repuesto objRepuesto = new Repuesto();
-            /*RepuestoCtr objRepuestoCtr = new RepuestoCtr();
-            bool correcto = true;
-            if (textBox_cantidad_detalle_sa.Text == "" || textBox_codigo_Repuesto.Text == "")
-            {
-                MessageBox.Show("ERROR!! ESPACIOS EN BLANCO!!");
-                return;
-            }
-            objRepuesto.codigoRepuesto = textBox_codigo_Repuesto.Text;
-            if (!objRepuestoCtr.ExistenciaRepuesto(objRepuesto))
-            {
-                MessageBox.Show("ERROR!! REPUESTO INEXISTENTE!!");
-                return;
-            }
-            string letra = "";
-            for (int i = 0; i < textBox_cantidad_detalle_sa.Text.Length; i++)
-            {
-                correcto = char.IsNumber(textBox_cantidad_detalle_sa.Text.Trim()[i]);
-                if (!correcto)
-                {
-                    letra += textBox_cantidad_detalle_sa.Text.Trim()[i].ToString();
-                }
-            }
-            if (letra.Length > 0)
-            {
-                MessageBox.Show("ERROR!! Se ingresó letras en la cantidad solicitada");
-                return;
-            }
-            */
             DetalleSA.codigoSolicitud = SA.codigoSolicitud;
             textBox_codigo_repuesto.Text = dataGridView_detalleSA.CurrentRow.Cells["Codigo"].Value.ToString();
             textBox_marca_repuesto.Text = dataGridView_detalleSA.CurrentRow.Cells["Marca"].Value.ToString();
             textBox_modelo_repuesto.Text = dataGridView_detalleSA.CurrentRow.Cells["Modelo"].Value.ToString();
             textBox_cantidad_detalle_sa.Text= dataGridView_detalleSA.CurrentRow.Cells["Cantidad"].Value.ToString();
-            //DetalleSA.codigoRepuesto = textBox_codigo_Repuesto.Text;
-            //DetalleSA.cantidadSolicitada = Int32.Parse(textBox_cantidad_detalle_sa.Text);
-           // DetalleSA_Ctr.RegistrarDetalleSA(DetalleSA);
-            //msj1(DetalleSP);
             panel_agregar_detalle.Visible = true;
-            //CargarListaDetalleSolicitudAbastecimiento();
         }
         public void msj1(DetalleSolicitudProduccion p)
         {
@@ -268,11 +247,23 @@ namespace sisgaapTestWF
                     MessageBox.Show("REGISTRO EXITOSO!!");
                  //   textBox_codigo_Repuesto.Clear();
                     textBox_cantidad_detalle_sa.Clear();
+                    textBox_codigo_repuesto.Clear();
+                    textBox_marca_repuesto.Clear();
+                    textBox_modelo_repuesto.Clear();
+                    textBox_cantidad_detalle_sa.Clear();
+                    textBox_cantidad_sugerida.Text = "" + 0;
+                    textBox_costo_producir.Text = "";
                     break;
                 case 88:
                     MessageBox.Show("Actualización EXITOSA!!");
                    // textBox_codigo_Repuesto.Clear();
                     textBox_cantidad_detalle_sa.Clear();
+                    textBox_codigo_repuesto.Clear();
+                    textBox_marca_repuesto.Clear();
+                    textBox_modelo_repuesto.Clear();
+                    textBox_cantidad_detalle_sa.Clear();
+                    textBox_cantidad_sugerida.Text = "" + 0;
+                    textBox_costo_producir.Text = "";
                     break;
             }
         }
@@ -287,6 +278,12 @@ namespace sisgaapTestWF
             DetalleSP.codigoSolicitud = SP.codigoSolicitud;
             dataGridView_produccion.DataSource = DetalleSP_Ctr.Detalle_SP_datatable(DetalleSP);
             dataGridView_produccion.Columns[0].Visible = false;
+            dataGridView_produccion.Columns[1].Visible = false;
+            dataGridView_produccion.Columns[6].Visible = false;
+            dataGridView_produccion.Columns[2].ReadOnly = true;
+            dataGridView_produccion.Columns[3].ReadOnly = true;
+            dataGridView_produccion.Columns[4].ReadOnly = true;
+            dataGridView_produccion.Columns[5].ReadOnly = true;
         }
         private void cargarDetalles()
         {
@@ -300,18 +297,21 @@ namespace sisgaapTestWF
         private void button_GuardardetalleSA_Click(object sender, EventArgs e)
         {
             bool correcto = true;
-            //if (textBox_cantidad_detalle_sa.Text == "" || textBox_codigo_Repuesto.Text == "")
-            //{
-            //    MessageBox.Show("ERROR!! ESPACIOS EN BLANCO!!");
-            //    return;
-            //}
-            string letra = ""; string letra2 = "";
-            for (int i = 0; i < textBox_cantidad_detalle_sa.Text.Length; i++)
+            if (dataGridView_produccion.CurrentRow.Cells["[Cantidad Sugerida]"].Value.ToString() == "" || dataGridView_produccion.CurrentRow.Cells["Costo"].Value.ToString() == "")
             {
-                correcto = char.IsNumber(textBox_cantidad_detalle_sa.Text.Trim()[i]);
+               MessageBox.Show("ERROR!! ESPACIOS EN BLANCO!!");
+               return;
+            }
+            string letra = ""; string letra2 = "";
+            DetalleSP.codigoSolicitud = SP.codigoSolicitud;
+            DetalleSP.codigoRepuesto = dataGridView_produccion.CurrentRow.Cells["Repuesto"].Value.ToString();
+            DetalleSP.Detalle_Solicitud_Abastecimiento_codigoSolicitud= dataGridView_produccion.CurrentRow.Cells["DetalleSolicitud"].Value.ToString();
+            for (int i = 0; i < dataGridView_produccion.CurrentRow.Cells["[Cantidad Sugerida]"].Value.ToString().Length; i++)
+            {
+                correcto = char.IsNumber(dataGridView_produccion.CurrentRow.Cells["[Cantidad Sugerida]"].Value.ToString().Trim()[i]);
                 if (!correcto)
                 {
-                    letra += textBox_cantidad_detalle_sa.Text.Trim()[i].ToString();
+                    letra += dataGridView_produccion.CurrentRow.Cells["[Cantidad Sugerida]"].Value.ToString().Trim()[i].ToString();
                 }
             }
             if (letra.Length > 0)
@@ -319,32 +319,33 @@ namespace sisgaapTestWF
                 MessageBox.Show("ERROR!! Se ingresó letras o simbolos en la cantidad solicitada");
                 return;
             }
-            DetalleSP.codigoSolicitud = SP.codigoSolicitud;
-            DetalleSP.codigoRepuesto = dataGridView_detalleSA.CurrentRow.Cells["Codigo"].Value.ToString();
-            for (int i = 0; i < dataGridView_detalleSA.CurrentRow.Cells["Cantidad"].Value.ToString().Length; i++)
+            for (int i = 0; i < dataGridView_produccion.CurrentRow.Cells["Costo"].Value.ToString().Length; i++)
             {
-                correcto = char.IsNumber(dataGridView_detalleSA.CurrentRow.Cells["Cantidad"].Value.ToString().Trim()[i]);
+                correcto = char.IsNumber(dataGridView_produccion.CurrentRow.Cells["Costo"].Value.ToString().Trim()[i]);
                 if (!correcto)
                 {
-                    letra2 += textBox_cantidad_detalle_sa.Text.Trim()[i].ToString();
+                    letra2 += dataGridView_produccion.CurrentRow.Cells["Costo"].Value.ToString().Trim()[i].ToString();
                 }
             }
             if (letra2.Length > 0)
             {
-                MessageBox.Show("ERROR!! Se ingresó letras o simbolos en la cantidad solicitada");
+                MessageBox.Show("ERROR!! Se ingresó letras o simbolos en costo");
                 return;
             }
-            DetalleSP.cantidadSugerida = Int32.Parse(dataGridView_detalleSA.CurrentRow.Cells["Cantidad"].Value.ToString());
+            DetalleSP.cantidadSugerida = Int32.Parse(dataGridView_produccion.CurrentRow.Cells["[Cantidad Sugerida]"].Value.ToString());
+            DetalleSP.costoUnitario = double.Parse(dataGridView_produccion.CurrentRow.Cells["Costo"].Value.ToString());
             DetalleSP_Ctr.ActualizarDetalleSP(DetalleSP);
             msj1(DetalleSP);
-            CargarListaDetalleSolicitudAbastecimiento();
+            CargarListaDetalleSolicitudProduccion();
         }
 
         private void button_EliminardetalleSA_Click(object sender, EventArgs e)
         {
-            DetalleSA.codigoSolicitud = SA.codigoSolicitud;
-            DetalleSA_Ctr.EliminarAllDetalleSA(DetalleSA);
-            CargarListaDetalleSolicitudAbastecimiento();
+            DetalleSP.codigoSolicitud = SP.codigoSolicitud;
+            DetalleSP.codigoRepuesto = dataGridView_detalleSA.CurrentRow.Cells["Repuesto"].Value.ToString();
+            DetalleSP.Detalle_Solicitud_Abastecimiento_codigoSolicitud= dataGridView_detalleSA.CurrentRow.Cells["DetalleSolicitud"].Value.ToString();
+            DetalleSP_Ctr.EliminarAllDetalleSP(DetalleSP);
+            CargarListaDetalleSolicitudProduccion();
         }
 
         private void button_Registrar_Click(object sender, EventArgs e)
@@ -358,31 +359,33 @@ namespace sisgaapTestWF
             panel_SupervisorA.Visible = false;
             panel_registro.Visible = true;
             button_actualizar.Visible = true;
+            SP.codigoSolicitud= DataGridView_VistaPrincipal.CurrentRow.Cells["Solicitud"].Value.ToString();
             button_CancelarTodo.Visible = false;
-            SA.codigoSolicitud = DataGridView_VistaPrincipal.CurrentRow.Cells["Solicitud"].Value.ToString();
-            SActr.CargarSA(SA);
-            textBox_redactor.Text = SA.redactor;
-            textBox_descripcion.Text = SA.descripcion;
-            textBox_asunto.Text = SA.asunto;
-            textBox_observacion.Text = SA.observacion;
-            dateTime_SA.Value = SA.fechaEntrega;
-
+            DetalleSP.Detalle_Solicitud_Abastecimiento_codigoSolicitud = DataGridView_VistaPrincipal.CurrentRow.Cells["DetalleSolicitud"].Value.ToString();
+            SPctr.CargarSP(SP);
+            textBox_solicitud_abastecimiento.Text = DetalleSP.Detalle_Solicitud_Abastecimiento_codigoSolicitud;
+            textBox_redactor.Text = SP.redactor;
+            textBox_descripcion.Text = SP.descripcion;
+            textBox_asunto.Text = SP.asunto;
+            textBox_observacion.Text = SP.observacion;
+            dateTime_SA.Value = SP.fechaEntrega;
+            textBox_solicitud_abastecimiento.Enabled = false;
         }
 
         private void button_actualizar_Click(object sender, EventArgs e)
         {
-            if (textBox_redactor.Text == "" || textBox_asunto.Text == "")
+            if (textBox_asunto.Text == "")
             {
                 MessageBox.Show("ERROR!! ESPACIOS EN BLANCO!!");
                 return;
             }
-            SA.asunto = textBox_asunto.Text;
-            SA.redactor = textBox_redactor.Text;
-            SA.descripcion = textBox_descripcion.Text;
-            SA.observacion = textBox_observacion.Text;
-            SA.fechaEntrega = dateTime_SA.Value.Date;
-            SActr.ActualizarSA(SA);
-            //msj(SA);
+            SP.asunto = textBox_asunto.Text;
+            SP.redactor = textBox_redactor.Text;
+            SP.descripcion = textBox_descripcion.Text;
+            SP.observacion = textBox_observacion.Text;
+            SP.fechaEntrega = dateTime_SA.Value.Date;
+            SPctr.ActualizarSP(SP);
+            msj(SP);
             CargarListaDetalleSolicitudAbastecimiento();
         }
 
@@ -399,11 +402,7 @@ namespace sisgaapTestWF
             DetalleSP_Ctr.EliminarAllDetalleSP(DetalleSP);
             SPctr.EliminarSP(SP);
             CargarListaSolicitudProduccion();
-            DetalleSA.codigoSolicitud = DataGridView_VistaPrincipal.CurrentRow.Cells["Solicitud"].Value.ToString();
-            SA.codigoSolicitud = DataGridView_VistaPrincipal.CurrentRow.Cells["Solicitud"].Value.ToString();
-            DetalleSA_Ctr.EliminarAllDetalleSA(DetalleSA);
-            SActr.EliminarSA(SA);
-            CargarListaSolicitudProduccion();
+            
         }
 
         private void button_restablecer_Click(object sender, EventArgs e)
@@ -413,7 +412,49 @@ namespace sisgaapTestWF
 
         private void button_producir_todo_Click(object sender, EventArgs e)
         {
-            textBox_cantidad_sugerida.Text = textBox_cantidad_detalle_sa.Text;
+            bool correcto = true;
+            if (textBox_cantidad_sugerida.Text == "" || textBox_costo_producir.Text == "")
+            {
+                MessageBox.Show("ERROR!! ESPACIOS EN BLANCO!!");
+                return;
+            }
+            string letra = "";
+            for (int i = 0; i < textBox_cantidad_sugerida.Text.Length; i++)
+            {
+                correcto = char.IsNumber(textBox_cantidad_sugerida.Text.Trim()[i]);
+                if (!correcto)
+                {
+                    letra += textBox_cantidad_sugerida.Text.Trim()[i].ToString();
+                }
+            }
+            if (letra.Length > 0)
+            {
+                MessageBox.Show("ERROR!! Se ingresó caracter no válido en la cantidad");
+                return;
+            }
+            string letra2 = "";
+            for (int i = 0; i < textBox_costo_producir.Text.Length; i++)
+            {
+                correcto = char.IsNumber(textBox_costo_producir.Text.Trim()[i]);
+                if (!correcto)
+                {
+                    letra2 += textBox_costo_producir.Text.Trim()[i].ToString();
+                }
+            }
+            if (letra2.Length > 0)
+            {
+                MessageBox.Show("ERROR!! Se ingresó caracter no válido en el costo");
+                return;
+            }
+            DetalleSP.codigoSolicitud = SP.codigoSolicitud;
+            DetalleSP.codigoRepuesto = textBox_codigo_repuesto.Text;
+            DetalleSP.cantidadSugerida = Int32.Parse(textBox_cantidad_detalle_sa.Text);
+            DetalleSP.costoUnitario = Double.Parse(textBox_costo_producir.Text);
+            DetalleSP.Detalle_Solicitud_Abastecimiento_codigoSolicitud = dataGridView_detalleSA.CurrentRow.Cells["Solicitud"].Value.ToString();
+            DetalleSP_Ctr.RegistrarDetalleSP(DetalleSP);
+            msj1(DetalleSP);
+            panel_agregar_detalle.Visible = false;
+            CargarListaDetalleSolicitudAbastecimiento();
         }
 
         private void button_producir_Click(object sender, EventArgs e)
@@ -435,7 +476,7 @@ namespace sisgaapTestWF
             }
             if (letra.Length > 0)
             {
-                MessageBox.Show("ERROR!! Se ingresó letras en la cantidad sugerida");
+                MessageBox.Show("ERROR!! Se ingresó caracter no válido en la cantidad");
                 return;
             }
             string letra2 = "";
@@ -449,7 +490,7 @@ namespace sisgaapTestWF
             }
             if (letra2.Length > 0)
             {
-                MessageBox.Show("ERROR!! Se ingresó letras en costo");
+                MessageBox.Show("ERROR!! Se ingresó caracter no válido en el costo");
                 return;
             }
             DetalleSP.codigoSolicitud = SP.codigoSolicitud;
@@ -485,6 +526,37 @@ namespace sisgaapTestWF
             panel_Detalle_Solicitud.Visible = false;
             panel_produccion.Visible = true;
             CargarListaDetalleSolicitudProduccion();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_guardar_tabla_Click(object sender, EventArgs e)
+        {
+            bool correcto = true;
+            string letra = "";
+            for (int i = 0; i < DataGridView_VistaPrincipal.CurrentRow.Cells["Asunto"].Value.ToString().Length; i++)
+            {
+                correcto = char.IsLetter(textBox_cantidad_detalle_sa.Text.Trim()[i]);
+                if (!correcto)
+                {
+                    letra += DataGridView_VistaPrincipal.CurrentRow.Cells["Asunto"].Value.ToString().Trim()[i].ToString();
+                }
+            }
+            if (letra.Length > 0)
+            {
+                MessageBox.Show("ERROR!! Se ingresó números en celda de Letras");
+                return;
+            }
+
+            SP.codigoSolicitud = DataGridView_VistaPrincipal.CurrentRow.Cells["Codigo"].Value.ToString();
+            SP.asunto = DataGridView_VistaPrincipal.CurrentRow.Cells["Asunto"].Value.ToString();
+            //SA.fechaEntrega =DateTime.Parse( DataGridView_VistaPrincipal.CurrentRow.Cells["Entrega"].Value.ToString());
+            SActr.GuardarSA(SA);
+            msj(SA);
+            CargarListaSolicitudAbastecimiento();
         }
     }
 }

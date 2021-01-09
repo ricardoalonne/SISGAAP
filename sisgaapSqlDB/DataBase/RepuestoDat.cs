@@ -125,5 +125,19 @@ namespace sisgaapSqlDB.DataBase
             conexionBD.Close();
             return dt;
         }
+        public DataTable select_RxCB(string dato, string letra)
+        {
+            DataTable dt = null;
+            conexionBD.Open();
+            SqlCommand command = new SqlCommand("SP_consultar_repuesto", conexionBD);
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@letra", letra);
+            command.Parameters.AddWithValue("@cb", dato);
+            SqlDataAdapter daAdaptador = new SqlDataAdapter(command);
+            dt = new DataTable();
+            daAdaptador.Fill(dt);
+            conexionBD.Close();
+            return dt;
+        }
     }
 }
